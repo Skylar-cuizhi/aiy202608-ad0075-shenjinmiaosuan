@@ -33,8 +33,6 @@
 
 ![见微 · 风险研究卡片：阅读覆盖证明 + 六段式研判，每个数字可点击回到 PDF 原文](./docs/demo.jpg)
 
-🔗 在线体验：【待填，没有就删掉这一行】
-
 ## 🛠 用到的技术 / AI 工具
 
 - 前端：React + TypeScript + Vite + Tailwind CSS + Radix UI
