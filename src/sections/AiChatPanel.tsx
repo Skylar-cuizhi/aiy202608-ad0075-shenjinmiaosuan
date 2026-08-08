@@ -9,8 +9,8 @@ interface Props {
   /** 卷宗确定性摘要（程序生成，作为对话的证据边界） */
   digest: string;
   companyName?: string;
-  /** 顶栏高度，抽屉从其下方开始 */
-  topOffset?: number;
+  /** 顶栏高度对应的响应式定位类，抽屉从其下方开始 */
+  topClassName?: string;
 }
 
 const SUGGESTED = [
@@ -21,7 +21,7 @@ const SUGGESTED = [
 ];
 
 /** 最左侧 AI 对话抽屉：围绕当前卷宗的证据约束问答 */
-export default function AiChatPanel({ open, onClose, digest, companyName, topOffset = 57 }: Props) {
+export default function AiChatPanel({ open, onClose, digest, companyName, topClassName = 'top-[57px]' }: Props) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [pending, setPending] = useState(false);
@@ -59,9 +59,9 @@ export default function AiChatPanel({ open, onClose, digest, companyName, topOff
     <div
       className={cn(
         'fixed bottom-0 left-0 z-40 w-[380px] max-w-[92vw] transition-transform duration-300 ease-out',
+        topClassName,
         open ? 'translate-x-0' : '-translate-x-full pointer-events-none',
       )}
-      style={{ top: topOffset }}
       aria-hidden={!open}
     >
       <div className="flex h-full flex-col border-r border-stone-200 bg-paper-light shadow-[8px_0_32px_rgba(28,25,23,0.10)]">
