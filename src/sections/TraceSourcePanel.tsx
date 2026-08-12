@@ -53,6 +53,9 @@ export default function TraceSourcePanel({ source, onClose }: { source: TraceSou
               <FileText size={12} /> 原文已获取（{source.textLen.toLocaleString()} 字）· 命中 {matchedCount}/{source.anchors.length} 处主张
             </p>
           )}
+          {source.provenance && (
+            <p className="text-sky-700">{source.provenance}</p>
+          )}
         </div>
       </header>
 

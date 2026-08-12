@@ -6,6 +6,7 @@
 🏷 命题企业 / 赛道：金稳院赛道
 👤 团队：深金妙算
 🔢 团队编号：AD0075
+🌐 在线体验（手机/电脑均可）：**https://skylar-cuizhi.github.io/aiy202608-ad0075-shenjinmiaosuan/**（溯源工作台直达：`?trace=1`）
 
 ---
 

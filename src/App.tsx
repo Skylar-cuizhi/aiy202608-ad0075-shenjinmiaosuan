@@ -512,7 +512,7 @@ function ResearchDesk() {
       )}
     >
       {/* 顶栏 */}
-      <header className="flex items-center gap-3 border-b border-paper-dark bg-paper-light px-5 py-2.5">
+      <header className="flex flex-wrap items-center gap-2 border-b border-paper-dark bg-paper-light px-3 py-2.5 md:gap-3 md:px-5">
         <div className="flex items-center gap-2.5">
           <JianweiLogo className="h-10 w-10" />
           <div>
