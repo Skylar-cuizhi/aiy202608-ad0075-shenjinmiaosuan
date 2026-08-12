@@ -1,279 +1,250 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""调研报告溯源数据管线（见微 · 调研溯源模块配套工具）：
-解析报告中的 [(来源)](URL) 引证 → 抓取原文 → 定位每条主张在原文中的锚点句 → 来源可信度分级 → sources.json
+"""见微·报告溯源：从报告 markdown 生成溯源数据（sources.json 等，对齐前端 TracePack 格式）。
 
-用法：
-    python3 tools/trace/build_data.py <调研报告.md> [输出目录]
-随后用 emit_pack.py 把报告与 sources.json 合成可导入见微的溯源包 JSON。
-依赖：requests（可选）、beautifulsoup4；PDF 来源的补抓需 pypdf。
+用法: python3 tools/trace/build_data.py <report.md> [pack_slug]
+
+- 引证格式：内联 [(名称)](URL)，或脚注 [^N^]（文尾 `[^N^]: 描述 <URL>` 定义，自动归一化为内联）。
+- 抓取来源原文（HTML / PDF），把每条引证定位到原文句子（命中句 + 前后句）。
+- 输出 out/trace_data/<slug>/: report.md, report.normalized.md, claims.json, sources.json
+- 再用 emit_pack.py 把 report + sources.json 合成可导入见微的溯源包。
 """
-import json, re, os, sys, time
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
-REPORT = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else "report.md"
-OUT = os.path.abspath(sys.argv[2]) if len(sys.argv) > 2 else "trace-out"
-os.makedirs(OUT, exist_ok=True)
+import io
+import json
+import re
+import sys
+import time
+from pathlib import Path
 
 try:
     import requests
-    HAS_REQ = True
 except ImportError:
-    HAS_REQ = False
-    import urllib.request
+    sys.exit("需要 requests: 见微内建 Python 已自带; 若用系统 python 请 pip3 install --user requests")
 
 from bs4 import BeautifulSoup
 
-UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+ROOT = Path(__file__).resolve().parent.parent.parent
+OUT = ROOT / "out" / "trace_data"
+
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36",
       "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8"}
 
-CITE_RE = re.compile(r"\[\(([^\)]{1,40})\)\]\((https?://[^\)]+)\)")
-NUM_RE = re.compile(r"\d+(?:\.\d+)?")
-SENT_SPLIT = re.compile(r"(?<=[。！？；!?])")
-STOP = set("的了是在和有和与等中为对年月日其该各将已并被及或也都而就这那你我他她它们个之於于以让从向到把被给但而且如果因所以根据其中以上以下以及")
+# ---------- 引证解析 ----------
 
-# ---------------- 可信度分级（对齐 traceable-research 的 rubric） ----------------
-GRADE_MAP = {
-    "idc.com": ("A", "机构官网原始数据页"),
-    "businesswire.com": ("A", "Omdia 通稿官方发布页"),
-    "news.cn": ("A", "国家级通讯社原文"),
-    "gov.cn": ("A", "政府原文"),
-    "dfcfw.com": ("B", "券商研报原文 PDF（卖方立场）"),
-    "people.com.cn": ("B", "主流媒体署名报道（转述 IDC 数据）"),
-    "thepaper.cn": ("B", "主流媒体署名报道"),
-    "caixin.com": ("B", "主流财经媒体署名报道"),
-    "36kr.com": ("B", "主流科技媒体署名报道"),
-    "ifanr.com": ("B", "主流科技媒体署名报道"),
-    "cnet.com": ("B", "国际主流科技媒体（转述 Counterpoint）"),
-    "vrtuoluo.cn": ("B", "XR 行业头部垂直媒体原创"),
-    "nweon.com": ("B", "XR 行业垂直媒体原创"),
-    "tmtpost.com": ("B", "科技媒体署名报道"),
-    "huxiu.com": ("B", "科技媒体署名报道"),
-    "lanjinger.com": ("B", "财经媒体署名报道"),
-    "ledinside.cn": ("B", "行业研究机构媒体"),
-    "93913.com": ("C", "VR 行业自媒体"),
-    "ofweek.com": ("C", "行业门户（多为供稿/转载）"),
-    "ofweek.com.cn": ("C", "行业门户（多为供稿/转载）"),
-    "sohu.com": ("C", "门户自媒体号转载"),
-    "163.com": ("C", "门户自媒体号转载"),
-    "sina.cn": ("C", "门户转载"),
-    "sina.com.cn": ("C", "门户转载"),
-    "smzdm.com": ("C", "消费社区内容（政策转述）"),
-    "xueqiu.com": ("C", "投资社区帖子（转述券商观点）"),
-    "199it.com": ("C", "数据聚合摘要站"),
-    "fxbaogao.com": ("C", "报告聚合站"),
-    "cloud.tencent.com": ("C", "云厂商开发者社区转载"),
-    "lmtw.com": ("C", "行业站点（转载洛图数据）"),
-    "chaoyidianzi.com": ("C", "电子行业小站转载"),
-    "10100.com": ("D", "陌生聚合站，责任主体不明"),
-    "techx.pk": ("D", "境外小站，无法确认原始出处"),
-    "43y.com.cn": ("D", "陌生站点，无法确认原始出处"),
-    "kompozy.io": ("D", "境外小站，责任主体不明"),
-    "a11.world": ("D", "陌生金融站点，责任主体不明"),
-    "abvr360.com": ("D", "VR 小站，责任主体不明"),
-    "glassalmanac.com": ("D", "境外眼镜资讯小站，责任主体不明"),
-    "treeview.studio": ("D", "境外工作室博客聚合"),
-    "weeklyonstock.com": ("D", "陌生站点托管 PDF，出处不明"),
-    "ithome.com": ("B", "主流科技媒体署名报道"),
-}
+CITE_RE = re.compile(r"\[\(([^)\n]{1,60})\)\]\((https?://[^)\s]+)\)")
+FOOT_DEF_RE = re.compile(r"^\[\^(\d+)\^\]:\s*(.*?)\s*(?:<(https?://[^>\s]+)>|(https?://\S+))?\s*$", re.M)
 
-def domain_of(url):
-    m = re.search(r"https?://(?:www\.|m\.|mp\.|c\.|news\.|post\.|static\.|pdf\.|fin\.|cloud\.)?([^/]+)", url)
-    host = url.split("/")[2].lower()
-    for d in sorted(GRADE_MAP, key=len, reverse=True):
-        if host.endswith(d):
-            return d
-    return host
 
-def grade_of(url):
-    d = domain_of(url)
-    return GRADE_MAP.get(d, ("D", "陌生域名，责任主体不明"))
+def _foot_name(desc: str) -> str:
+    """从脚注描述取来源名：去《》后按第一个标点截断。"""
+    desc = re.sub(r"《[^》]*》", "", desc).strip()
+    name = re.split(r"[，,：:／/]", desc)[0].strip()
+    return name[:60]
 
-# ---------------- 报告解析 ----------------
-def extract_claims(md):
-    """返回 [(name, url, claim)]，claim 为引证所在的中文句子（截断到 ≤240 字）"""
-    claims = []
-    lines = md.split("\n")
-    for ln, line in enumerate(lines):
+
+def normalize_citations(md: str) -> str:
+    """把脚注式引证 [^N^]（文尾定义）转成内联 [(名称)](URL)；无 URL 的定义行直接删除。已是内联格式则原样返回。"""
+    defs = {}
+    for m in FOOT_DEF_RE.finditer(md):
+        num, desc, u1, u2 = m.groups()
+        url = u1 or u2
+        if url:
+            defs[num] = (_foot_name(desc) or f"来源{num}", url.rstrip(")。，"))
+    if not defs:
+        return md
+    body = FOOT_DEF_RE.sub("", md)
+    body = re.sub(r"\n{3,}", "\n\n", body)
+
+    def repl(m):
+        d = defs.get(m.group(1))
+        return f"[({d[0]})]({d[1]})" if d else ""
+
+    return re.sub(r"\[\^(\d+)\^\]", repl, body)
+
+
+def extract_claims(md: str):
+    """抽取正文中的 [(名称)](URL) 引证，返回 [{url, name, claim}]；claim 为该句上下文（供原文定位）。"""
+    claims, seen = [], set()
+    for line in md.splitlines():
+        s = line.strip()
+        if s.startswith(("![", "[(")) and (line.count("http") >= 2 or s.startswith("![")):
+            continue  # 跳过图片与文末来源列表行
         for m in CITE_RE.finditer(line):
             name, url = m.group(1).strip(), m.group(2).strip()
-            # 跳过文末来源列表区（形如 " [(x)](url) : url" 独占一行）
-            if line.strip().startswith("[(") and line.count("http") >= 2:
+            ctx = (line[: m.start()] + line[m.end():]).strip()
+            ctx = re.sub(r"^[#>*\-\s\d.、]+", "", ctx)
+            ctx = re.sub(r"\*\*", "", ctx)
+            ctx = ctx[:280]
+            if url in seen:
+                for c in claims:  # 同 URL 再出现：补充一条定位上下文
+                    if c["url"] == url and ctx and ctx not in c["claim"]:
+                        c["claim"] = (c["claim"] + " ｜ " + ctx)[:400]
+                        break
                 continue
-            # 定位所在句子：向前后扩展到句界
-            start = m.start()
-            left = max(line.rfind(b, 0, start) for b in "。！？\n") + 1
-            right_cands = [line.find(b, m.end()) for b in "。！？\n"]
-            right_cands = [r for r in right_cands if r != -1]
-            right = min(right_cands) + 1 if right_cands else len(line)
-            claim = line[left:right].strip()
-            claim = CITE_RE.sub(lambda mm: f"（{mm.group(1)}）", claim)  # 引证替换为可读文本
-            claim = re.sub(r"!\[[^\]]*\]\([^\)]*\)", "", claim)
-            claim = re.sub(r"\*\*", "", claim)
-            if len(claim) > 240:
-                # 超长句：围绕引证截取窗口
-                cpos = claim.find(f"（{name}）")
-                if cpos == -1: cpos = len(claim)//2
-                s = max(0, cpos-110); e = min(len(claim), cpos+130)
-                claim = ("…" if s>0 else "") + claim[s:e] + ("…" if e<len(claim) else "")
-            if len(claim) < 8:
-                continue
-            claims.append({"name": name, "url": url, "claim": claim, "line": ln})
+            seen.add(url)
+            claims.append({"url": url, "name": name, "claim": ctx})
     return claims
 
-# ---------------- 抓取与正文提取 ----------------
-def fetch(url):
+
+# ---------- 域名分级（A 一手权威 / B 专业署名报道 / C 二手转述 / D 不可追责） ----------
+
+def domain_of(url: str) -> str:
+    m = re.match(r"https?://(?:www\.)?([^/]+)", url)
+    return (m.group(1) if m else url).lower()
+
+
+def grade_of(url: str):
+    d = domain_of(url)
+    if re.search(r"(mckinsey|deloitte|pwc|idc\.|counterpoint|gartner|statista|canalys|questmobile|runto|wellsenn|frost|bain\.|bcg|cinnogroup|strategyanalytics|iresearch|analysys)", d):
+        return "A", "专业机构原始研究报告（一手数据发布方）"
+    if re.search(r"(gov\.cn|ftc\.gov|fcc\.gov|sec\.gov|europa\.eu|commerce\.gov|congress\.gov|govinfo|courtlistener|justia|pirg\.org|who\.int|un\.org)", d):
+        return "A", "政府 / 监管 / 司法官方来源"
+    if re.search(r"(blog\.google|apple\.com|meta\.com|about\.fb\.com|mi\.com|xiaomi|huawei\.com|oppo\.com|vivo\.com|baidu\.com/news|alibaba|tencent\.com|bytedance|rokid|xreal|ray-ban|essilorluxottica)", d):
+        return "A", "厂商官方披露（新闻稿 / 官方博客 / 财报）"
+    if re.search(r"(bloomberg|reuters|ft\.com|wsj|nytimes|theverge|techcrunch|cnbc|apnews|washingtonpost|bbc|cnn|wired|scmp|koreatimes|36kr|tmtpost|jiqizhixin|iyiou|sina\.com|sohu\.com|163\.com|qq\.com|ifeng|thepaper|guancha|huxiu|geekpark|leiphone|qbitai|ebrun|caixin|yicai|jingji|stcn|cls\.cn)", d):
+        return "B", "主流媒体 / 专业媒体署名报道"
+    if re.search(r"(zhihu|baike|wikipedia|weixin|mp\.|medium|substack|toutiao|douban|xiaohongshu|reddit)", d):
+        return "C", "百科 / 自媒体 / 社区二手转述"
+    if re.search(r"(tieba|4chan|anonymous)", d):
+        return "D", "匿名来源，不可追责"
+    return "C", "未识别域名，按二手转述保守分级"
+
+
+# ---------- 抓取与正文提取（HTML + PDF） ----------
+
+def fetch(url: str, timeout=20):
+    """返回 (raw_bytes, None) 或 (None, err)。"""
     try:
-        if HAS_REQ:
-            r = requests.get(url, headers=UA, timeout=15, verify=False)
-            r.encoding = r.apparent_encoding or r.encoding
-            if r.status_code != 200:
-                return None, f"HTTP {r.status_code}"
-            return r.text, None
-        else:
-            req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                raw = resp.read()
-            return raw.decode("utf-8", "ignore"), None
+        r = requests.get(url, headers=UA, timeout=timeout, allow_redirects=True)
+        if r.status_code != 200:
+            return None, f"HTTP {r.status_code}"
+        raw = r.content
+        if len(raw) < 200:
+            return None, f"响应过小（{len(raw)}B，可能需登录/反爬）"
+        return raw, None
     except Exception as e:
-        return None, str(e)[:80]
+        return None, str(e)[:150]
 
-def extract_text(html):
-    soup = BeautifulSoup(html, "html.parser")
-    for t in soup(["script", "style", "noscript", "iframe", "nav", "footer", "aside", "form"]):
+
+def extract_text(raw: bytes):
+    """从 HTML 或 PDF 二进制提取正文，返回 {title, date, text}。"""
+    if raw[:5] == b"%PDF-":
+        from pypdf import PdfReader
+        reader = PdfReader(io.BytesIO(raw))
+        meta = reader.metadata or {}
+        text = "\n".join((p.extract_text() or "") for p in reader.pages[:80])
+        return {"title": (meta.title or "").strip(), "date": "",
+                "text": re.sub(r"\s{3,}", "  ", text)}
+    soup = BeautifulSoup(raw, "html.parser")
+    for t in soup(["script", "style", "noscript", "header", "footer", "nav", "form", "aside"]):
         t.decompose()
-    title = (soup.title.string.strip() if soup.title and soup.title.string else "")
-    # 发布日期
+    title = (soup.title.string or "").strip() if soup.title and soup.title.string else ""
     date = ""
-    for meta in soup.find_all("meta"):
-        k = (meta.get("property") or meta.get("name") or "").lower()
-        if any(x in k for x in ["publish", "date", "pubdate"]):
-            v = meta.get("content") or ""
-            dm = re.search(r"\d{4}[-/年]\d{1,2}[-/月]\d{1,2}", v)
-            if dm: date = dm.group(0); break
-    # 正文候选
-    best, best_len = None, 0
-    cands = soup.find_all("article") or soup.find_all(["div", "section", "main"])
-    for el in cands:
-        ps = [p.get_text(" ", strip=True) for p in el.find_all(["p", "h2", "h3", "li"])]
-        ps = [p for p in ps if len(p) >= 12]
-        total = sum(len(p) for p in ps)
-        if total > best_len:
-            best, best_len = ps, total
-    if not best:
-        ps = [p.get_text(" ", strip=True) for p in soup.find_all("p")]
-        best = [p for p in ps if len(p) >= 12]
-    text = "\n".join(best)
-    if not date:
-        dm = re.search(r"\d{4}[-/年]\d{1,2}[-/月]\d{1,2}", text[:1500] + html[:3000])
-        if dm: date = dm.group(0)
-    return {"title": title[:80], "date": date, "text": text}
+    meta = soup.find("meta", attrs={"property": "article:published_time"}) or soup.find("meta", attrs={"name": re.compile(r"date|publish", re.I)})
+    if meta and meta.get("content"):
+        date = meta["content"][:10]
+    main = soup.find("article") or soup.find("main") or soup.body or soup
+    text = re.sub(r"\n{3,}", "\n\n", main.get_text("\n", strip=True))
+    return {"title": title, "date": date, "text": text}
 
-# ---------------- 锚点定位 ----------------
-def bigrams(s):
-    s = re.sub(r"[^\u4e00-\u9fffA-Za-z]", "", s)
-    return {s[i:i+2] for i in range(len(s)-1) if not (s[i] in STOP or s[i+1] in STOP)}
 
-def locate(claim, text):
-    if not text:
+# ---------- 定位与高亮 ----------
+
+def _bigrams(s: str):
+    s = re.sub(r"[^\w一-鿿]+", "", s)
+    return {s[i:i + 2] for i in range(len(s) - 1)}
+
+
+def locate(claim_ctx: str, source_text: str):
+    """把报告引证句定位到原文句子。命中返回 {matched, hit, before, after, note}，未命中返回 None。"""
+    sents = [s.strip() for s in re.split(r"(?<=[。！？!?；;])|\n", source_text) if len(s.strip()) >= 6]
+    cands = [c.strip() for c in re.split(r"[。；;!?！？\n｜]", claim_ctx) if len(c.strip()) >= 8]
+    cands.sort(key=len, reverse=True)
+    best_i, best_sc = -1, 0.0
+    for c in cands[:8]:
+        cw = _bigrams(c)
+        if not cw:
+            continue
+        for i, s in enumerate(sents[:4000]):
+            sc = len(cw & _bigrams(s)) / len(cw)
+            if sc > best_sc:
+                best_i, best_sc = i, sc
+        if best_sc >= 0.5:
+            break
+    if best_i < 0 or best_sc < 0.30:
         return None
-    sents = []
-    for para in text.split("\n"):
-        for s in SENT_SPLIT.split(para):
-            s = s.strip()
-            if s: sents.append(s)
-    if not sents:
-        return None
-    c_nums = [n for n in NUM_RE.findall(claim) if len(n) >= 2 and n not in ("2026", "2025", "2024")]
-    c_bg = bigrams(claim)
-    best_i, best_score = -1, 0
-    for i, s in enumerate(sents):
-        s_nums = set(NUM_RE.findall(s))
-        shared = [n for n in c_nums if n in s_nums]
-        bg_overlap = len(c_bg & bigrams(s))
-        score = sum(3 + min(len(n), 6) for n in shared) + min(bg_overlap, 12)
-        if score > best_score:
-            best_i, best_score = i, score
-    # 阈值：至少 1 个共享数字，或 >=6 个共享二元组
-    s_hit = sents[best_i] if best_i >= 0 else ""
-    has_num = any(n in NUM_RE.findall(s_hit) for n in c_nums) if s_hit else False
-    if best_i < 0 or (not has_num and len(c_bg & bigrams(s_hit)) < 6):
-        return {"matched": False, "hit": "", "before": sents[:2], "after": [], "note": "已获取原文，但未定位到精确对应句，需人工核对"}
-    return {"matched": True,
-            "hit": sents[best_i],
-            "before": sents[max(0, best_i-2):best_i],
-            "after": sents[best_i+1:best_i+3],
-            "note": ""}
+    return {
+        "matched": True,
+        "hit": sents[best_i][:400],
+        "before": [s for s in sents[max(0, best_i - 2):best_i]][:2],
+        "after": [s for s in sents[best_i + 1:best_i + 3]][:2],
+        "note": f"二元组重合度 {best_sc:.0%}",
+    }
 
-# ---------------- 主流程 ----------------
+
+# ---------- 主流程 ----------
+
+def build_sources(claims, sleep=0.3, verbose=True):
+    """逐来源抓取 + 定位，返回前端 TraceSource 格式的列表。"""
+    sources = []
+    for i, c in enumerate(claims, 1):
+        grade, reason = grade_of(c["url"])
+        src = {"id": f"S{i}", "name": c["name"], "url": c["url"],
+               "grade": grade, "gradeReason": reason,
+               "status": "fail", "failReason": "", "title": "", "date": "", "textLen": 0,
+               "anchors": []}
+        raw, err = fetch(c["url"])
+        if err:
+            src["failReason"] = err
+            src["grade"] = "U" if "HTTP 4" in err or "HTTP 5" in err else grade
+            src["anchors"].append({"claim": c["claim"], "matched": False, "hit": "",
+                                   "before": [], "after": [],
+                                   "note": f"原文未能获取（{err}）"})
+        else:
+            try:
+                info = extract_text(raw)
+            except Exception as e:
+                info, err = None, f"正文提取失败：{str(e)[:100]}"
+            if not info or len(info["text"]) < 100:
+                src["failReason"] = err or "正文提取过短（可能需登录/反爬）"
+                src["anchors"].append({"claim": c["claim"], "matched": False, "hit": "",
+                                       "before": [], "after": [],
+                                       "note": f"原文未能获取（{src['failReason']}）"})
+            else:
+                src.update({"status": "ok", "title": info["title"][:120],
+                            "date": info["date"], "textLen": len(info["text"])})
+                loc = locate(c["claim"], info["text"])
+                if loc:
+                    src["anchors"].append({"claim": c["claim"], **loc})
+                else:
+                    src["anchors"].append({"claim": c["claim"], "matched": False, "hit": "",
+                                           "before": [], "after": [],
+                                           "note": "原文已获取，但未定位到对应句（可能为转述/概括）"})
+        sources.append(src)
+        if verbose:
+            print(f"[{i}/{len(claims)}] {src['status']:<4} {src['grade']}  {c['name'][:22]:<24} {c['url'][:70]}", flush=True)
+        time.sleep(sleep)
+    return sources
+
+
 def main():
-    md = open(REPORT, encoding="utf-8").read()
-    claims = extract_claims(md)
-    urls = {}
-    for c in claims:
-        urls.setdefault(c["url"], c["name"])
-    print(f"引证 {len(claims)} 处，唯一来源 {len(urls)} 个", flush=True)
+    md_path = Path(sys.argv[1])
+    slug = sys.argv[2] if len(sys.argv) > 2 else md_path.stem
+    out = OUT / slug
+    out.mkdir(parents=True, exist_ok=True)
+    md = md_path.read_text(encoding="utf-8")
+    md_norm = normalize_citations(md)
+    claims = extract_claims(md_norm)
+    (out / "report.md").write_text(md, encoding="utf-8")
+    (out / "report.normalized.md").write_text(md_norm, encoding="utf-8")
+    (out / "claims.json").write_text(json.dumps(claims, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"claims: {len(claims)}")
+    sources = build_sources(claims)
+    (out / "sources.json").write_text(json.dumps(sources, ensure_ascii=False, indent=1), encoding="utf-8")
+    ok = sum(1 for s in sources if s["status"] == "ok")
+    matched = sum(1 for s in sources for a in s["anchors"] if a.get("matched"))
+    print(f"\nDone. fetched {ok}/{len(sources)}, matched {matched}. -> {out}")
 
-    pages = {}
-    def job(u):
-        html, err = fetch(u)
-        if err: return u, None, err
-        info = extract_text(html)
-        if len(info["text"]) < 100: return u, None, "正文提取过短（可能需登录/反爬）"
-        return u, info, None
-    with ThreadPoolExecutor(8) as ex:
-        futs = {ex.submit(job, u): u for u in urls}
-        done = 0
-        for f in as_completed(futs):
-            u, info, err = f.result()
-            done += 1
-            pages[u] = (info, err)
-            tag = "OK " if info else "FAIL"
-            print(f"[{done:02d}/{len(urls)}] {tag} {domain_of(u)} ({len(info['text']) if info else err})", flush=True)
-
-    sources = {}
-    for i, (url, name) in enumerate(urls.items()):
-        g, reason = grade_of(url)
-        info, err = pages.get(url, (None, "未抓取"))
-        sources[url] = {
-            "id": f"S{i+1}", "name": name, "url": url,
-            "grade": g, "gradeReason": reason,
-            "status": "ok" if info else "fail",
-            "failReason": "" if info else err,
-            "title": info["title"] if info else "",
-            "date": info["date"] if info else "",
-            "textLen": len(info["text"]) if info else 0,
-            "anchors": [],
-        }
-        if info:
-            open(os.path.join(OUT, f"src_{i+1}.txt"), "w", encoding="utf-8").write(info["text"])
-
-    matched = 0
-    for c in claims:
-        src = sources[c["url"]]
-        if src["status"] != "ok":
-            src["anchors"].append({"claim": c["claim"], "matched": False, "hit": "", "before": [], "after": [],
-                                   "note": f"原文未能获取（{src['failReason']}）"})
-            continue
-        info_text = open(os.path.join(OUT, f"src_{int(src['id'][1:])}.txt"), encoding="utf-8").read()
-        loc = locate(c["claim"], info_text)
-        if loc and loc["matched"]: matched += 1
-        if loc and any(a.get("hit") == loc["hit"] and a.get("claim") == c["claim"] for a in src["anchors"]):
-            continue
-        if loc: src["anchors"].append({"claim": c["claim"], **loc})
-
-    json.dump(list(sources.values()), open(os.path.join(OUT, "sources.json"), "w", encoding="utf-8"),
-              ensure_ascii=False, indent=1)
-    ok = sum(1 for s in sources.values() if s["status"] == "ok")
-    print(f"\n=== 完成 ===\n来源 {len(sources)}：成功获取 {ok} / 失败 {len(sources)-ok}")
-    print(f"锚点定位：{matched}/{len(claims)} 处主张找到原文对应句")
-    grades = {}
-    for s in sources.values(): grades[s["grade"]] = grades.get(s["grade"], 0) + 1
-    print("可信度分布:", grades)
 
 if __name__ == "__main__":
-    import warnings; warnings.filterwarnings("ignore")
-    try:
-        import urllib3; urllib3.disable_warnings()
-    except Exception: pass
     main()

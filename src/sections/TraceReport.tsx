@@ -50,7 +50,15 @@ export default function TraceReport({ reportMd, sources, onSelect }: Props) {
           td: ({ children }) => <td className="border-b border-stone-100 px-3 py-2 align-top leading-6 text-stone-600">{children}</td>,
           img: ({ src, alt }) => (
             <span className="my-5 block">
-              <img src={src} alt={alt ?? ''} className="w-full rounded-lg border border-stone-200 shadow-sm" />
+              <img
+                src={src}
+                alt={alt ?? ''}
+                className="w-full rounded-lg border border-stone-200 shadow-sm"
+                onError={(e) => {
+                  const wrap = (e.target as HTMLImageElement).closest('span')
+                  if (wrap) (wrap as HTMLElement).style.display = 'none' // 配图缺失时整块隐藏，不留破图
+                }}
+              />
               {alt && <span className="mt-1.5 block text-center text-xs text-stone-400">{alt}</span>}
             </span>
           ),

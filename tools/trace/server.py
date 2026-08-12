@@ -18,7 +18,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_data import extract_claims, fetch, extract_text, locate, grade_of, domain_of  # noqa: E402
+from build_data import extract_claims, normalize_citations, fetch, extract_text, locate, grade_of, domain_of  # noqa: E402
 
 import warnings; warnings.filterwarnings("ignore")  # noqa: E402
 try:
@@ -31,6 +31,7 @@ OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "trace-out")
 
 
 def build_pack(title: str, report_md: str) -> dict:
+    report_md = normalize_citations(report_md)  # 脚注式 [^N^] 引证先归一化为内联 [(名称)](URL)
     claims = extract_claims(report_md)
     urls = {}
     for c in claims:

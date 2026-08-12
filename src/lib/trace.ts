@@ -64,10 +64,32 @@ export function parseTracePack(text: string): TracePack {
 }
 
 /**
+ * 脚注式引证 [^N^]（文尾 `[^N^]: 描述 <URL>` 定义）归一化为内联 [(名称)](URL)。
+ * 与管线 build_data.normalize_citations 逻辑对齐；无 URL 的定义与未定义引用号直接去除。
+ */
+export function normalizeCitations(md: string): string {
+  const DEF_RE = /^\[\^(\d+)\^\]:\s*(.*?)\s*(?:<(https?:\/\/[^>\s]+)>|(https?:\/\/\S+))?\s*$/gm
+  const defs = new Map<string, [string, string]>()
+  for (const m of md.matchAll(DEF_RE)) {
+    const url = m[3] ?? m[4]
+    if (!url) continue
+    const name = (m[2].replace(/《[^》]*》/g, '').split(/[，,：:／/]/)[0].trim() || `来源${m[1]}`).slice(0, 60)
+    defs.set(m[1], [name, url.replace(/[)。，]$/, '')])
+  }
+  if (!defs.size) return md
+  const body = md.replace(DEF_RE, '').replace(/\n{3,}/g, '\n\n')
+  return body.replace(/\[\^(\d+)\^\]/g, (_raw, n: string) => {
+    const d = defs.get(n)
+    return d ? `[(${d[0]})](${d[1]})` : ''
+  })
+}
+
+/**
  * 仅粘贴浏览：不做来源抓取与评级，只把报告中的 [(名称)](URL) 引证解析成占位来源。
  * 启动本地管线服务（tools/trace/server.py）重新生成后，才会有原文标红与可信度分级。
  */
 export function packFromMdOnly(reportMd: string): TracePack {
+  reportMd = normalizeCitations(reportMd)
   const CITE_RE = /\[\(([^)]{1,40})\)\]\((https?:\/\/[^)]+)\)/g
   const byUrl = new Map<string, string>()
   for (const line of reportMd.split('\n')) {

@@ -14,6 +14,10 @@ def main():
     out_path = os.path.abspath(sys.argv[3]) if len(sys.argv) > 3 else "trace-pack.json"
 
     report_md = open(report_path, encoding="utf-8").read()
+    sources_path_dir = os.path.dirname(sources_path)
+    norm_path = os.path.join(sources_path_dir, "report.normalized.md")
+    if os.path.exists(norm_path):  # 管线做过脚注归一化时，溯源包用归一化后的报告（引证可点击）
+        report_md = open(norm_path, encoding="utf-8").read()
     sources = json.load(open(sources_path, encoding="utf-8"))
 
     m = re.search(r"^#\s+(.+)$", report_md, re.M)
