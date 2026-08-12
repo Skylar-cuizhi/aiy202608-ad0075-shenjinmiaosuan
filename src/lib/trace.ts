@@ -23,6 +23,8 @@ export interface TraceSource {
   title: string
   date: string
   textLen: number
+  /** 补录来源的抓取方式说明（如 WebBridge 浏览器补抓）；空 = 管线直连抓取 */
+  provenance?: string
   anchors: TraceAnchor[]
 }
 
@@ -116,6 +118,7 @@ export function packFromMdOnly(reportMd: string): TracePack {
 }
 
 import reportMdRaw from '../data/trace/report.md?raw'
+import glasses15yJson from '../data/trace/glasses-15y.json'
 
 /** 内置演示溯源包：智能眼镜市场深度调研报告（网络来源已离线抓取并定位锚点） */
 export const demoTracePack: TracePack = {
@@ -123,3 +126,12 @@ export const demoTracePack: TracePack = {
   reportMd: reportMdRaw,
   sources: sourcesJson as TraceSource[],
 }
+
+/** 内置溯源包：《一副眼镜的十五年》——含 WebBridge 浏览器补抓的 McKinsey/BCG 原文 */
+export const glasses15yTracePack: TracePack = glasses15yJson as TracePack
+
+/** 内置溯源包清单（供工作台切换） */
+export const BUILTIN_PACKS: { label: string; pack: TracePack }[] = [
+  { label: '智能眼镜市场深度调研报告', pack: demoTracePack },
+  { label: '一副眼镜的十五年', pack: glasses15yTracePack },
+]

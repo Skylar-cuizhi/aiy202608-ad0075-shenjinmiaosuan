@@ -4,7 +4,7 @@ import { ClipboardPaste, FileJson2, Loader2, Wifi, WifiOff, X } from 'lucide-rea
 import TraceReport from '@/sections/TraceReport'
 import TraceSourcePanel from '@/sections/TraceSourcePanel'
 import {
-  demoTracePack, packFromMdOnly, packStats, parseTracePack, TRACE_GRADE_STYLE,
+  BUILTIN_PACKS, demoTracePack, packFromMdOnly, packStats, parseTracePack, TRACE_GRADE_STYLE,
   type TraceGrade, type TracePack, type TraceSource,
 } from '@/lib/trace'
 
@@ -98,7 +98,7 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
     <div className="flex h-full min-h-0 flex-1 flex-col">
       {/* 工具条 */}
       <div className="flex flex-wrap items-center gap-2 border-b border-stone-200 bg-paper-light px-5 py-2 text-xs">
-        <span className="mr-1 max-w-[380px] truncate font-song text-sm font-semibold text-ink" title={pack.title}>
+        <span className="mr-1 max-w-[40vw] truncate font-song text-sm font-semibold text-ink md:max-w-[380px]" title={pack.title}>
           {pack.title}
         </span>
         <span className="rounded-full border border-stone-300 bg-paper px-2.5 py-1 text-stone-600">来源 {stats.total} 个</span>
@@ -126,6 +126,22 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
           <ClipboardPaste className="h-3.5 w-3.5" />
           粘贴报告
         </button>
+        <select
+          value={BUILTIN_PACKS.findIndex((b) => b.pack === pack)}
+          onChange={(e) => {
+            const b = BUILTIN_PACKS[Number(e.target.value)]
+            if (b) applyPack(b.pack)
+          }}
+          className="rounded-md border border-stone-300 bg-paper px-2 py-1 text-xs font-medium text-stone-700 outline-none hover:bg-stone-50"
+          title="切换内置溯源报告"
+        >
+          <option value={-1} disabled hidden={BUILTIN_PACKS.some((b) => b.pack === pack)}>
+            自定义报告
+          </option>
+          {BUILTIN_PACKS.map((b, i) => (
+            <option key={b.label} value={i}>{b.label}</option>
+          ))}
+        </select>
         <button
           onClick={() => fileRef.current?.click()}
           disabled={importing}
@@ -229,22 +245,32 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
         </div>
       )}
 
-      {/* 报告 + 原文面板 */}
-      <Group orientation="horizontal" className="min-h-0 flex-1">
-        <Panel defaultSize={sel ? '62%' : '100%'} minSize="35%">
-          <div className="h-full overflow-y-auto bg-paper px-6 py-6">
-            <TraceReport reportMd={pack.reportMd} sources={pack.sources} onSelect={setSel} />
-          </div>
-        </Panel>
-        {sel && (
-          <>
-            <ResizeHandle />
-            <Panel defaultSize="38%" minSize="24%" maxSize="55%">
-              <TraceSourcePanel source={sel} onClose={() => setSel(null)} />
-            </Panel>
-          </>
-        )}
-      </Group>
+      {/* 报告 + 原文面板：桌面端左右分栏；移动端报告全屏、原文以全屏抽屉弹出 */}
+      <div className="hidden min-h-0 flex-1 md:block">
+        <Group orientation="horizontal" className="h-full">
+          <Panel defaultSize={sel ? '62%' : '100%'} minSize="35%">
+            <div className="h-full overflow-y-auto bg-paper px-6 py-6">
+              <TraceReport reportMd={pack.reportMd} sources={pack.sources} onSelect={setSel} />
+            </div>
+          </Panel>
+          {sel && (
+            <>
+              <ResizeHandle />
+              <Panel defaultSize="38%" minSize="24%" maxSize="55%">
+                <TraceSourcePanel source={sel} onClose={() => setSel(null)} />
+              </Panel>
+            </>
+          )}
+        </Group>
+      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto bg-paper px-4 py-4 md:hidden">
+        <TraceReport reportMd={pack.reportMd} sources={pack.sources} onSelect={setSel} />
+      </div>
+      {sel && (
+        <div className="fixed inset-0 z-40 bg-paper-light md:hidden">
+          <TraceSourcePanel source={sel} onClose={() => setSel(null)} />
+        </div>
+      )}
     </div>
   )
 }
