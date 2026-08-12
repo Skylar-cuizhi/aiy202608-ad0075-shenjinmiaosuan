@@ -51,7 +51,21 @@ npm run dev
 
 AI 解释层需配置 DeepSeek Key：复制 `.env.example` 为 `.env` 并填入 `DEEPSEEK_API_KEY`（不配置也可体验演示模式，内置虚构公司样例）。
 
-「调研溯源」模块：欢迎页点击「研于网海 · 溯源调研报告」进入（内置智能眼镜调研演示包）。导入 GPT / Kimi 深度研究产出的报告有两种方式：
+「调研溯源」模块：欢迎页点击「研于网海 · 溯源调研报告」进入（内置智能眼镜调研演示包）。
+
+### 🔁 与 GPT / Kimi 深度研究配合的标准流程
+
+```
+GPT / Kimi 深度研究（产出 markdown 报告 + 引证 URL，GPT 只当研究员，不做原文转录）
+        ↓ 整段粘贴
+见微「粘贴报告」（本地管线自动抓取可直连的来源）
+        ↓ 少数反爬来源（403 / 断连，如 McKinsey、BCG）
+WebBridge 浏览器补抓：驱动本机真实浏览器下载原文（带正常浏览器指纹与登录态，不怕反爬）
+        ↓ 合并回溯源包、重新定位标红
+完整溯源报告（桌面 / 手机在线版均可展示）
+```
+
+> 原则：GPT 负责出报告、给出处；**原文永远走真实渠道获取**。不让 AI 转录原文——转录可能凭记忆编造，那是溯源系统自己要防的假证据。补录来源在前端会标注抓取方式（如「WebBridge 浏览器补抓（PDF 原文）」）。
 
 **方式一 · 粘贴即用（推荐）**：先启动本地管线服务，再在溯源工作台点「粘贴报告」，整段粘贴 Markdown →「生成原文标红」。服务仅监听本机回环，数据不出本机。
 
@@ -66,6 +80,16 @@ python3 tools/trace/build_data.py 你的报告.md trace-out   # 抓原文、定�
 python3 tools/trace/emit_pack.py 你的报告.md trace-out/sources.json 你的报告.trace.json
 # 然后在溯源工作台点「导入溯源包」选择生成的 JSON
 ```
+
+**方式三 · 反爬来源补抓（McKinsey / BCG / 需登录站点）**：管线跑完后若有「未能获取」的来源，用 Kimi WebBridge 驱动本机真实浏览器补抓，再合并回溯源包：
+
+```bash
+python3 tools/trace/fetch_webbridge.py html "S5=https://…"   # 网页正文（S 编号见溯源包）
+python3 tools/trace/fetch_webbridge.py pdf  "S8=https://….pdf"  # PDF 经浏览器原生下载回收
+python3 tools/trace/apply_patch.py 你的报告.trace.json          # 合并补抓原文并重新定位标红
+```
+
+> 抓取的原文缓存在工作区 `trace-patch/`（`<编号>.txt|.pdf`），可追溯复用。遇到滑块验证码等真人挑战时，在浏览器标签组里手动完成后重跑对应编号即可。
 
 ## 📌 后续计划
 

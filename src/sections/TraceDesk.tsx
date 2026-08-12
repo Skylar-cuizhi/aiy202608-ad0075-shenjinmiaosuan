@@ -182,8 +182,9 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
             </div>
             <div className="space-y-3 overflow-y-auto px-5 py-4">
               <p className="text-xs leading-5 text-stone-500">
-                把 GPT / Kimi 深度研究产出的 Markdown 报告整段粘贴进来（需保留 <code>[(来源)](URL)</code> 形式的引证）。
+                把 GPT / Kimi 深度研究产出的 Markdown 报告整段粘贴进来（<code>[(来源)](URL)</code> 内联引证或 <code>[^N^]</code> 脚注引证均可，自动识别）。
                 见微会在本机抓取全部来源原文、定位标红句并做可信度分级——数据不出本机。
+                少数反爬来源（如 McKinsey / BCG）可用 <code>tools/trace/fetch_webbridge.py</code> 驱动本机浏览器补抓后合并（见 README「方式三」）。
               </p>
               <input
                 value={pasteTitle}
