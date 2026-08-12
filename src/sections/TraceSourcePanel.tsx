@@ -57,7 +57,13 @@ export default function TraceSourcePanel({ source, onClose }: { source: TraceSou
       </header>
 
       <div className="flex-1 space-y-5 overflow-y-auto px-5 py-4">
-        {source.status === 'fail' && (
+        {source.status === 'fail' && source.anchors.length === 0 && (
+          <div className="rounded-lg border border-stone-300 bg-stone-50 px-4 py-3 text-sm leading-6 text-stone-600">
+            <p className="flex items-center gap-1.5 font-medium"><AlertTriangle size={15} /> 暂无原文锚点数据</p>
+            <p className="mt-1">这是「粘贴浏览」模式下的占位来源，尚未核验。启动本地管线服务（python3 tools/trace/server.py）并重新生成后，此处将显示抓取的原文、标红句与可信度分级。</p>
+          </div>
+        )}
+        {source.status === 'fail' && source.anchors.length > 0 && (
           <div className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
             <p className="flex items-center gap-1.5 font-medium"><AlertTriangle size={15} /> 原文未能获取</p>
             <p className="mt-1 text-amber-800">原因：{source.failReason}。该来源的 {source.anchors.length} 处引证暂无法回溯到原文，相关结论请人工核实。</p>
