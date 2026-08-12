@@ -32,6 +32,7 @@ import CompareSection from '@/sections/CompareSection';
 import MultiYearSection from '@/sections/MultiYearSection';
 import WelcomeSection from '@/sections/WelcomeSection';
 import AiChatPanel from '@/sections/AiChatPanel';
+import TraceDesk from '@/sections/TraceDesk';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Group, Panel, Separator } from 'react-resizable-panels';
@@ -79,12 +80,22 @@ function ResearchDesk() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   /** 演示模式：默认关闭，初始为空白工作台 */
   const [demoMode, setDemoMode] = useState(false);
+  /** 调研溯源模式：展示带网络来源锚点的调研报告（左报告右原文标红） */
+  const [traceMode, setTraceMode] = useState(false);
   /** 欢迎页：leaving=正在做离场过渡；welcomeGone=已离场 */
   const [welcomeGone, setWelcomeGone] = useState(false);
   const [leaving, setLeaving] = useState(false);
   /** 产品页镜头：from-near=由近拉远入场；to-near=推向近处离场 */
   const [deskFx, setDeskFx] = useState<'' | 'from-near' | 'to-near'>('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // 深链：?trace=1 直接进入调研溯源模式（跳过欢迎页）
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('trace') === '1') {
+      setTraceMode(true);
+      setWelcomeGone(true);
+    }
+  }, []);
 
   const activeDoc = docs.find((d) => d.id === activeDocId) ?? null;
   const realPdf = activeDoc?.pdf ?? null;
@@ -280,6 +291,7 @@ function ResearchDesk() {
       setAiPending(0);
       setRiskPackOverride(null);
       setDemoMode(false);
+      setTraceMode(false);
       setDeskFx('');
     }, 700);
   }
@@ -559,7 +571,7 @@ function ResearchDesk() {
             AI 研判{aiPending > 0 ? `中 ${aiPending}` : ''}
           </button>
         )}
-        {realPdf && (
+        {(realPdf || traceMode) && (
           <button
             onClick={leaveToHome}
             className="flex items-center gap-1.5 rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
@@ -850,6 +862,9 @@ function ResearchDesk() {
               </>
             )}
           </Group>
+        ) : traceMode ? (
+          /* 调研溯源模式：左侧调研报告，点击引证，右侧弹出网络原文标红（PDF 模式优先于本模式） */
+          <TraceDesk />
         ) : demoMode ? (
           <Group orientation="horizontal" className="flex-1">
             {sidebarCollapsed ? (
@@ -957,6 +972,7 @@ function ResearchDesk() {
             onPick={() => fileInputRef.current?.click()}
             onDropFiles={(fs) => handleFiles(fs)}
             onDemo={() => { setDemoMode(true); enterWithTransition(); }}
+            onTrace={() => { setTraceMode(true); enterWithTransition(); }}
             onRestore={restoreAnalysis}
             onDelete={async (id) => {
               await deleteAnalysis(id);
