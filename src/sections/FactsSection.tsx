@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { FileText, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import StructuredEvidence from '@/components/StructuredEvidence';
 
 interface Props {
   facts: Fact[];
@@ -65,7 +66,7 @@ export default function FactsSection({ facts, onSelectAnchor }: Props) {
               <th className="px-3 py-2 font-medium">年份</th>
               <th className="px-3 py-2 text-right font-medium">数值</th>
               <th className="px-3 py-2 font-medium">来源</th>
-              <th className="px-3 py-2 font-medium">原文片段</th>
+              <th className="px-3 py-2 font-medium">证据片段</th>
               <th className="px-3 py-2" />
             </tr>
           </thead>
@@ -83,8 +84,8 @@ export default function FactsSection({ facts, onSelectAnchor }: Props) {
                     P{f.anchor.page}{f.anchor.table ? ` · ${f.anchor.table}` : ''}
                   </Badge>
                 </td>
-                <td className="max-w-[280px] px-3 py-2.5">
-                  <span className="line-clamp-2 text-xs leading-snug text-stone-500">{f.anchor.quote}</span>
+                <td className="max-w-[280px] px-3 py-2.5 align-top">
+                  <StructuredEvidence fact={f} />
                 </td>
                 <td className="px-3 py-2.5 text-right">
                   <button

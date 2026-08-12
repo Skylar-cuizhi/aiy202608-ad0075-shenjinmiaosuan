@@ -4,10 +4,25 @@ import { searchPdf } from '@/lib/pdf';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Search, MousePointerClick } from 'lucide-react';
+import { ReadableEvidenceText } from '@/components/StructuredEvidence';
 
 interface Props {
   pdf: LoadedPdf;
   onJump: (page: number, rects: SearchMatch['rects']) => void;
+}
+
+function SearchEvidence({ snippet }: { snippet: string }) {
+  return (
+    <div className="mt-1 min-w-0 rounded-md bg-stone-50/80 px-2.5 py-2">
+      <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-medium text-stone-400">
+        <span className="rounded border border-stone-200 bg-paper-light px-1.5 py-0.5 text-stone-600">原文证据</span>
+        <span>相邻金额已补充分隔</span>
+      </div>
+      <p className="mt-1 break-words text-xs leading-relaxed text-stone-600">
+        <ReadableEvidenceText text={snippet} />
+      </p>
+    </div>
+  );
 }
 
 /** 全文检索：接入 LLM 提取管线之前的真实溯源通道 */
@@ -27,7 +42,7 @@ export default function SearchSection({ pdf, onJump }: Props) {
       <div className="rounded-lg border border-stone-200 bg-paper-light px-4 py-3 text-sm leading-relaxed text-stone-600">
         检索在<b className="text-stone-800">逐页文字索引</b>上进行，每个命中结果都带有 PDF 坐标，
         点击即可在右侧原文面板中<b className="text-stone-800">精准定位并高亮</b>。
-        接入提取管线（下一步）后，这里将升级为结构化事实库。
+        接入提取管线（下一步）后，这里将升级为可核验事实库。
       </div>
 
       <form
@@ -81,7 +96,7 @@ export default function SearchSection({ pdf, onJump }: Props) {
               <Badge variant="outline" className="border-stone-300 text-[11px] text-stone-600">P{m.page}</Badge>
               <MousePointerClick className="h-3.5 w-3.5 text-stone-300 group-hover:text-cinnabar-600" />
             </div>
-            <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-stone-600">{m.snippet}</p>
+            <SearchEvidence snippet={m.snippet} />
           </button>
         ))}
         {submitted && results.length === 0 && (

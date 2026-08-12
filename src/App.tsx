@@ -512,17 +512,17 @@ function ResearchDesk() {
       )}
     >
       {/* 顶栏 */}
-      <header className="flex flex-wrap items-center gap-2 border-b border-paper-dark bg-paper-light px-3 py-2.5 md:gap-3 md:px-5">
-        <div className="flex items-center gap-2.5">
-          <JianweiLogo className="h-10 w-10" />
+      <header className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-4 gap-y-2 border-b border-paper-dark bg-paper-light px-5 py-2.5 xl:grid-cols-[auto_auto_minmax(12rem,1fr)_auto] xl:gap-y-0">
+        <div className="flex shrink-0 items-center gap-2.5">
+          <JianweiLogo className="h-10 w-10 shrink-0" />
           <div>
             <div className="font-song text-xl font-bold leading-tight tracking-[0.15em] text-ink">见微</div>
-            <div className="font-song text-[10px] leading-tight tracking-[0.18em] text-stone-500">
+            <div className="hidden whitespace-nowrap font-song text-[10px] leading-tight tracking-[0.18em] text-stone-500 sm:block">
               溯于原文 · 察于细微 · 成于研判
             </div>
           </div>
         </div>
-        <div className="mx-3 h-6 w-px bg-paper-dark" />
+        <div className="hidden h-6 w-px bg-paper-dark xl:block" />
 
         {realPdf ? (
           <div className="min-w-0 flex-1">
@@ -531,7 +531,7 @@ function ResearchDesk() {
                 ? `${latestDoc.extraction.meta.companyName} · ${docs.length > 1 ? `${fiscalYearsLabel} 年报对比` : (latestDoc.extraction.meta.reportTitle ?? realPdf.fileName)}`
                 : realPdf.fileName}
             </div>
-            <div className="text-[11px] text-stone-500">
+            <div className="truncate whitespace-nowrap text-[11px] text-stone-500">
               {docs.length > 1 ? `${docs.length} 份年报 · ` : ''}{realPdf.numPages} 页 · 提取 {merged.facts.length} 条事实 · 命中 {realRiskCards.length} 条风险规则
               {latestDoc?.extraction.meta.industry?.raw
                 ? ` · 行业：${latestDoc.extraction.meta.industry.raw}`
@@ -543,95 +543,99 @@ function ResearchDesk() {
             <div className="truncate text-sm font-semibold">
               {report.companyName} · {report.reportTitle}
             </div>
-            <div className="flex items-center gap-1 text-[11px] text-stone-500">
-              <FlaskConical className="h-3 w-3" />
-              演示数据（虚构公司）· {report.totalPages} 页 · 行业：{report.industry}
+            <div className="flex min-w-0 items-center gap-1 text-[11px] text-stone-500">
+              <FlaskConical className="h-3 w-3 shrink-0" />
+              <span className="truncate whitespace-nowrap">
+                演示数据（虚构公司）· {report.totalPages} 页 · 行业：{report.industry}
+              </span>
             </div>
           </div>
         ) : (
           <div className="min-w-0 flex-1" />
         )}
 
-        {(realPdf || demoMode) && (
-          <button
-            onClick={() => setChatOpen((v) => !v)}
-            className={cn(
-              'flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-medium transition-colors',
-              chatOpen
-                ? 'border-violet-300 bg-violet-100 text-violet-800'
-                : 'border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100',
-            )}
-            title="打开 / 收起 AI 研判对话"
-          >
-            {aiPending > 0 ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <Sparkles className="h-4 w-4" />
-            )}
-            AI 研判{aiPending > 0 ? `中 ${aiPending}` : ''}
-          </button>
-        )}
-        {(realPdf || traceMode) && (
-          <button
-            onClick={leaveToHome}
-            className="flex items-center gap-1.5 rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
-          >
-            <ArrowLeftRight className="h-4 w-4" /> 返回首页
-          </button>
-        )}
-        {!realPdf && demoMode && (
-          <button
-            onClick={leaveToHome}
-            className="flex items-center gap-1.5 rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
-          >
-            <ArrowLeftRight className="h-4 w-4" /> 退出演示
-          </button>
-        )}
-        <button
-          onClick={() => setHistoryOpen((v) => !v)}
-          className="flex items-center gap-1.5 rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
-        >
-          {restoring ? <Loader2 className="h-4 w-4 animate-spin" /> : <History className="h-4 w-4" />}
-          历史分析
-        </button>
-        {(realPdf || demoMode) && (
-          <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">
-            {realPdf ? '确定性提取 · 零模型读数' : '索引完整 · 全程可溯源'}
-          </Badge>
-        )}
-        <button
-          onClick={() => fileInputRef.current?.click()}
-          disabled={parsing !== null}
-          className="flex items-center gap-1.5 rounded-md bg-ink px-3 py-1.5 text-sm font-medium text-paper-light transition-colors hover:bg-ink-light disabled:opacity-50"
-        >
-          {parsing ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" />
-              解析中 {parsing.total > 0 ? `${parsing.done}/${parsing.total}` : '…'}
-            </>
-          ) : (
-            <>
-              <Upload className="h-4 w-4" /> {docs.length > 0 ? '追加年报 PDF' : '上传财报 PDF'}
-            </>
+        <div className="col-span-2 flex min-w-0 items-center gap-2 overflow-x-auto xl:col-span-1 xl:justify-end xl:overflow-visible">
+          {(realPdf || demoMode) && (
+            <button
+              onClick={() => setChatOpen((v) => !v)}
+              className={cn(
+                'flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border px-3 py-1.5 text-sm font-medium transition-colors',
+                chatOpen
+                  ? 'border-violet-300 bg-violet-100 text-violet-800'
+                  : 'border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100',
+              )}
+              title="打开 / 收起 AI 研判对话"
+            >
+              {aiPending > 0 ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Sparkles className="h-4 w-4" />
+              )}
+              AI 研判{aiPending > 0 ? `中 ${aiPending}` : ''}
+            </button>
           )}
-        </button>
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="application/pdf"
-          multiple
-          className="hidden"
-          onChange={(e) => {
-            const fs = e.target.files ? [...e.target.files] : [];
-            if (fs.length > 0) handleFiles(fs);
-            e.target.value = '';
-          }}
-        />
+          {(realPdf || traceMode) && (
+            <button
+              onClick={leaveToHome}
+              className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
+            >
+              <ArrowLeftRight className="h-4 w-4" /> 返回首页
+            </button>
+          )}
+          {!realPdf && demoMode && (
+            <button
+              onClick={leaveToHome}
+              className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
+            >
+              <ArrowLeftRight className="h-4 w-4" /> 退出演示
+            </button>
+          )}
+          <button
+            onClick={() => setHistoryOpen((v) => !v)}
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
+          >
+            {restoring ? <Loader2 className="h-4 w-4 animate-spin" /> : <History className="h-4 w-4" />}
+            历史分析
+          </button>
+          {(realPdf || demoMode) && (
+            <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">
+              {realPdf ? '确定性提取 · 零模型读数' : '索引完整 · 全程可溯源'}
+            </Badge>
+          )}
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            disabled={parsing !== null}
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md bg-ink px-3 py-1.5 text-sm font-medium text-paper-light transition-colors hover:bg-ink-light disabled:opacity-50"
+          >
+            {parsing ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                解析中 {parsing.total > 0 ? `${parsing.done}/${parsing.total}` : '…'}
+              </>
+            ) : (
+              <>
+                <Upload className="h-4 w-4" /> {docs.length > 0 ? '追加年报 PDF' : '上传财报 PDF'}
+              </>
+            )}
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="application/pdf"
+            multiple
+            className="hidden"
+            onChange={(e) => {
+              const fs = e.target.files ? [...e.target.files] : [];
+              if (fs.length > 0) handleFiles(fs);
+              e.target.value = '';
+            }}
+          />
+        </div>
       </header>
 
       {/* 历史分析面板 */}
       {historyOpen && (
-        <div className="fixed right-4 top-16 z-50 w-96 overflow-hidden rounded-lg border border-stone-200 bg-paper-light shadow-xl">
+        <div className="fixed right-4 top-[103px] z-50 w-96 max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg border border-stone-200 bg-paper-light shadow-xl xl:top-[61px]">
           <div className="flex items-center justify-between border-b border-stone-100 px-4 py-2.5">
             <div className="text-sm font-semibold text-stone-800">历史分析（保存在本机）</div>
             <button onClick={() => setHistoryOpen(false)} className="rounded p-1 text-stone-400 hover:bg-stone-100 hover:text-stone-600">
@@ -680,9 +684,9 @@ function ResearchDesk() {
         </div>
       )}
 
-      <div className="flex min-h-0 flex-1">
+      <div className="flex min-h-0 min-w-0 flex-1">
         {realPdf && extraction ? (
-          <Group orientation="horizontal" className="flex-1">
+          <Group orientation="horizontal" className="min-w-0 flex-1">
             {sidebarCollapsed ? (
               <Panel defaultSize="3%" minSize="3%" maxSize="3%">
                 {/* 收起态：细长 Rail，点击恢复覆盖证明与章节索引 */}
@@ -866,7 +870,7 @@ function ResearchDesk() {
           /* 调研溯源模式：左侧调研报告，点击引证，右侧弹出网络原文标红（PDF 模式优先于本模式） */
           <TraceDesk />
         ) : demoMode ? (
-          <Group orientation="horizontal" className="flex-1">
+          <Group orientation="horizontal" className="min-w-0 flex-1">
             {sidebarCollapsed ? (
               <Panel defaultSize="3%" minSize="3%" maxSize="3%">
                 <button
@@ -951,7 +955,7 @@ function ResearchDesk() {
         onClose={() => setChatOpen(false)}
         digest={chatDigest}
         companyName={realPdf ? (latestDoc?.extraction.meta.companyName ?? realPdf.fileName) : report.companyName}
-        topOffset={61}
+        topClassName="top-[103px] xl:top-[61px]"
       />
 
       {/* 云海欢迎页覆盖层：初始在场；离场时场景内相机穿门，覆盖层只作光涌淡出 */}

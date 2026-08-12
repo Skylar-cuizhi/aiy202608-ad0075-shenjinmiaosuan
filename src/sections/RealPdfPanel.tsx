@@ -20,6 +20,24 @@ export default function RealPdfPanel({ pdf, page, highlights, onPageChange, onCl
   const highlightLayerRef = useRef<HTMLDivElement>(null);
   const [containerW, setContainerW] = useState(0);
   const [factor, setFactor] = useState(1); // 宽度适配的倍率微调
+  const [pageInput, setPageInput] = useState(String(page));
+
+  // 外部定位（点击事实、搜索结果、章节）后同步输入框显示。
+  useEffect(() => {
+    setPageInput(String(page));
+  }, [page]);
+
+  /** 将手动输入限制在有效页码范围内；非法输入恢复当前页。 */
+  const commitPageInput = () => {
+    const parsed = Number.parseInt(pageInput, 10);
+    if (!Number.isFinite(parsed)) {
+      setPageInput(String(page));
+      return;
+    }
+    const next = Math.min(pdf.numPages, Math.max(1, parsed));
+    setPageInput(String(next));
+    if (next !== page) onPageChange(next);
+  };
 
   // 监听面板宽度变化（拖拽分隔条时实时触发）
   useEffect(() => {
@@ -76,17 +94,33 @@ export default function RealPdfPanel({ pdf, page, highlights, onPageChange, onCl
 
   return (
     <aside className="flex h-full w-full flex-col border-l border-stone-200 bg-paper-light">
-      <div className="flex items-center gap-1.5 border-b border-stone-200 px-3 py-2">
+      <div className="flex items-center gap-0.5 overflow-x-auto border-b border-stone-200 px-2 py-2">
         <button
           onClick={() => onPageChange(Math.max(1, page - 1))}
           disabled={page <= 1}
-          className="rounded p-1 text-stone-500 hover:bg-stone-100 disabled:opacity-30"
+          className="shrink-0 rounded p-1 text-stone-500 hover:bg-stone-100 disabled:opacity-30"
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
-        <div className="min-w-0 flex-1 text-center">
-          <span className="text-sm font-semibold text-stone-800">第 {page} 页</span>
-          <span className="text-xs text-stone-400"> / {pdf.numPages}</span>
+        <div className="flex min-w-[7.25rem] flex-1 items-center justify-center gap-1 whitespace-nowrap text-center">
+          <span className="text-xs text-stone-500">第</span>
+          <input
+            aria-label="跳转到页码"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            value={pageInput}
+            onChange={(e) => setPageInput(e.target.value.replace(/\D/g, ''))}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                commitPageInput();
+              }
+            }}
+            onBlur={commitPageInput}
+            className="h-7 w-14 shrink-0 rounded border border-stone-200 bg-paper-light px-1 text-center text-sm font-semibold tabular-nums text-stone-800 outline-none transition-colors focus:border-cinnabar-400 focus:ring-2 focus:ring-cinnabar-200/60"
+            title={`输入 1–${pdf.numPages} 后回车跳转`}
+          />
+          <span className="text-xs text-stone-400">页 / {pdf.numPages}</span>
           {pageData?.isImageOnly && (
             <span className="ml-1 rounded bg-red-50 px-1 text-[10px] text-red-500">无文字层</span>
           )}
@@ -94,26 +128,26 @@ export default function RealPdfPanel({ pdf, page, highlights, onPageChange, onCl
         <button
           onClick={() => onPageChange(Math.min(pdf.numPages, page + 1))}
           disabled={page >= pdf.numPages}
-          className="rounded p-1 text-stone-500 hover:bg-stone-100 disabled:opacity-30"
+          className="shrink-0 rounded p-1 text-stone-500 hover:bg-stone-100 disabled:opacity-30"
         >
           <ChevronRight className="h-4 w-4" />
         </button>
-        <span className="mx-1 h-4 w-px bg-stone-200" />
+        <span className="h-4 w-px shrink-0 bg-stone-200" />
         <button
           onClick={() => setFactor((f) => Math.max(0.6, +(f - 0.15).toFixed(2)))}
-          className="rounded p-1 text-stone-500 hover:bg-stone-100"
+          className="shrink-0 rounded p-1 text-stone-500 hover:bg-stone-100"
           title="缩小（基于面板宽度自适应）"
         >
           <ZoomOut className="h-4 w-4" />
         </button>
         <button
           onClick={() => setFactor((f) => Math.min(2.2, +(f + 0.15).toFixed(2)))}
-          className="rounded p-1 text-stone-500 hover:bg-stone-100"
+          className="shrink-0 rounded p-1 text-stone-500 hover:bg-stone-100"
           title="放大（基于面板宽度自适应）"
         >
           <ZoomIn className="h-4 w-4" />
         </button>
-        <button onClick={onClose} className="rounded p-1 text-stone-400 hover:bg-stone-100 hover:text-stone-600">
+        <button onClick={onClose} className="shrink-0 rounded p-1 text-stone-400 hover:bg-stone-100 hover:text-stone-600">
           <X className="h-4 w-4" />
         </button>
       </div>
