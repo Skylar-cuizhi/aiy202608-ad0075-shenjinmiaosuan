@@ -1,0 +1,2013 @@
+[
+ {
+  "id": "S1",
+  "name": "人民网",
+  "url": "http://finance.people.com.cn/n1/2026/0326/c1004-40689362.html",
+  "grade": "B",
+  "gradeReason": "主流媒体署名报道（转述 IDC 数据）",
+  "status": "ok",
+  "failReason": "",
+  "title": "中国智能眼镜市场持续火爆 2025年出货量同比增长87.1%--经济·科技--人民网",
+  "date": "2026-03-26",
+  "textLen": 2407,
+  "anchors": [
+   {
+    "claim": "根据 IDC 数据，2025 年全球智能眼镜出货量达 1477.3 万台，同比增长 44.2%，其中中国市场出货 246.0 万台，同比增长 87.1% （人民网） ；洛图科技（RUNTO）则统计 2025 年中国智能眼镜（含 AR 眼镜）销量 145.4 万台，同比大涨 211% （VR陀螺） （两家机构统计口径不同，详见正文）。",
+    "matched": true,
+    "hit": "3月25日，国际数据公司（IDC）发布报告称，2025年，全球智能眼镜市场出货量达1477.3万台，同比增长44.2%；",
+    "before": [
+     "人工智能 传播内容认知全国重点实验室 人民审校 人民智媒 智能写作 白泽",
+     "传播内容认知全国重点实验室"
+    ],
+    "after": [
+     "其中，中国智能眼镜市场出货量为246.0万台，同比增长87.1%。",
+     "光学方案进步、AI逐步接入、用户接受度提升等因素，共同推动市场从预热走向放量。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "IDC 数据显示，2025 年全球智能眼镜市场出货量达 1477.3 万台，同比增长 44.2% （人民网） ；其对 2026 年的预测进一步上调至 2368.7 万台，意味着单年增量接近 900 万台 （澎湃新闻） 。",
+    "matched": true,
+    "hit": "3月25日，国际数据公司（IDC）发布报告称，2025年，全球智能眼镜市场出货量达1477.3万台，同比增长44.2%；",
+    "before": [
+     "人工智能 传播内容认知全国重点实验室 人民审校 人民智媒 智能写作 白泽",
+     "传播内容认知全国重点实验室"
+    ],
+    "after": [
+     "其中，中国智能眼镜市场出货量为246.0万台，同比增长87.1%。",
+     "光学方案进步、AI逐步接入、用户接受度提升等因素，共同推动市场从预热走向放量。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "IDC 口径下，2025 年中国智能眼镜出货 246.0 万台，同比增长 87.1%，中国厂商出货量占全球市场的 23.3% （人民网） ；洛图科技以\"销量\"口径统计的 2025 年中国市场为 145.4 万台、同比增长 211%，其中 AR 眼镜 48.9 万台（+83%）、音频眼镜增长 135%、拍摄眼镜几乎从零跃升至约 51.7 万台 （VR陀螺） 。",
+    "matched": true,
+    "hit": "其中，中国智能眼镜市场出货量为246.0万台，同比增长87.1%。",
+    "before": [
+     "传播内容认知全国重点实验室",
+     "3月25日，国际数据公司（IDC）发布报告称，2025年，全球智能眼镜市场出货量达1477.3万台，同比增长44.2%；"
+    ],
+    "after": [
+     "光学方案进步、AI逐步接入、用户接受度提升等因素，共同推动市场从预热走向放量。",
+     "2025年，智能眼镜市场呈现火爆态势。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "2026 年 1–2 月，商务大数据重点监测平台的智能眼镜网络零售额同比增长 183.5% （人民网） ，商务部数据显示国补实施以来智能眼镜销量逐月加速、6 月单月增长 30.6% （财新网） ，需求端动能仍在强化。",
+    "matched": true,
+    "hit": "据国家统计局数据，2026年1月份至2月份，全国网上商品和服务零售额增长9.2%，商务大数据重点监测平台智能产品增长亮眼，其中智能眼镜网络零售额同比增长183.5%。",
+    "before": [
+     "其中，2025年第四季度出货量为67.9万台，同比增长57.1%，主要受新厂商集中铺货、第四季度促销季以及2026年年初智能眼镜首次被纳入国补等多重因素推动，厂商提前备货、加速渠道布局，积蓄势能。",
+     "进入2026年后，中国智能眼镜市场依旧热度不减。"
+    ],
+    "after": [
+     "业内人士认为，产品轻量化和AI接入为智能眼镜行业的普及积蓄了势能。",
+     "当前主流智能眼镜产品重量普遍控制在40克至50克区间，佩戴体验接近传统眼镜。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S2",
+  "name": "VR陀螺",
+  "url": "https://www.vrtuoluo.cn/544801.html",
+  "grade": "B",
+  "gradeReason": "XR 行业头部垂直媒体原创",
+  "status": "ok",
+  "failReason": "",
+  "title": "洛图科技：2025年中国智能眼镜市场销量145.4万台_VR陀螺",
+  "date": "",
+  "textLen": 1293,
+  "anchors": [
+   {
+    "claim": "根据 IDC 数据，2025 年全球智能眼镜出货量达 1477.3 万台，同比增长 44.2%，其中中国市场出货 246.0 万台，同比增长 87.1% （人民网） ；洛图科技（RUNTO）则统计 2025 年中国智能眼镜（含 AR 眼镜）销量 145.4 万台，同比大涨 211% （VR陀螺） （两家机构统计口径不同，详见正文）。",
+    "matched": true,
+    "hit": "数据指出，2025年，中国智能眼镜市场的销量为145.4万台，同比大涨211%。",
+    "before": [
+     "微信里点“发现”，扫一下 二维码便可将本文分享至朋友圈",
+     "近日，数据机构洛图科技（RUNTO）发布了国内智能眼镜销量报告。"
+    ],
+    "after": [
+     "根据产品形态和产品功能，洛图科技（RUNTO）将智能眼镜划分为AR眼镜（有显示+有音频）、音频眼镜（无显示+有音频）和拍摄眼镜（无显示+有摄像头）。",
+     "其中，AR眼镜和音频眼镜的销量同比涨幅分别为83%和135%，拍摄眼镜则几乎实现了从零到50万台的突破。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "IDC 口径下，2025 年中国智能眼镜出货 246.0 万台，同比增长 87.1%，中国厂商出货量占全球市场的 23.3% （人民网） ；洛图科技以\"销量\"口径统计的 2025 年中国市场为 145.4 万台、同比增长 211%，其中 AR 眼镜 48.9 万台（+83%）、音频眼镜增长 135%、拍摄眼镜几乎从零跃升至约 51.7 万台 （VR陀螺） 。",
+    "matched": true,
+    "hit": "数据指出，2025年，中国智能眼镜市场的销量为145.4万台，同比大涨211%。",
+    "before": [
+     "微信里点“发现”，扫一下 二维码便可将本文分享至朋友圈",
+     "近日，数据机构洛图科技（RUNTO）发布了国内智能眼镜销量报告。"
+    ],
+    "after": [
+     "根据产品形态和产品功能，洛图科技（RUNTO）将智能眼镜划分为AR眼镜（有显示+有音频）、音频眼镜（无显示+有音频）和拍摄眼镜（无显示+有摄像头）。",
+     "其中，AR眼镜和音频眼镜的销量同比涨幅分别为83%和135%，拍摄眼镜则几乎实现了从零到50万台的突破。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "2026 年预测方面，IDC 预计中国出货将突破 491.5 万台 （澎湃新闻） ，洛图预计销量突破 320 万台、同比增长 120% （VR陀螺） 。",
+    "matched": true,
+    "hit": "洛图科技（RUNTO）预测，2026年中国智能眼镜整体市场的销量将突破320万台，同比增长120%，",
+    "before": [
+     "其中，AR眼镜和音频眼镜的销量同比涨幅分别为83%和135%，拍摄眼镜则几乎实现了从零到50万台的突破。",
+     "其中，AR眼镜中国市场规模从2024年的26.7万台增长至2025年的48.9万台，增幅达83.2%，近乎翻倍。"
+    ],
+    "after": [
+     "投稿/爆料：tougao@youxituoluo.com",
+     "稿件/商务合作： 林南（微信 19250561593） 六六（微信 13138755620）"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S3",
+  "name": "IDC",
+  "url": "https://www.idc.com/promo/arvr/",
+  "grade": "A",
+  "gradeReason": "机构官网原始数据页",
+  "status": "ok",
+  "failReason": "",
+  "title": "IDC - Augmented and Virtual Reality Headsets Market Insights",
+  "date": "2026-07-01",
+  "textLen": 2882,
+  "anchors": [
+   {
+    "claim": "市场呈现清晰的\"一超多强\"格局：Meta 凭借 Ray-Ban / Oakley 联名系列占据全球七成以上份额 （IDC） ，中国厂商（雷鸟创新、XREAL、Rokid、小米、阿里夸克等）则在本土市场和显示类产品上集体崛起 （电子工程专辑 EE Times China） 。",
+    "matched": true,
+    "hit": "The global smart glasses category surged 167% year over year in Q1 2026, reaching approximately 2.25 million units shipped in a single quarter, according to new data from IDC’s Worldwide Quarterly Wearable Device Tracker and Worldwide Quarterly Augmented and Virtual Reality Headset Tracker . Eyewear with displays, tracked under IDC’s broader ARVR segment, grew 86% year over year over the same period.",
+    "before": [
+     "Smart Glasses Surge as XR Market Rewrites Its Own Rules"
+    ],
+    "after": [
+     "Growth was driven by mainstream adoption of display-less smart glasses, led by Meta’s Ray-Ban partnership, alongside an expanding field of challengers building AI-first, always-on eyewear experiences.",
+     "Display-Less Glasses Lead the Shift"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "Omdia 预计 AI 眼镜出货到 2030 年将达到 3500 万台，2025–2030 年复合增速 47% （Business Wire） ；IDC 预计无显示智能眼镜出货将从 2026 年的约 1360 万台增长至 2030 年的 2730 万台，CAGR 约 18.9%，品类收入 2026 年约 51 亿美元，而平均售价将从约 376 美元下探至 2030 年的约 229 美元 （IDC） 。",
+    "matched": true,
+    "hit": "Display-less smart glasses shipped roughly the same volume in Q1 2026 alone as the entire category did across all of 2024. IDC forecasts full-year 2026 shipments of approximately 13.6 million units, growing to 27.3 million by 2030, a CAGR of 18.9%. Revenue is expected to reach $5.1 billion in 2026, while average selling prices, currently around $376, are forecast to compress to approximately $229 by 2030 as the category matures and volume expands.",
+    "before": [
+     "Growth was driven by mainstream adoption of display-less smart glasses, led by Meta’s Ray-Ban partnership, alongside an expanding field of challengers building AI-first, always-on eyewear experiences.",
+     "Display-Less Glasses Lead the Shift"
+    ],
+    "after": [
+     "Vendor Landscape: Meta Leads as Competition Broadens",
+     "Meta led the global smart glasses market in Q1 2026 with 69.2% share, supported by its EssilorLuxottica partnership and the continued strength of the Ray-Ban Meta lineup. RayNeo followed with 3.4% share, driven by lower-cost display glasses, while Xiaomi held 3.1% share on the strength of China shipments. Viture ranked fourth with 2.5% share following its US retail expansion, and XREAL rounded out the top five with 2.0% ahead of its push into the Android XR platform. The Others category, a long tail of global and Chinese vendors, accounted for 19.8% share."
+    ],
+    "note": ""
+   },
+   {
+    "claim": "2025 年 Meta AI 眼镜出货约 740 万副，同比增长 281.3%，全球份额 85.2%（Omdia 口径） （电子工程专辑 EE Times China） ；2026 年一季度 IDC 口径份额仍为 69.2% （IDC） 。",
+    "matched": true,
+    "hit": "Meta led the global smart glasses market in Q1 2026 with 69.2% share, supported by its EssilorLuxottica partnership and the continued strength of the Ray-Ban Meta lineup. RayNeo followed with 3.4% share, driven by lower-cost display glasses, while Xiaomi held 3.1% share on the strength of China shipments. Viture ranked fourth with 2.5% share following its US retail expansion, and XREAL rounded out the top five with 2.0% ahead of its push into the Android XR platform. The Others category, a long tail of global and Chinese vendors, accounted for 19.8% share.",
+    "before": [
+     "Display-less smart glasses shipped roughly the same volume in Q1 2026 alone as the entire category did across all of 2024. IDC forecasts full-year 2026 shipments of approximately 13.6 million units, growing to 27.3 million by 2030, a CAGR of 18.9%. Revenue is expected to reach $5.1 billion in 2026, while average selling prices, currently around $376, are forecast to compress to approximately $229 by 2030 as the category matures and volume expands.",
+     "Vendor Landscape: Meta Leads as Competition Broadens"
+    ],
+    "after": [
+     "Despite its lead, Meta faces mounting pressure from Google’s Android XR ecosystem, which enters with deep Gemini integration across email, photos, and search, and from Snap, whose Lens Studio developer base and five generations of Spectacles hardware give it a head start on the social and creative layer of smart glasses.",
+     "XR Market Outlook: Glasses Outpace Headsets"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "其二，格局将剧烈重构：Meta 份额已从 85% 回落至 69%（2026Q1），Android XR 生态（三星、XREAL、更多中国厂商）与苹果是最大变量 （IDC） 。",
+    "matched": true,
+    "hit": "Meta led the global smart glasses market in Q1 2026 with 69.2% share, supported by its EssilorLuxottica partnership and the continued strength of the Ray-Ban Meta lineup. RayNeo followed with 3.4% share, driven by lower-cost display glasses, while Xiaomi held 3.1% share on the strength of China shipments. Viture ranked fourth with 2.5% share following its US retail expansion, and XREAL rounded out the top five with 2.0% ahead of its push into the Android XR platform. The Others category, a long tail of global and Chinese vendors, accounted for 19.8% share.",
+    "before": [
+     "Display-less smart glasses shipped roughly the same volume in Q1 2026 alone as the entire category did across all of 2024. IDC forecasts full-year 2026 shipments of approximately 13.6 million units, growing to 27.3 million by 2030, a CAGR of 18.9%. Revenue is expected to reach $5.1 billion in 2026, while average selling prices, currently around $376, are forecast to compress to approximately $229 by 2030 as the category matures and volume expands.",
+     "Vendor Landscape: Meta Leads as Competition Broadens"
+    ],
+    "after": [
+     "Despite its lead, Meta faces mounting pressure from Google’s Android XR ecosystem, which enters with deep Gemini integration across email, photos, and search, and from Snap, whose Lens Studio developer base and five generations of Spectacles hardware give it a head start on the social and creative layer of smart glasses.",
+     "XR Market Outlook: Glasses Outpace Headsets"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S4",
+  "name": "电子工程专辑 EE Times China",
+  "url": "https://www.eet-china.com/mp/a480562.html",
+  "grade": "D",
+  "gradeReason": "陌生域名，责任主体不明",
+  "status": "fail",
+  "failReason": "HTTPSConnectionPool(host='www.eet-china.com', port=443): Read timed out. (read t",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "市场呈现清晰的\"一超多强\"格局：Meta 凭借 Ray-Ban / Oakley 联名系列占据全球七成以上份额 （IDC） ，中国厂商（雷鸟创新、XREAL、Rokid、小米、阿里夸克等）则在本土市场和显示类产品上集体崛起 （电子工程专辑 EE Times China） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTPSConnectionPool(host='www.eet-china.com', port=443): Read timed out. (read t）"
+   },
+   {
+    "claim": "聚焦 AI 眼镜这一细分品类（不含传统音频眼镜），Omdia 的统计更为激进：2025 年全球 AI 眼镜出货 870 万副，同比激增 232%，并预计 2026 年将超过 1500 万副、增幅至少 72% （电子工程专辑 EE Times China） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTPSConnectionPool(host='www.eet-china.com', port=443): Read timed out. (read t）"
+   },
+   {
+    "claim": "2025 年的结构性变化在于：无显示的 AI 拍摄眼镜贡献了绝大多数增量——IDC 预计 2025 年音频及音频拍摄眼镜出货 547 万台、同比增长 101.9% （腾讯云） ；而带显示功能的智能眼镜份额从 2024 年的 3.3% 提升至 2025 年的 8.4%（约 73 万台），其中中国企业占比高达 71% （电子工程专辑 EE Times China） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTPSConnectionPool(host='www.eet-china.com', port=443): Read timed out. (read t）"
+   },
+   {
+    "claim": "2025 年 Meta AI 眼镜出货约 740 万副，同比增长 281.3%，全球份额 85.2%（Omdia 口径） （电子工程专辑 EE Times China） ；2026 年一季度 IDC 口径份额仍为 69.2% （IDC） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTPSConnectionPool(host='www.eet-china.com', port=443): Read timed out. (read t）"
+   },
+   {
+    "claim": "其三，显示化是明确的升级方向：带显示眼镜份额一年内从 3.3% 升至 8.4%，随着 PVG 波导把整机价格压向千元级，\"无屏→单目提示屏→双目全彩 AR\"的升级路径清晰 （电子工程专辑 EE Times China） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTPSConnectionPool(host='www.eet-china.com', port=443): Read timed out. (read t）"
+   }
+  ]
+ },
+ {
+  "id": "S5",
+  "name": "什么值得买",
+  "url": "https://post.smzdm.com/p/a5r8qkgx",
+  "grade": "C",
+  "gradeReason": "消费社区内容（政策转述）",
+  "status": "fail",
+  "failReason": "HTTP 202",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "2026 年，智能眼镜作为中国消费品以旧换新政策中唯一新增品类首次纳入国家补贴 （什么值得买） ，叠加 Meta 299 美元自有品牌眼镜 （glassalmanac.com） 、三星 Galaxy Glasses （IT之家） 、苹果传闻中的 N50 （搜狐） 等巨头新品，行业正处在从\"小众尝鲜\"迈向\"大众普及\"的关键拐点。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 202）"
+   },
+   {
+    "claim": "中国市场的爆发有其独特结构：一是价格带更宽，从千元级音频眼镜到七千元级全彩 AR 眼镜全覆盖，白牌产品进一步拉低门槛，2025 年线上在售可拍摄眼镜品牌已超过 100 个 （互联网数据资讯网-199IT） ；二是政策加持，2026 年智能眼镜作为唯一新增品类被纳入国家以旧换新补贴，单件售价 6000 元以内按 15% 补贴、上限 500 元 （什么值得买） ；三是渠道多元，运营商以\"充话费送眼镜\"\"合约套餐绑定\"等方式参与分发 （OFweek光学网） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 202）"
+   },
+   {
+    "claim": "2025 年 12 月 30 日，国家发改委、财政部发布通知，将智能眼镜作为数码智能产品类别中唯一新增品类纳入 2026 年以旧换新补贴：售价 6000 元以内按 15% 补贴、单件上限 500 元、每人每类限补 1 件，首批 625 亿元超长期特别国债资金已提前下达 （什么值得买） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 202）"
+   }
+  ]
+ },
+ {
+  "id": "S6",
+  "name": "glassalmanac.com",
+  "url": "https://glassalmanac.com/meta-glasses-reveal-26-styles-and-muse-spark-ai-why-299-matters-in-2026/",
+  "grade": "D",
+  "gradeReason": "境外眼镜资讯小站，责任主体不明",
+  "status": "ok",
+  "failReason": "",
+  "title": "Meta Glasses Reveal 26 Styles And Muse Spark AI, Why $299 Matters in 2026 - Glas",
+  "date": "2026-06-29",
+  "textLen": 4623,
+  "anchors": [
+   {
+    "claim": "2026 年，智能眼镜作为中国消费品以旧换新政策中唯一新增品类首次纳入国家补贴 （什么值得买） ，叠加 Meta 299 美元自有品牌眼镜 （glassalmanac.com） 、三星 Galaxy Glasses （IT之家） 、苹果传闻中的 N50 （搜狐） 等巨头新品，行业正处在从\"小众尝鲜\"迈向\"大众普及\"的关键拐点。",
+    "matched": true,
+    "hit": "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+    "before": [],
+    "after": [
+     "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+     "What Meta’s June 23 launch means for buyers and rivals today"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "2026 年 6 月，Meta 又推出自有品牌 Meta Glasses，26 款样式、起售价降至 299 美元，搭载 Muse Spark AI，首次脱离 Ray-Ban 品牌体系 （glassalmanac.com） ——这一降维定价被普遍视为对三星、苹果入局前的卡位。",
+    "matched": true,
+    "hit": "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+    "before": [],
+    "after": [
+     "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+     "What Meta’s June 23 launch means for buyers and rivals today"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "| Meta Glasses | Meta | 拍摄 AI | 299 美元 （glassalmanac.com）  | — | 26 款样式、Muse Spark AI、自有品牌 |",
+    "matched": true,
+    "hit": "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+    "before": [],
+    "after": [
+     "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+     "What Meta’s June 23 launch means for buyers and rivals today"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "其一，量的确定性高：2026 年全球出货 1500–2400 万台区间（口径不同），中国翻倍增长，Meta 降价至 299 美元、三星与苹果入局将完成大众市场教育 （glassalmanac.com） 。",
+    "matched": true,
+    "hit": "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+    "before": [],
+    "after": [
+     "Excitement and price shock hit 2026 buyers as Meta unveiled its own Meta Glasses on June 23, 2026, starting at $299. The announcement matters because Meta and EssilorLuxottica said the line includes 26 styles, prescription options and Muse Spark AI – the first glasses sold under Meta’s brand rather than Ray-Ban. This changes the affordability calculus for AR wearables and pressures rivals already shipping higher-end AR devices. Expect faster mainstream adoption or a marketing arms race – are you ready to wear AI daily?",
+     "What Meta’s June 23 launch means for buyers and rivals today"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S7",
+  "name": "IT之家",
+  "url": "https://www.ithome.com/0/949/938.htm",
+  "grade": "B",
+  "gradeReason": "主流科技媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "搭载 Android XR 系统，消息称三星 Galaxy 智能眼镜将于 7 月发布 - IT之家",
+  "date": "",
+  "textLen": 955,
+  "anchors": [
+   {
+    "claim": "2026 年，智能眼镜作为中国消费品以旧换新政策中唯一新增品类首次纳入国家补贴 （什么值得买） ，叠加 Meta 299 美元自有品牌眼镜 （glassalmanac.com） 、三星 Galaxy Glasses （IT之家） 、苹果传闻中的 N50 （搜狐） 等巨头新品，行业正处在从\"小众尝鲜\"迈向\"大众普及\"的关键拐点。",
+    "matched": true,
+    "hit": "现据韩国媒体 Seoul Economic Daily 的最新报道透露，三星将在下一场 Galaxy 新品发布会上正式发布 Galaxy 智能眼镜。",
+    "before": [
+     "Galaxy 智能眼镜预计将推出两款机型，采用墨镜式外观设计，内置摄像头、扬声器与麦克风。",
+     "IT之家注意到，三星此前已确认，Galaxy 智能眼镜将于今年晚些时候上市，但没有给出明确的发布时间。"
+    ],
+    "after": [
+     "有传闻称，三星定于 2026 年 7 月 22 日在伦敦举办下一场 Galaxy Unpacked 新品发布会。",
+     "届时三星有望推出新一代折叠屏手机产品线，包括 Galaxy Z Fold 8、Galaxy Z Flip 8，还有传闻中的大屏折叠机型，该机型预计将对标苹果的折叠版 iPhone 。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S8",
+  "name": "搜狐",
+  "url": "https://www.sohu.com/a/897282109_121162878",
+  "grade": "C",
+  "gradeReason": "门户自媒体号转载",
+  "status": "ok",
+  "failReason": "",
+  "title": "谷歌I/O 2025发布Android XR 眼镜，5大科技巨头集体押注共筑智能硬件新纪元_设备_功能_字节",
+  "date": "2025-05-21",
+  "textLen": 2260,
+  "anchors": [
+   {
+    "claim": "2026 年，智能眼镜作为中国消费品以旧换新政策中唯一新增品类首次纳入国家补贴 （什么值得买） ，叠加 Meta 299 美元自有品牌眼镜 （glassalmanac.com） 、三星 Galaxy Glasses （IT之家） 、苹果传闻中的 N50 （搜狐） 等巨头新品，行业正处在从\"小众尝鲜\"迈向\"大众普及\"的关键拐点。",
+    "matched": true,
+    "hit": "另外，古尔曼表示苹果正积极打造自己的智能眼镜，代号为N50，并仿效Meta和Ray-Ban的合作产品，团队希望把公司的AI开发成果注入其中，将各种各样的技术融入到一副时尚轻便的眼镜之中：包括摄像头、麦克风、扬声器和人工智能助手等等。",
+    "before": [
+     "据彭博社的马克·古尔曼（Mark Gurman）表示，苹果研发多款XR设备，轻薄版Vision与智能眼镜N50计划曝光。",
+     "在新一期的Power On中，他补充提到所述设备最快会在2025年年底或2026年年初亮相。"
+    ],
+    "after": [
+     "他指出：“这款设备尚未准备妥当，但想法是把眼镜变成苹果的智能设备，它可以分析周围环境，并向佩戴者提供信息。",
+     "三星电子(SSNGY.US)"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S9",
+  "name": "澎湃新闻",
+  "url": "https://m.thepaper.cn/newsDetail_forward_32462172",
+  "grade": "B",
+  "gradeReason": "主流媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "AI眼镜市场2026年进入卡位赛",
+  "date": "",
+  "textLen": 2331,
+  "anchors": [
+   {
+    "claim": "IDC 数据显示，2025 年全球智能眼镜市场出货量达 1477.3 万台，同比增长 44.2% （人民网） ；其对 2026 年的预测进一步上调至 2368.7 万台，意味着单年增量接近 900 万台 （澎湃新闻） 。",
+    "matched": true,
+    "hit": "IDC预测，2026年全球智能眼镜市场出货量预计将突破2368.7万台，其中中国智能眼镜市场出货量将突破491.5万台，市场正式迈入规模化增长新阶段。",
+    "before": [
+     "Rokid创始人祝铭明（Misa）在与《节点AI》创始人崔大宝交流时也曾谈到，“我们面对的是一个万亿级市场”“我认为3-5年内，手机会变成眼镜的算力配件”。",
+     "第三方数据机构对AI眼镜市场前景也呈乐观态度。"
+    ],
+    "after": [
+     "Smart Analytics Global（SAG）的预测同样乐观，该机构认为全球AI智能眼镜市场将在2026年进入爆发增长阶段，主要驱动力来自Ray-Ban Meta的商业化成功，以及苹果、三星等生态巨头即将进入市场的预期。",
+     "资本也用真金白银投票，证明AI眼镜市场处在规模化爆发前夜。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "2026 年预测方面，IDC 预计中国出货将突破 491.5 万台 （澎湃新闻） ，洛图预计销量突破 320 万台、同比增长 120% （VR陀螺） 。",
+    "matched": true,
+    "hit": "IDC预测，2026年全球智能眼镜市场出货量预计将突破2368.7万台，其中中国智能眼镜市场出货量将突破491.5万台，市场正式迈入规模化增长新阶段。",
+    "before": [
+     "Rokid创始人祝铭明（Misa）在与《节点AI》创始人崔大宝交流时也曾谈到，“我们面对的是一个万亿级市场”“我认为3-5年内，手机会变成眼镜的算力配件”。",
+     "第三方数据机构对AI眼镜市场前景也呈乐观态度。"
+    ],
+    "after": [
+     "Smart Analytics Global（SAG）的预测同样乐观，该机构认为全球AI智能眼镜市场将在2026年进入爆发增长阶段，主要驱动力来自Ray-Ban Meta的商业化成功，以及苹果、三星等生态巨头即将进入市场的预期。",
+     "资本也用真金白银投票，证明AI眼镜市场处在规模化爆发前夜。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "| 雷鸟 X3 Pro | 雷鸟创新 | 双目全彩 AR | 7649 元 （10100.com）  | 76g | Micro OLED+光波导、eSIM 独立通信版本 （澎湃新闻）  |",
+    "matched": true,
+    "hit": "雷鸟创新推出了双目全彩AR眼镜“雷鸟X3 Pro Project eSIM”，该产品集成了eSIM 通信模块与4G 协议支持。",
+    "before": [
+     "美国拉斯维加斯的展会现场，50余家AI眼镜厂商参展，其中当然有Meta、三星等国际巨头，但同时也有以Rokid（乐奇）、雷鸟创新、XREAL等为代表20多家中国AI眼镜品牌，他们带去的多款创新产品，引发全球关注。",
+     "比如，Rokid在展会现场发布的新品Rokid Ai Glasses Style，重量仅有38.5克，支持长达12小时连续使用，还能够实现听歌、翻译、导航、AI问答等功能。"
+    ],
+    "after": [
+     "XREAL也在2026 CES上发布新一代AR眼镜XREAL 1S，等等。",
+     "这些厂商的集体发力，让2026 CES成为中国AI眼镜技术的 “全球秀场”，也展示出了行业的巨大潜力。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S10",
+  "name": "Business Wire",
+  "url": "https://www.businesswire.com/news/home/20250915980274/zh-CN",
+  "grade": "A",
+  "gradeReason": "Omdia 通稿官方发布页",
+  "status": "fail",
+  "failReason": "HTTP 403",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "Omdia 预计 AI 眼镜出货到 2030 年将达到 3500 万台，2025–2030 年复合增速 47% （Business Wire） ；IDC 预计无显示智能眼镜出货将从 2026 年的约 1360 万台增长至 2030 年的 2730 万台，CAGR 约 18.9%，品类收入 2026 年约 51 亿美元，而平均售价将从约 376 美元下探至 2030 年的约 229 美元 （IDC） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 403）"
+   },
+   {
+    "claim": "Omdia 亦指出，内置摄像头与麦克风引发的隐私担忧以及全天佩戴的社会接受度，短期内可能阻碍品类突破早期用户圈层 （Business Wire） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 403）"
+   }
+  ]
+ },
+ {
+  "id": "S11",
+  "name": "雪球",
+  "url": "https://xueqiu.com/9028330867/367788509",
+  "grade": "C",
+  "gradeReason": "投资社区帖子（转述券商观点）",
+  "status": "fail",
+  "failReason": "正文提取过短（可能需登录/反爬）",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "更乐观的测算来自卖方研究：有券商预计 AI 智能眼镜 2030 年全球出货可达 1.12 亿台、市场规模 400 亿美元 （雪球） ；高盛则预计中国 AI/AR 眼镜 2024–2030 年出货 CAGR 约 79%，2030 年出货 2.5 亿台（该数字包含对传统眼镜的替代性渗透，口径最宽） （43y.com.cn） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（正文提取过短（可能需登录/反爬））"
+   }
+  ]
+ },
+ {
+  "id": "S12",
+  "name": "43y.com.cn",
+  "url": "https://news.43y.com.cn/n/34442.html",
+  "grade": "D",
+  "gradeReason": "陌生站点，无法确认原始出处",
+  "status": "ok",
+  "failReason": "",
+  "title": "高盛上调中国AI/AR眼镜市场预期：2030年规模望达30亿美元，复合增速约79%成下一代交互核心入口_太阳眼镜网",
+  "date": "2025-12-04",
+  "textLen": 1780,
+  "anchors": [
+   {
+    "claim": "更乐观的测算来自卖方研究：有券商预计 AI 智能眼镜 2030 年全球出货可达 1.12 亿台、市场规模 400 亿美元 （雪球） ；高盛则预计中国 AI/AR 眼镜 2024–2030 年出货 CAGR 约 79%，2030 年出货 2.5 亿台（该数字包含对传统眼镜的替代性渗透，口径最宽） （43y.com.cn） 。",
+    "matched": true,
+    "hit": "基于对技术成熟度与市场需求的综合研判，高盛在报告中给出了具体量化预测：2024-2030年中国AI/AR眼镜出货量复合年增长率（CAGR）将达到约79%，远高于全球平均水平；",
+    "before": [
+     "教育场景中，沉浸式虚拟实验室与3D教学内容，显著提升了学生的知识吸收效率。",
+     "高盛预计，到2027年行业级应用市场规模将与消费级市场持平，成为驱动行业增长的核心引擎之一。"
+    ],
+    "after": [
+     "其中，2025年出货量预计突破1000万台，2030年将飙升至2.5亿台。",
+     "市场收入方面，伴随高端产品占比提升与增值服务拓展，2030年中国AI/AR眼镜市场规模有望达到约30亿美元（约合人民币216亿元），其中硬件收入占比65%，软件及服务收入占比35%。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "…的高退货率可能透支消费者信任 （钛媒体） ；巨头碾压——苹果、三星、字节入场后，创业公司的窗口期可能快速关闭；盈利模型未跑通，头部公司普遍亏损，若 2027 年前无法证明软件与服务收入（高盛预计 2030 年占 35% （43y.com.cn） ）的可行性，资本退潮风险不可忽视。",
+    "matched": true,
+    "hit": "市场收入方面，伴随高端产品占比提升与增值服务拓展，2030年中国AI/AR眼镜市场规模有望达到约30亿美元（约合人民币216亿元），其中硬件收入占比65%，软件及服务收入占比35%。",
+    "before": [
+     "基于对技术成熟度与市场需求的综合研判，高盛在报告中给出了具体量化预测：2024-2030年中国AI/AR眼镜出货量复合年增长率（CAGR）将达到约79%，远高于全球平均水平；",
+     "其中，2025年出货量预计突破1000万台，2030年将飙升至2.5亿台。"
+    ],
+    "after": [
+     "报告特别指出，中国在5G/6G通信、AI算法、供应链整合等领域的优势，将进一步巩固其在全球AI/AR眼镜产业中的核心地位，预计2030年中国企业全球市场份额将超过40%。",
+     "上一篇： 驾驶时想兼顾便捷与私密？"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S13",
+  "name": "财新网",
+  "url": "https://www.caixin.com/2026-08-01/102470400.html?originReferrer=kimi",
+  "grade": "B",
+  "gradeReason": "主流财经媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "观势｜国补退坡，消费动能怎么上坡_财新网_财新网",
+  "date": "2026-08-01",
+  "textLen": 864,
+  "anchors": [
+   {
+    "claim": "2026 年 1–2 月，商务大数据重点监测平台的智能眼镜网络零售额同比增长 183.5% （人民网） ，商务部数据显示国补实施以来智能眼镜销量逐月加速、6 月单月增长 30.6% （财新网） ，需求端动能仍在强化。",
+    "matched": false,
+    "hit": "",
+    "before": [
+     "【财新网】 正在装修婚房的王娜，在今年“618”大促期间集中下单、买齐了家具和家电。",
+     "“618期间（平台）活动叠加国补，几乎是变相的‘折上折’，过了大促价格就不那么优惠了，洗衣机可能再贵400—500元；"
+    ],
+    "after": [],
+    "note": "已获取原文，但未定位到精确对应句，需人工核对"
+   }
+  ]
+ },
+ {
+  "id": "S14",
+  "name": "互联网数据资讯网-199IT",
+  "url": "https://www.199it.com/archives/1810065.html",
+  "grade": "C",
+  "gradeReason": "数据聚合摘要站",
+  "status": "ok",
+  "failReason": "",
+  "title": "洛图科技：2025中国智能眼镜销145万台，增211% | 互联网数据资讯网-199IT | 中文互联网数据研究资讯中心-199IT",
+  "date": "",
+  "textLen": 955,
+  "anchors": [
+   {
+    "claim": "中国市场的爆发有其独特结构：一是价格带更宽，从千元级音频眼镜到七千元级全彩 AR 眼镜全覆盖，白牌产品进一步拉低门槛，2025 年线上在售可拍摄眼镜品牌已超过 100 个 （互联网数据资讯网-199IT） ；二是政策加持，2026 年智能眼镜作为唯一新增品类被纳入国家以旧换新补贴，单件售价 6000 元以内按 15% 补贴、上限 500 元 （什么值得买） ；三是渠道多元，运营商以\"充话费送眼镜\"\"合约套餐绑定\"等方式参与分发 （OFweek光学网） 。",
+    "matched": true,
+    "hit": "其中，拍摄眼镜表现最为亮眼，受益于Vlog创作、户外运动记录等高频需求， 2025年，中国线上市场监测到的在售可拍摄眼镜品牌数量已超过了100个。",
+    "before": [
+     "近日消息，2025年中国智能眼镜市场迎来爆发式增长， 洛图科技数据显示，全年出货量达145.4万台，同比大涨 211%。",
+     "小米、夸克、理想等多领域企业纷纷入局，推动市场从小众尝鲜向大众化迈进。"
+    ],
+    "after": [
+     "雷鸟创新、小米等率先布局的品牌占据主导地位，理想、夸克、星纪魅族等在第四季度新入局的品牌也快速站稳了脚跟。",
+     "2023-2025年 中国消费级XR和智能眼镜市场销量"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "主要玩家可分为四个梯队：专业 AR 厂商（雷鸟、XREAL、Rokid、INMO 影目，即\"AR 四小龙\"）、手机/互联网巨头（小米、阿里夸克/千问、华为、字节跳动）、跨界玩家（理想汽车、极米、老凤祥等）、以及华强北白牌（约占拍摄眼镜市场 10% 份额） （互联网数据资讯网-199IT） 。",
+    "matched": true,
+    "hit": "分体式眼镜凭借观影、游戏场景优势，仍由雷鸟创新、XREAL占据超七成市场，一体式眼镜则因AI+AR概念吸引夸克、Rokid 等新品牌布局。",
+    "before": [
+     "2023-2025年 中国消费级XR和智能眼镜市场销量",
+     "数据显示，在中国线上市场，分体式和一体式眼镜的销量比例从2024年的82:18变为73:27。"
+    ],
+    "after": [
+     "2026年智能眼镜被纳入国补， 洛图科技预测，2026年中国智能眼镜销量将突破320万台，同比增长120%。",
+     "洛图科技：2025年中国智能眼镜销量达137.0万副 同比增长215.7%"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S15",
+  "name": "OFweek光学网",
+  "url": "https://optics.ofweek.com/2026-01/ART-250003-8120-30680349.html",
+  "grade": "C",
+  "gradeReason": "行业门户（多为供稿/转载）",
+  "status": "ok",
+  "failReason": "",
+  "title": "洛图科技：2025年全球及中国智能眼镜与XR市场全景数据洞察及2026年预测 - OFweek光学网",
+  "date": "",
+  "textLen": 6013,
+  "anchors": [
+   {
+    "claim": "中国市场的爆发有其独特结构：一是价格带更宽，从千元级音频眼镜到七千元级全彩 AR 眼镜全覆盖，白牌产品进一步拉低门槛，2025 年线上在售可拍摄眼镜品牌已超过 100 个 （互联网数据资讯网-199IT） ；二是政策加持，2026 年智能眼镜作为唯一新增品类被纳入国家以旧换新补贴，单件售价 6000 元以内按 15% 补贴、上限 500 元 （什么值得买） ；三是渠道多元，运营商以\"充话费送眼镜\"\"合约套餐绑定\"等方式参与分发 （OFweek光学网） 。",
+    "matched": true,
+    "hit": "2025年，中国线上市场监测到的在售可拍摄眼镜品牌数量已超过了100个，雷鸟创新、小米等率先布局的品牌占据主导地位，理想、夸克、星纪魅族等在第四季度新入局的品牌也快速站稳了脚跟，同时近10%的市场份额被白牌产品占据，市场格局呈现“头部领跑、新势力突围和白牌补位”的特征。",
+    "before": [
+     "此外，华为、小米等品牌将其纳入“手机+穿戴”的生态体系，进一步加速了产品的大众化渗透。",
+     "可拍摄眼镜的增长得益于Vlog创作、户外运动记录等场景的兴起，眼镜形态的记录方式更自然、便捷，还能带来更强的第一视角沉浸感，精准契合当下用户的轻记录需求。"
+    ],
+    "after": [
+     "进入2026年，字节跳动（豆包）、三星、极米、Vidda、华为等品牌的产品也即将登场。",
+     "事实上，受 光学设计 与重量平衡、续航散热优化等技术瓶颈影响，2025年拍摄眼镜行业的规模化量产出现了一定难度，不过这也为2026年预留了充足的增长空间。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "上游微显示龙头 JBD 完成超 10 亿元 B2 轮融资推进 2.5 微米像素间距技术产业化，光波导企业耐德佳一年内完成四轮融资加速量产 （OFweek光学网） 。",
+    "matched": true,
+    "hit": "上游供应链方面，Micro LED微显示龙头企业JBD完成了超10亿元B2轮融资，用于2.5微米像素间距技术产业化；",
+    "before": [
+     "并于2026年1月完成1亿美元的D轮融资。",
+     "影目科技在2025年累计完成B2、B3、C1三轮融资，总金额近5亿元。"
+    ],
+    "after": [
+     "光波导企业耐德佳一年内完成C1至C4轮四轮融资，加速了其光波导模组“琉璃”的量产进程。",
+     "运营商除参与战略投资外，还依托其覆盖全国的线下服务网点与亿级用户基数，推出了“充话费送眼镜”、“合约套餐绑定”等方案，推动行业从小众尝鲜向大众普及跨越。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "欧盟 GDPR、各国对公共场所摄录的立法动向，以及拍摄眼镜的\"华强北白牌\"乱象，都可能成为 2026–2027 年行业的关键变量 （OFweek光学网） 。",
+    "matched": true,
+    "hit": "需要注意的是，隐私合规问题可能成为拍摄眼镜的关键变量。",
+    "before": [
+     "进入2026年，字节跳动（豆包）、三星、极米、Vidda、华为等品牌的产品也即将登场。",
+     "事实上，受 光学设计 与重量平衡、续航散热优化等技术瓶颈影响，2025年拍摄眼镜行业的规模化量产出现了一定难度，不过这也为2026年预留了充足的增长空间。"
+    ],
+    "after": [
+     "2026年全球智能眼镜增长71%；",
+     "中国智能眼镜增长120%，突破320万台"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "风险方面需关注五点：隐私与监管（公共场所摄录立法收紧可能直接冲击拍摄眼镜这一最大增量品类 （OFweek光学网） ）；存储涨价推高 BOM 成本，Counterpoint 已观察到 AI 眼镜均价从 347 美元升至 360 美元并可能继续上行 （CNET） ；体验不及预期导致的高退货率可能透支消费者信任 （钛媒体） ；巨头碾压——苹果、三星、字节…",
+    "matched": true,
+    "hit": "精彩回顾 立即查看>> 维科杯·OFweek 2026光学行业年度评选",
+    "before": [
+     "精彩回顾 立即查看>> OFweek 2026中国激光产业高质量发展峰会",
+     "精彩回顾 立即查看>> OFweek 2026集成电路制造工艺创新应用论坛"
+    ],
+    "after": [
+     "精彩回顾 立即查看>> 维科杯•OFweek 2026激光行业年度评选",
+     "MKS集团光学与运动控制事业部系列技术白皮书  限时下载"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S16",
+  "name": "techx.pk",
+  "url": "https://techx.pk/ai-smart-glasses-shipments-322-percent-growth-2025-2026/",
+  "grade": "D",
+  "gradeReason": "境外小站，无法确认原始出处",
+  "status": "ok",
+  "failReason": "",
+  "title": "AI Smart Glasses Shipments Jumped 322% in 2025 and 2026 Look",
+  "date": "2026-07-14",
+  "textLen": 214,
+  "anchors": [
+   {
+    "claim": "Omdia 数据显示，2025 年中国大陆 AI 眼镜出货约 95–100 万副，同比增长 3545%，小米（31.9%）、Rokid（28.5%）、阿里（15.9%）位列前三 （techx.pk） 。",
+    "matched": false,
+    "hit": "",
+    "before": [
+     "India AI Summit An Analysis of Logistical Failures and Technical Hurdles",
+     "As interest in Artificial Intelligence (AI) surges globally, South Asian nations are racing to establish themselves as regional tech hubs...."
+    ],
+    "after": [],
+    "note": "已获取原文，但未定位到精确对应句，需人工核对"
+   },
+   {
+    "claim": "…oid XR 操作系统整合硬件伙伴——与三星合作的 Galaxy XR 头显已发售，与 XREAL 联合研发的 Project Aura（70° 视场角，2026 年秋上市，起售价不超过 1500 美元）是平台标杆眼镜 （techx.pk） ；三星 Galaxy Glasses 预计 2026 年 7 月 22 日在伦敦 Unpacked 发布，与 Gentle Monster 合作设计，深度集成 Gemini 与 SmartThings 生态 （VR陀螺） 。",
+    "matched": true,
+    "hit": "As interest in Artificial Intelligence (AI) surges globally, South Asian nations are racing to establish themselves as regional tech hubs....",
+    "before": [
+     "India AI Summit An Analysis of Logistical Failures and Technical Hurdles"
+    ],
+    "after": [],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S17",
+  "name": "腾讯云",
+  "url": "https://cloud.tencent.com/developer/article/2641757",
+  "grade": "C",
+  "gradeReason": "云厂商开发者社区转载",
+  "status": "ok",
+  "failReason": "",
+  "title": "2025年全球智能眼镜出货量将达1205万台，同比增长18.3%-腾讯云开发者社区-腾讯云",
+  "date": "2026-03-19",
+  "textLen": 783,
+  "anchors": [
+   {
+    "claim": "2025 年的结构性变化在于：无显示的 AI 拍摄眼镜贡献了绝大多数增量——IDC 预计 2025 年音频及音频拍摄眼镜出货 547 万台、同比增长 101.9% （腾讯云） ；而带显示功能的智能眼镜份额从 2024 年的 3.3% 提升至 2025 年的 8.4%（约 73 万台），其中中国企业占比高达 71% （电子工程专辑 EE Times China） 。",
+    "matched": true,
+    "hit": "其中不具备显示功能的音频眼镜及音频拍摄眼镜预计出货547万台，同比增长101.9%。",
+    "before": [
+     "2025年全球智能眼镜出货量将达1205万台，同比增长18.3%",
+     "3月24日，市场研究机构IDC发布预测报告称，2025年全球智能眼镜市场预计出货1205万台，同比增长18.3%。"
+    ],
+    "after": [
+     "IDC研究显示，中国、美国是当前智能眼镜设备的主要出货市场。",
+     "其中，中国市场可预见的消费群体包括高端商务精英，近视/远视人群，科技极客玩家，游戏及旅拍玩家等。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "IDC 勾勒的中国核心消费人群画像——高端商务精英、近视人群、科技极客、游戏与旅拍玩家 （腾讯云） ——也印证了当前市场仍以尝鲜和垂直刚需为主，距离\"非戴不可\"的大众日用品尚有距离。",
+    "matched": true,
+    "hit": "其中，中国市场可预见的消费群体包括高端商务精英，近视/远视人群，科技极客玩家，游戏及旅拍玩家等。",
+    "before": [
+     "其中不具备显示功能的音频眼镜及音频拍摄眼镜预计出货547万台，同比增长101.9%。",
+     "IDC研究显示，中国、美国是当前智能眼镜设备的主要出货市场。"
+    ],
+    "after": [
+     "自2024年四季度以来，众多厂商集都发布了全新的智能眼镜产品，并且其中大部分都没有配备显示功能，在降低了成本的同时，还加入了对于AI大模型的支持，引入了各种AI功能，引发了众多爱好者的购买。",
+     "如果从具备显示功能的智能眼镜或XR头显市场来看，CounterPoint Research的数据显示，在2024年的XR头显市场，Meta 以 77% 的市场份额持续保持第一。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S18",
+  "name": "CNET",
+  "url": "https://www.cnet.com/tech/mobile/meta-tops-smart-glasses-market/",
+  "grade": "B",
+  "gradeReason": "国际主流科技媒体（转述 Counterpoint）",
+  "status": "ok",
+  "failReason": "",
+  "title": "Meta Tightens Grip on Smart Glasses Market as Global Shipments Soar 139% - CNET",
+  "date": "2026-03-02",
+  "textLen": 3905,
+  "anchors": [
+   {
+    "claim": "Counterpoint 数据显示，2025 年下半年 AI 眼镜已占智能眼镜总出货的 88%，纯音频眼镜需求明显萎缩 （CNET） 。",
+    "matched": true,
+    "hit": "AI smart glasses accounted for 88% of total smart glasses shipments during the second half of 2025, while demand for simple smart audio glasses was far lower. The demand for AI glasses stems from Meta’s AI glasses and from Chinese vendors, including Li Auto, Rokid and Bolon.",
+    "before": [
+     "Read more: Meta Ray-Bans, 6 Months Later: The Best AI Companion Happens to Be Camera Glasses",
+     "AI glasses are becoming popular, but pricey"
+    ],
+    "after": [
+     "The market growth for smart glasses isn’t expected to stop. Counterpoint says smart glasses shipments are expected to continue strong growth this year, with plans for new brands and for others to expand. But price will become a concern in 2026.",
+     "The average price of AI glasses has risen quickly — reaching $347 in the first half of last year. Yet, the average price went up to $360 in the second half. And prices could rise even further if the current memory shortage persists."
+    ],
+    "note": ""
+   },
+   {
+    "claim": "…监管（公共场所摄录立法收紧可能直接冲击拍摄眼镜这一最大增量品类 （OFweek光学网） ）；存储涨价推高 BOM 成本，Counterpoint 已观察到 AI 眼镜均价从 347 美元升至 360 美元并可能继续上行 （CNET） ；体验不及预期导致的高退货率可能透支消费者信任 （钛媒体） ；巨头碾压——苹果、三星、字节入场后，创业公司的窗口期可能快速关闭；盈利模型未跑通，头部公司普遍亏损，若 2027 年前无法证明软件与服务收入（高盛预计 2030 年占 35% （43y…",
+    "matched": true,
+    "hit": "The average price of AI glasses has risen quickly — reaching $347 in the first half of last year. Yet, the average price went up to $360 in the second half. And prices could rise even further if the current memory shortage persists.",
+    "before": [
+     "AI smart glasses accounted for 88% of total smart glasses shipments during the second half of 2025, while demand for simple smart audio glasses was far lower. The demand for AI glasses stems from Meta’s AI glasses and from Chinese vendors, including Li Auto, Rokid and Bolon.",
+     "The market growth for smart glasses isn’t expected to stop. Counterpoint says smart glasses shipments are expected to continue strong growth this year, with plans for new brands and for others to expand. But price will become a concern in 2026."
+    ],
+    "after": [
+     "Customers and experts weigh in",
+     "Counterpoint also found that Meta customers generally gave positive feedback on video performance for the Gen 2 Meta AI Glasses, and the Oakley Meta Vanguara received positive feedback for its design, as well as its photography and audio features. On the other hand, users say there are still improvements needed in battery performance."
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S19",
+  "name": "网易新闻客户端",
+  "url": "https://c.m.163.com/news/a/KKGKIAF30531D3YN.html",
+  "grade": "C",
+  "gradeReason": "门户自媒体号转载",
+  "status": "ok",
+  "failReason": "",
+  "title": "洛图科技：2025年全球及中国智能眼镜与XR市场全景数据洞察及2026年预测",
+  "date": "2026-01-30",
+  "textLen": 4637,
+  "anchors": [
+   {
+    "claim": "AR 眼镜内部也在分化——聚焦观影游戏、采用 Micro OLED + Birdbath 方案的分体式眼镜，与聚焦信息提示、采用光波导方案的一体式眼镜，中国线上销量比例从 2024 年的 82:18 变为 2025 年的 73:27，一体式占比快速提升 （网易新闻客户端） 。",
+    "matched": true,
+    "hit": "根据洛图科技（RUNTO）线上数据显示，在中国线上市场，分体式和一体式眼镜的销量比例从2024年的82:18变为73:27。",
+    "before": [
+     "分体式 / 一体式的销量比例从 8: 2 到 7: 3",
+     "AR眼镜内部分为聚焦于观影、游戏等场景、搭载Birdbath方案的分体式眼镜和侧重于信息实时提示、搭载光波导方案的一体式眼镜。"
+    ],
+    "after": [
+     "分体式 AR 眼镜市场由雷鸟创新和 XREAL 两大品牌主导，二者合计占据超七成的线上市场份额 。",
+     "产品以 Micro OLED 屏幕 +Birdbath 光学方案 为主。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "第一视角拍摄是最大的尝鲜驱动——Vlog 创作、户外运动记录、亲子抓拍等\"轻记录\"需求精准匹配眼镜形态，推动中国拍摄眼镜市场一年内从零做到 50 万台 （网易新闻客户端） ；实时翻译与字幕是付费意愿最强的生产力场景，亮亮视野 Leion Hey2 支持 100 余种语言互译、总续航 96 小时，听障人群字幕辅助成为差异化卖点 （LEDinside|LED在线） ；导航与信息提示依赖显示类产品，Meta Dis…",
+    "matched": true,
+    "hit": "可拍摄眼镜的增长得益于Vlog创作、户外运动记录等场景的兴起，眼镜形态的记录方式更自然、便捷，还能带来更强的第一视角沉浸感，精准契合当下用户的轻记录需求。",
+    "before": [
+     "另一方面，千元以下的亲民定价降低消费门槛，2025年，该价格段在线上市场的销量占比超过了50%。",
+     "此外，华为、小米等品牌将其纳入“手机+穿戴”的生态体系，进一步加速了产品的大众化渗透。"
+    ],
+    "after": [
+     "2025 年，中国线上市场监测到的在售可拍摄眼镜品牌数量已超过了 100 个 ，雷鸟创新、小米等率先布局的品牌占据主导地位，理想、夸克、星纪魅族等在第四季度新入局的品牌也快速站稳了脚跟，同时近10%的市场份额被白牌产品占据，市场格局呈现“头部领跑、新势力突围和白牌补位”的特征。",
+     "进入2026年，字节跳动（豆包）、三星、极米、Vidda、华为等品牌的产品也即将登场。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S20",
+  "name": "维科号",
+  "url": "https://mp.ofweek.com/optics/a956714790667",
+  "grade": "C",
+  "gradeReason": "行业门户（多为供稿/转载）",
+  "status": "ok",
+  "failReason": "",
+  "title": "洛图科技：2025年全球及中国智能眼镜与XR市场全景数据洞察及2026年预测 - 维科号V",
+  "date": "",
+  "textLen": 4368,
+  "anchors": [
+   {
+    "claim": "分体式市场由雷鸟创新和 XREAL 主导，二者合计占七成以上线上份额 （维科号） ；一体式市场则吸引了夸克、Rokid、INMO 等玩家密集布局。",
+    "matched": true,
+    "hit": "分体式AR眼镜市场由雷鸟创新和XREAL两大品牌主导，二者合计占据超七成的线上市场份额。",
+    "before": [
+     "AR眼镜内部分为聚焦于观影、游戏等场景、搭载Birdbath方案的分体式眼镜和侧重于信息实时提示、搭载光波导方案的一体式眼镜。",
+     "根据洛图科技（RUNTO）线上数据显示，在中国线上市场，分体式和一体式眼镜的销量比例从2024年的82:18变为73:27。"
+    ],
+    "after": [
+     "产品以Micro OLED屏幕+Birdbath光学方案为主。",
+     "2025年，以索尼、维信诺为代表的供应商在显示屏幕的亮度与功耗等方面实现了一定突破。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S21",
+  "name": "映维网资讯",
+  "url": "https://news.nweon.com/132615",
+  "grade": "B",
+  "gradeReason": "XR 行业垂直媒体原创",
+  "status": "ok",
+  "failReason": "",
+  "title": "Meta发布AI眼镜Ray-Ban Display+神经腕带，售价799美元 - 映维网资讯",
+  "date": "2025-09-18",
+  "textLen": 2676,
+  "anchors": [
+   {
+    "claim": "其产品矩阵已清晰分三层：拍摄型 AI 眼镜（Ray-Ban Meta Gen 2，379 美元起；Oakley Meta 运动系列，499–799 美元）、显示型 AI 眼镜（Meta Ray-Ban Display，799 美元，配神经腕带）、以及研发中的全息 AR 眼镜（Orion 后继产品） （映维网资讯） 。",
+    "matched": true,
+    "hit": "包含Meta Ray-Ban Display眼镜和Meta神经感应腕带的套装起售价799美元），Meta Ray-Ban Display眼镜将允许你以全新方式体验、认知与交互世界。",
+    "before": [
+     "这款肌电腕带能解读肌肉活动产生的自然信号来控制眼镜功能，通过微妙手势即可直观操控体验，无需触碰眼镜或手机。",
+     "操作如此轻松自如，仿佛施展神奇魔法。"
+    ],
+    "after": [
+     "套装将于9月30日率先登陆美国部分实体零售商（包括百思买、LensCrafters、Ray-Ban专卖店及Verizon门店），二2026年初将扩展至加拿大、法国、意大利和英国。",
+     "Meta表示，通过精选渠道发售以确保用户获得最适合的产品，未来将逐步扩大购买选择。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "| Meta Ray-Ban Display | Meta×雷朋 | 单目显示+腕带 | 799 美元 （映维网资讯）  | 69g | 600×600 全彩波导、sEMG 神经腕带、42PPD |",
+    "matched": true,
+    "hit": "包含Meta Ray-Ban Display眼镜和Meta神经感应腕带的套装起售价799美元），Meta Ray-Ban Display眼镜将允许你以全新方式体验、认知与交互世界。",
+    "before": [
+     "这款肌电腕带能解读肌肉活动产生的自然信号来控制眼镜功能，通过微妙手势即可直观操控体验，无需触碰眼镜或手机。",
+     "操作如此轻松自如，仿佛施展神奇魔法。"
+    ],
+    "after": [
+     "套装将于9月30日率先登陆美国部分实体零售商（包括百思买、LensCrafters、Ray-Ban专卖店及Verizon门店），二2026年初将扩展至加拿大、法国、意大利和英国。",
+     "Meta表示，通过精选渠道发售以确保用户获得最适合的产品，未来将逐步扩大购买选择。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "Meta Display 的几何波导实现了 42 PPD（每度像素数）——这是当前波导设备的最高水准，且漏光率仅 2% （映维网资讯） ，显示效果与隐蔽性已接近实用临界点。",
+    "matched": true,
+    "hit": "研究人员实现了每度视场42像素的显示精度（注：当前市面唯一超过42ppd的波导设备是已停售的大型头显）。",
+    "before": [
+     "为打造配得起雷朋之名的时尚眼镜，团队重构了整个显示系统。",
+     "单目显示器采用高度定制化光引擎与几何波导技术，通过微型化定制模块实现卓越计算效率、锐利对比度与高亮度，关键是在不增大镜框的前提下实现高分辨率。"
+    ],
+    "after": [
+     "变色镜片与自动亮度算法确保室内外视觉画面始终鲜艳清晰。",
+     "私密镜片显示仅2%的光线泄露率，在保持亮度的同时兼顾隐蔽性。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "…2 支持 100 余种语言互译、总续航 96 小时，听障人群字幕辅助成为差异化卖点 （LEDinside|LED在线） ；导航与信息提示依赖显示类产品，Meta Display 的步行导航、夸克 S1 的提词器均属此类 （映维网资讯） ；影音娱乐则由分体式 AR 眼镜承接，等效百英寸级巨幕观影、240Hz 游戏显示（ROG XREAL R1）是主要卖点 （VR陀螺） 。",
+    "matched": true,
+    "hit": "（ 映维网Nweon 2025年09月18日 ）在今日的Connect大会，马克·扎克伯格展示了人工 智能眼镜 领域的突破性进化：Meta Ray-Ban Display眼镜和Meta神经感应腕带。",
+    "before": [
+     "查看 引用/信息源 请点击： 映维网Nweon",
+     "Meta Ray-Ban Display眼镜和Meta神经感应腕带"
+    ],
+    "after": [
+     "预览照片、通过视觉化Meta AI提示进行协作等日常操作，无需掏出手机，这项技术允许你始终感知周遭世界，而非隔绝现实。",
+     "Meta Ray-Ban Display这款全新 AI眼镜 配备全彩色高分辨率显示屏，需要时清晰呈现，无需时隐于无形。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S22",
+  "name": "treeview.studio",
+  "url": "https://treeview.studio/blog/xr-spatial-computing-smart-glasses-market-statistics-report",
+  "grade": "D",
+  "gradeReason": "境外工作室博客聚合",
+  "status": "ok",
+  "failReason": "",
+  "title": "XR & Smart Glasses Market Statistics Report (2026) | Treeview",
+  "date": "",
+  "textLen": 39353,
+  "anchors": [
+   {
+    "claim": "EssilorLuxottica 财报显示 2025 年 Ray-Ban 与 Oakley 联名 Meta 眼镜合计出货约 900 万台，Meta 内部智能眼镜硬件收入（约 21.5 亿美元）首次超过 Quest 头显收入（6.6 亿美元） （treeview.studio） 。",
+    "matched": true,
+    "hit": "Eugenia, best known as Eugi, is a Digital Marketer at Treeview with a focus on content, communications and growth. A self-proclaimed tech enthusiast, she is passionate about bringing the world of spatial computing to a wider audience.",
+    "before": [
+     "Eugenia Gallo",
+     "Digital Marketer"
+    ],
+    "after": [
+     "Eugenia Gallo",
+     "Digital Marketer"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "苹果则被彭博社多次报道正在研发代号 N50 的智能眼镜，对标 Ray-Ban Meta 的摄像头+麦克风+AI 助手组合，Siri 为主交互，目标 2026 年底至 2027 年发布 （treeview.studio） 。",
+    "matched": true,
+    "hit": "The financial structure behind that dominance has not changed. Reality Labs has now absorbed roughly $92.2 billion in cumulative operating losses since late 2020 while generating a fraction of that in revenue. Meta has publicly rebalanced the division toward wearables, with Susan Li telling analysts the company is meaningfully reducing its investment in VR and Horizon while growing investment in wearables. The strategic question for 2027 is no longer whether smart glasses outsell headsets inside Meta, which they already do, but whether the category can reach a revenue scale that justifies the spending.",
+    "before": [
+     "Smart glasses won the volume race not because they are the most technically capable XR device, but because they are the most wearable one. They outsold VR/MR headsets by a ratio of roughly 3:1 in 2025. That gap is likely to widen before it narrows.",
+     "Meta’s dominance is deeper than it looks. Meta holds 75.7% of XR shipment volume, but its strategic position is more concentrated than even that number suggests. Ray-Ban Meta smart glasses generated an estimated $2.15B in hardware revenue in 2025, more than Quest for the first time ever. Meta now has two separate high-volume product lines in two separate XR categories. No other company has one, but that is about to change."
+    ],
+    "after": [
+     "Two significant launches in the smart glasses market are taking shape simultaneously. The first is Apple. Reports as of early 2026 suggest there are no Apple Vision headsets in active development, with the company’s focus pivoting decisively toward smart glasses. Bloomberg reported that Apple is aiming to release smart glasses by end of 2026 as part of a broader push into AI-enhanced products. The first model will match Ray-Ban Meta’s camera, microphone and AI feature set, with Siri serving as the primary interface .",
+     "The second launch is Android XR . Samsung confirmed at MWC that it is targeting an AI-powered smart glasses launch in 2026, built in partnership with Google and Qualcomm, featuring a camera and microphone and tethered to a smartphone. Samsung is reportedly developing two distinct models, both expected to ship in 2026, potentially weighing as little as 50 grams, with deep integration with Google’s Gemini AI assistant. Google’s Android XR smart glasses were confirmed at Google I/O 2026, with audio glasses launching fall 2026 and display glasses following later with no date confirmed. Frame partners are Warby Parker (everyday styles) and Gentle Monster (fashion styles), each with full collections. Both models work with Android and iOS, run Gemini triggered by “Hey Google” or a frame tap, and support turn-by-turn navigation, real-time translation (audio output matches speaker tone and pitch), photo and video capture with Nano Banana AI editing, and agentic task execution. Third-party apps confirmed at launch include Uber and Mondly."
+    ],
+    "note": ""
+   },
+   {
+    "claim": "Meta 的 Reality Labs 自 2020 年末以来累计经营亏损约 922 亿美元，尽管公司已将资源明显从 VR/Horizon 向可穿戴倾斜 （treeview.studio） 。",
+    "matched": true,
+    "hit": "The financial structure behind that dominance has not changed. Reality Labs has now absorbed roughly $92.2 billion in cumulative operating losses since late 2020 while generating a fraction of that in revenue. Meta has publicly rebalanced the division toward wearables, with Susan Li telling analysts the company is meaningfully reducing its investment in VR and Horizon while growing investment in wearables. The strategic question for 2027 is no longer whether smart glasses outsell headsets inside Meta, which they already do, but whether the category can reach a revenue scale that justifies the spending.",
+    "before": [
+     "Smart glasses won the volume race not because they are the most technically capable XR device, but because they are the most wearable one. They outsold VR/MR headsets by a ratio of roughly 3:1 in 2025. That gap is likely to widen before it narrows.",
+     "Meta’s dominance is deeper than it looks. Meta holds 75.7% of XR shipment volume, but its strategic position is more concentrated than even that number suggests. Ray-Ban Meta smart glasses generated an estimated $2.15B in hardware revenue in 2025, more than Quest for the first time ever. Meta now has two separate high-volume product lines in two separate XR categories. No other company has one, but that is about to change."
+    ],
+    "after": [
+     "Two significant launches in the smart glasses market are taking shape simultaneously. The first is Apple. Reports as of early 2026 suggest there are no Apple Vision headsets in active development, with the company’s focus pivoting decisively toward smart glasses. Bloomberg reported that Apple is aiming to release smart glasses by end of 2026 as part of a broader push into AI-enhanced products. The first model will match Ray-Ban Meta’s camera, microphone and AI feature set, with Siri serving as the primary interface .",
+     "The second launch is Android XR . Samsung confirmed at MWC that it is targeting an AI-powered smart glasses launch in 2026, built in partnership with Google and Qualcomm, featuring a camera and microphone and tethered to a smartphone. Samsung is reportedly developing two distinct models, both expected to ship in 2026, potentially weighing as little as 50 grams, with deep integration with Google’s Gemini AI assistant. Google’s Android XR smart glasses were confirmed at Google I/O 2026, with audio glasses launching fall 2026 and display glasses following later with no date confirmed. Frame partners are Warby Parker (everyday styles) and Gentle Monster (fashion styles), each with full collections. Both models work with Android and iOS, run Gemini triggered by “Hey Google” or a frame tap, and support turn-by-turn navigation, real-time translation (audio output matches speaker tone and pitch), photo and video capture with Nano Banana AI editing, and agentic task execution. Third-party apps confirmed at launch include Uber and Mondly."
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S23",
+  "name": "发现报告",
+  "url": "https://www.fxbaogao.com/detail/5080110",
+  "grade": "C",
+  "gradeReason": "报告聚合站",
+  "status": "ok",
+  "failReason": "",
+  "title": "[国信证券]：Meta Connect 2025：聚焦AI智能眼镜 - 发现报告",
+  "date": "2025年9月17",
+  "textLen": 6776,
+  "anchors": [
+   {
+    "claim": "2025 年 9 月发布的 Meta Ray-Ban Display 是品类史上的标志性产品：右镜片集成 600×600 像素、42 PPD、峰值亮度 5000 尼特的单目全彩几何波导显示屏，配套基于表面肌电（sEMG）技术的 Neural Band 神经腕带实现隔空手势操控，整机 69 克，续航 6 小时（配充电盒 30 小时），套装售价 799 美元 （发现报告） 。",
+    "matched": true,
+    "hit": "本次大会上，最受瞩目的产品是Meta Ray-Ban Display，定价为799美元，将于9月30日正式上市。",
+    "before": [
+     "Meta Connect 2025核心硬件产品",
+     "Meta Ray-Ban Display：革命性的AR体验"
+    ],
+    "after": [
+     "作为Meta首款搭载透明显示器的消费级智能眼镜，其在右眼镜片内集成了一块600x600像素的全彩高分辨率显示屏，亮度高达5,000 nits，能够显示文字信息、导航指示、实时翻译和AI助理对话等内容。",
+     "这款眼镜的创新之处在于其交互方式——搭配Meta Neural Band神经腕带，通过表面肌电（sEMG）技术检测手部微小动作和肌肉信号，实现无需屏幕的隐形操控。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S24",
+  "name": "雪球",
+  "url": "https://xueqiu.com/9216592857/369525193",
+  "grade": "C",
+  "gradeReason": "投资社区帖子（转述券商观点）",
+  "status": "fail",
+  "failReason": "正文提取过短（可能需登录/反爬）",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "产品上市后供不应求，等待名单排至 2026 年之后，Meta 被迫推迟英、法、意、加等市场的扩张计划，合作伙伴 Luxottica 计划 2026 年将联名眼镜产能扩至 1000 万台 （雪球） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（正文提取过短（可能需登录/反爬））"
+   }
+  ]
+ },
+ {
+  "id": "S25",
+  "name": "lmtw.com",
+  "url": "https://lmtw.com/mzw/content/detail/id/251613",
+  "grade": "C",
+  "gradeReason": "行业站点（转载洛图数据）",
+  "status": "ok",
+  "failReason": "",
+  "title": "2025年中国智能眼镜销量大涨211%下的品牌竞争格局 | 流媒体网",
+  "date": "",
+  "textLen": 3790,
+  "anchors": [
+   {
+    "claim": "2025 年中国线上市场 CR4（雷鸟创新、XREAL、Rokid、星纪魅族）达 78.4%，其中雷鸟创新以 35.4% 的份额连续四年居中国线上第一 （lmtw.com） 。",
+    "matched": true,
+    "hit": "在主力销售渠道的线上市场中，根据洛图科技（RUNTO）数据显示，2025年，雷鸟创新、Xreal、Rokid、星纪魅族位列销量的TOP4，合计销量份额（CR4）为 78.4%。",
+    "before": [
+     "中国市场的规模 从2024年的26.7万台增长至2025年的48.9万台，增幅达83.2%，近乎翻倍 。",
+     "2025年的中国市场整体上品牌竞争激烈，集中度有所下滑，呈现的核心特征是：头部品牌相对稳固、第二梯队博弈加剧，行业向多元化对抗加速演进。"
+    ],
+    "after": [
+     "2025 年 中国AR眼镜线上市场品牌销量份额及变化",
+     "数据来源：洛图科技（ RUNTO）线上数据，单位：%"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S26",
+  "name": "爱范儿",
+  "url": "https://www.ifanr.com/1638234",
+  "grade": "B",
+  "gradeReason": "主流科技媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "小扎演示多次翻车，但这依然是 2025 最好的 AI 眼镜 | 附现场体验 | 爱范儿",
+  "date": "2025-09-18",
+  "textLen": 5830,
+  "anchors": [
+   {
+    "claim": "| Ray-Ban Meta Gen 2 | Meta×雷朋 | 拍摄 AI | 379 美元 （爱范儿）  | ~50g | 1200 万像素、8 小时续航、Meta AI |",
+    "matched": true,
+    "hit": "Ray-Ban Meta (Gen 2)：小改款，是面向大众的主力机型，外观上更时尚，续航和拍摄能力大幅提升，售价 379 美元。",
+    "before": [
+     "Meta Ray-Ban Display： Meta 首款带显示屏的智能眼镜。",
+     "通过彩色光波导 HUD 和 Neural Band 腕带，把「脸上的 AI」从概念变成现实，售价 799 美元。"
+    ],
+    "after": [
+     "Oakley Meta Vanguard：面向运动与极客人群，防风镜造型、中央广角摄像头、长续航和运动数据整合，甚至配备训练提醒灯，售价 499 美元。",
+     "Hyperscape：把现实空间「搬进」虚拟空间，Quest 用户可以扫描房间生成逼真的 VR 副本，不过目前仍是 Beta 版。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S27",
+  "name": "10100.com",
+  "url": "https://www.10100.com/article/137120996",
+  "grade": "D",
+  "gradeReason": "陌生聚合站，责任主体不明",
+  "status": "ok",
+  "failReason": "",
+  "title": "2025智能眼镜终极横评：小米/雷鸟/Rokid谁是性价比之王？- 大数跨境",
+  "date": "",
+  "textLen": 1886,
+  "anchors": [
+   {
+    "claim": "| 小米 AI 眼镜 | 小米 | 拍摄 AI | 1999 元 （10100.com）  | 40g | 高通 AR1+恒玄 BES2700 双芯、8.6 小时续航 （36氪）  |",
+    "matched": true,
+    "hit": "8.6小时续航、40g轻量化设计、1200万像素拍摄，以及与米家生态的深度整合，都让它成为日常使用的理想伴侣。",
+    "before": [
+     "4.1 普通用户首选：小米AI眼镜（1999元）",
+     "如果你追求 性价比 和 实用性 ，小米AI眼镜是最佳选择。"
+    ],
+    "after": [
+     "4.2 极客党直接冲：雷鸟X3 Pro（7649元起）",
+     "如果你是科技发烧友，追求 前沿体验 ，雷鸟X3 Pro的全彩AR显示和强大的空间计算能力绝对值得一试。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "| 雷鸟 X3 Pro | 雷鸟创新 | 双目全彩 AR | 7649 元 （10100.com）  | 76g | Micro OLED+光波导、eSIM 独立通信版本 （澎湃新闻）  |",
+    "matched": true,
+    "hit": "本次横评选取了五款热门产品：小米AI眼镜（1999元）、雷鸟V3（1799元起）、雷鸟X3 Pro（7649元起）、Rokid Glasses（2999元）和Rokid AR Lite（3499元），从续航、重量、AR功能和隐私保护四个维度进行深度对比，为不同需求的用户提供购买建议。",
+    "before": [
+     "2025年，智能眼镜市场迎来爆发期，各大厂商纷纷推出新品。"
+    ],
+    "after": [
+     "一、核心参数对比",
+     "1.2 意外发现：续航差距显著"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "| Rokid Glasses | Rokid | 单目光波导 AR | 2999 元 （10100.com）  | 49g | Micro LED+光波导、声纹支付、AR 导航 （LEDinside|LED在线）  |",
+    "matched": true,
+    "hit": "本次横评选取了五款热门产品：小米AI眼镜（1999元）、雷鸟V3（1799元起）、雷鸟X3 Pro（7649元起）、Rokid Glasses（2999元）和Rokid AR Lite（3499元），从续航、重量、AR功能和隐私保护四个维度进行深度对比，为不同需求的用户提供购买建议。",
+    "before": [
+     "2025年，智能眼镜市场迎来爆发期，各大厂商纷纷推出新品。"
+    ],
+    "after": [
+     "一、核心参数对比",
+     "1.2 意外发现：续航差距显著"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "此外，声纹支付（Rokid）、车机联动（理想）、工业远程协作（效率提升 40%）等 B 端与生态场景正在展开 （10100.com） 。",
+    "matched": true,
+    "hit": "Rokid Glasses支持AR导览和声纹支付，小米AI眼镜的AR功能相对基础，而雷鸟V3则不具备显示功能，更侧重于AI拍摄。",
+    "before": [
+     "雷鸟X3 Pro 在AR功能上表现最为出色，搭载全球最小可量产全彩Micro-LED光引擎，实现43英寸全彩3D空中透明屏显示效果，支持空间导航和Apple Watch控制。",
+     "Rokid AR Lite则主打\"巨幕体验\"，支持等效6米外300英寸超级大屏，适合影音娱乐。"
+    ],
+    "after": [
+     "小米AI眼镜和Rokid Glasses在隐私保护方面表现最佳。",
+     "小米采用本地数据处理和拍摄指示灯，Rokid则加入声纹加密技术。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S28",
+  "name": "36氪",
+  "url": "https://www.36kr.com/p/3568319356550022",
+  "grade": "B",
+  "gradeReason": "主流科技媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "AI眼镜元年，SoC厂商抢滩-36氪",
+  "date": "2026-08-11",
+  "textLen": 4148,
+  "anchors": [
+   {
+    "claim": "| 小米 AI 眼镜 | 小米 | 拍摄 AI | 1999 元 （10100.com）  | 40g | 高通 AR1+恒玄 BES2700 双芯、8.6 小时续航 （36氪）  |",
+    "matched": true,
+    "hit": "小米AI眼镜 也是采用双芯片架构， 高通AR1旗舰芯片加上恒玄BES2700的芯片方案。",
+    "before": [
+     "值得注意的是，2025年推出的多款高端AI眼镜开始采用“双芯片”设计。",
+     "例如： 阿里夸克AI眼镜搭载高通AR1旗舰芯片 + 恒玄BES2800协处理器， 并配备“双电池+换电仓”设计，支持热插拔更换主电池，最长续航可达24小时。"
+    ],
+    "after": [
+     "这种分工协作的设计思路源于现实约束：单一SoC难以同时满足高性能AI计算与全天候待机的需求。",
+     "通过让协处理器持续监控麦克风、加速度计等传感器，在检测到关键词后才唤醒主芯片，可大幅降低待机功耗，延长使用时间。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "为平衡性能与续航，高端产品普遍采用\"高通 AR1 主芯片 + 恒玄 BES2700/2800 协处理器\"的双芯片架构——协处理器持续监听传感器与关键词，仅在需要时唤醒主芯片，显著降低待机功耗，夸克 S1、小米 AI 眼镜、千问 G1 均为该方案 （36氪） 。",
+    "matched": true,
+    "hit": "例如： 阿里夸克AI眼镜搭载高通AR1旗舰芯片 + 恒玄BES2800协处理器， 并配备“双电池+换电仓”设计，支持热插拔更换主电池，最长续航可达24小时。",
+    "before": [
+     "SoC往往采用高通的产品，MCU就用恒玄科技BES2500YP、紫光展锐的W517等。",
+     "值得注意的是，2025年推出的多款高端AI眼镜开始采用“双芯片”设计。"
+    ],
+    "after": [
+     "小米AI眼镜 也是采用双芯片架构， 高通AR1旗舰芯片加上恒玄BES2700的芯片方案。",
+     "这种分工协作的设计思路源于现实约束：单一SoC难以同时满足高性能AI计算与全天候待机的需求。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "国产芯片方面，恒玄科技、紫光展锐（W517）、炬芯科技、物奇等已实现量产落地，展锐 W517 主打中低端差异化市场 （36氪） 。",
+    "matched": true,
+    "hit": "青橙无线、魔样科技、英卡智能等方案商普遍采用 全志科技 V821作为主控芯片，优创亿则选用 星宸科技 平台，百泰科技使用物奇方案，叩鼎科技搭配 国科微， 微克智能采用 博通集成 ，小糯米引入 紫光展锐 W517，莫界科技基于 意法半导体 STM32系列开发，康冠股份则直接接入高通AR1平台。",
+    "before": [
+     "AI眼镜SoC，多元化布局",
+     "当前主流AI眼镜方案商所采用的主控平台呈现多元化格局。"
+    ],
+    "after": [
+     "目前 全志科技 V821基本上称霸中低端市场，青橙无线作为目前出货量最大的方案商之一，月出货量稳定在5万至8万台之间，普遍采用 “全志V821 + 杰理AC7018” 双芯片架构，主打性价比路线。",
+     "更关键的是， V821的成本极具竞争力，官方披露仅3~5美元 ，远低于高通AR1 Gen1约60美元的售价。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S29",
+  "name": "LEDinside|LED在线",
+  "url": "https://www.ledinside.cn/showreport/20260108-60860.html",
+  "grade": "B",
+  "gradeReason": "行业研究机构媒体",
+  "status": "ok",
+  "failReason": "",
+  "title": "CES 2026：24款AR眼镜大盘点-LED在线",
+  "date": "",
+  "textLen": 469,
+  "anchors": [
+   {
+    "claim": "| 夸克 AI 眼镜 S1 | 阿里 | 双目光波导 AR | 约 3799 元 | 51g | 双目衍射光波导、JBD 蜂鸟光机、可换电 （LEDinside|LED在线）  |",
+    "matched": false,
+    "hit": "",
+    "before": [
+     "CES 2026：京东方、TCL华星、惠科等10家面板企业新品一览",
+     "CES 2026展场直击：RGB Mini LED、Micro LED全场景渗透"
+    ],
+    "after": [],
+    "note": "已获取原文，但未定位到精确对应句，需人工核对"
+   },
+   {
+    "claim": "| Rokid Glasses | Rokid | 单目光波导 AR | 2999 元 （10100.com）  | 49g | Micro LED+光波导、声纹支付、AR 导航 （LEDinside|LED在线）  |",
+    "matched": true,
+    "hit": "CES 2026展场直击：RGB Mini LED、Micro LED全场景渗透",
+    "before": [
+     "CES 2026：京东方、TCL华星、惠科等10家面板企业新品一览"
+    ],
+    "after": [
+     "直击2025年香港秋季灯饰展",
+     "第26届光博会直击：超30家企业展出XR眼镜技术产品"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "…中国拍摄眼镜市场一年内从零做到 50 万台 （网易新闻客户端） ；实时翻译与字幕是付费意愿最强的生产力场景，亮亮视野 Leion Hey2 支持 100 余种语言互译、总续航 96 小时，听障人群字幕辅助成为差异化卖点 （LEDinside|LED在线） ；导航与信息提示依赖显示类产品，Meta Display 的步行导航、夸克 S1 的提词器均属此类 （映维网资讯） ；影音娱乐则由分体式 AR 眼镜承接，等效百英寸级巨幕观影、240Hz 游戏显示（ROG XREAL R1）…",
+    "matched": false,
+    "hit": "",
+    "before": [
+     "CES 2026：京东方、TCL华星、惠科等10家面板企业新品一览",
+     "CES 2026展场直击：RGB Mini LED、Micro LED全场景渗透"
+    ],
+    "after": [],
+    "note": "已获取原文，但未定位到精确对应句，需人工核对"
+   }
+  ]
+ },
+ {
+  "id": "S30",
+  "name": "VR陀螺",
+  "url": "https://www.vrtuoluo.cn/545152.html",
+  "grade": "B",
+  "gradeReason": "XR 行业头部垂直媒体原创",
+  "status": "ok",
+  "failReason": "",
+  "title": "2026年AI眼镜盘点：新品井喷，巨头混战_VR陀螺",
+  "date": "",
+  "textLen": 9481,
+  "anchors": [
+   {
+    "claim": "| 千问 AI 眼镜 G1 | 阿里 | 拍摄 AI | 约 3000 元档 | ~40g | 高通 AR1+恒玄 BES2800、热插拔换电 （VR陀螺）  |",
+    "matched": true,
+    "hit": "核心硬件层面，G1采用了双芯双系统架构：高通骁龙AR1旗舰处理器 + 恒玄BES2800芯片。",
+    "before": [
+     "右镜腿采用热插拔换电设计，支持换电不断电的接力续航，提升户外与长时间使用的续航体验。",
+     "此次发售的威灵顿框标配蔡司防蓝光平光镜片，同时还特别推出“多彩款”，上线 7 款彩色镜片，针对骑行、高尔夫、帆船、海钓等不同户外场景，均有专属镜片匹配。"
+    ],
+    "after": [
+     "在多模态交互方面，支持Live Talk实时对话功能，可以实现边看边问的连续交互。",
+     "影像拍摄方面，G1搭载了索尼IMX681传感器，具备1200万像素、f/2.2光圈及109°超广角。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "…依赖显示类产品，Meta Display 的步行导航、夸克 S1 的提词器均属此类 （映维网资讯） ；影音娱乐则由分体式 AR 眼镜承接，等效百英寸级巨幕观影、240Hz 游戏显示（ROG XREAL R1）是主要卖点 （VR陀螺） 。",
+    "matched": true,
+    "hit": "ROG XREAL R1 ​​AR​游戏眼镜",
+    "before": [
+     "眼镜专为全天候佩戴设计，配合充电盒使用，续航时间可长达一周。",
+     "采用单眼显示设计，呈现关键信息。"
+    ],
+    "after": [
+     "据报道该眼镜是世界首款FHD分辨率、240Hz高刷新率的Micro-OLED游戏眼镜。",
+     "可在4米距离投射出171英寸虚拟巨屏，拥有57°视场角，内置3DoF技术，并配备Bose调校的音频系统。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S31",
+  "name": "蓝鲸财经",
+  "url": "https://www.lanjinger.com/d/1781574565509087513",
+  "grade": "B",
+  "gradeReason": "财经媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "AI眼镜赛道全面起势，离“非戴不可”还有多远？_资讯-蓝鲸财经",
+  "date": "2026-04-1",
+  "textLen": 5744,
+  "anchors": [
+   {
+    "claim": "| 小度 AI 眼镜 Pro | 百度 | 拍摄 AI | 约 2000 元档 | ~39g | 五麦克风阵列、多模态小度助手 （蓝鲸财经）  |",
+    "matched": true,
+    "hit": "此外，小度AI眼镜Pro还搭载“超能小度”多模态AI智能助手，支持AI翻译、AI识物、AI导航、AI备忘、AI录音、AI智控、氛围歌单等丰富功能。",
+    "before": [
+     "例如，在拍摄方面，小度AI眼镜Pro内置EIS智能防抖、地平线感知矫正等智能算法，确保画面始终清晰流畅，同时提供多种主题风格滤镜，拍照即出片，省去修图烦恼。",
+     "在通话方面，其搭载了五麦克风阵列与自研ENC通话降噪算法，即使在嘈杂环境中，也能保证清晰通话，同时逆声场防漏音系统通过声学结构叠加防漏音膜设计，也可有效保护通话的隐私性。"
+    ],
+    "after": [
+     "可以看出，小度AI眼镜Pro主攻日常可用性，把有限的功耗与算力集中用于语音、摄像头与多模态理解，在翻译、拍摄以及会议纪要等核心使用场景上进行极致的产品打磨。",
+     "小度的路线是先把“戴得住-用得上-离不开”的最小闭环做扎实，也恰好是让AI眼镜从科技圈走到大众日常的最可复制路径。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S32",
+  "name": "VR陀螺",
+  "url": "https://www.vrtuoluo.cn/545196.html",
+  "grade": "B",
+  "gradeReason": "XR 行业头部垂直媒体原创",
+  "status": "ok",
+  "failReason": "",
+  "title": "Android XR加持！三星首款AI眼镜发布在即，底牌是“全家桶”_VR陀螺",
+  "date": "",
+  "textLen": 3757,
+  "anchors": [
+   {
+    "claim": "| Galaxy Glasses（传闻） | 三星×Google | 拍摄 AI | 未公布 | ~50g | Android XR、Gemini、高通 AR1 （VR陀螺）  |",
+    "matched": true,
+    "hit": "早在去年的 Google I/O 上 ，Google 就展示了与三星合作的首款 Android XR 硬件——Galaxy XR，并于 2025 年 10 月正式发售。",
+    "before": [
+     "微信里点“发现”，扫一下 二维码便可将本文分享至朋友圈",
+     "伴随着 5 月 20 日 Google I/O 2026 的临近，我们有望看到三星与 Google 合作的首款 AI 眼镜。"
+    ],
+    "after": [
+     "作为 Google 与三星合作的 Android XR 阵营的第二款产品，三星首款 AI 眼镜现已进入发布倒计时，预计将在 Google I/O 2026 上作为标杆案例进行展示，并在 7 月的“Galaxy Unpacked”上正式发布。",
+     "一、三星首款AI拍摄眼镜，最大卖点在于SmartThings"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "…x.pk） ；三星 Galaxy Glasses 预计 2026 年 7 月 22 日在伦敦 Unpacked 发布，与 Gentle Monster 合作设计，深度集成 Gemini 与 SmartThings 生态 （VR陀螺） 。",
+    "matched": true,
+    "hit": "作为 Google 与三星合作的 Android XR 阵营的第二款产品，三星首款 AI 眼镜现已进入发布倒计时，预计将在 Google I/O 2026 上作为标杆案例进行展示，并在 7 月的“Galaxy Unpacked”上正式发布。",
+    "before": [
+     "伴随着 5 月 20 日 Google I/O 2026 的临近，我们有望看到三星与 Google 合作的首款 AI 眼镜。",
+     "早在去年的 Google I/O 上 ，Google 就展示了与三星合作的首款 Android XR 硬件——Galaxy XR，并于 2025 年 10 月正式发售。"
+    ],
+    "after": [
+     "一、三星首款AI拍摄眼镜，最大卖点在于SmartThings",
+     "根据 Android Headlines 早前泄露的图像显示，三星的 Galaxy Glasses 采用了标准的时尚墨镜设计，镜框上配备了摄像头与隐私提示灯。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S33",
+  "name": "IT之家",
+  "url": "https://www.ithome.com/0/977/226.htm",
+  "grade": "B",
+  "gradeReason": "主流科技媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "消息称字节叫停第一代豆包 AI 眼镜，第二代规划全功能版和轻量版双版本、下半年上市 - IT之家",
+  "date": "",
+  "textLen": 762,
+  "anchors": [
+   {
+    "claim": "字节的豆包 AI 眼镜则经历了一波三折：第一代产品在 2026 年 4 月发布前夕被叫停，第二代改为\"全功能版+20 余克轻量版\"双 SKU，芯片切换为高通 AR1+恒玄 BES2800，代工从歌尔换成龙旗，预计 2026 年下半年上市 （IT之家） 。",
+    "matched": true,
+    "hit": "芯片方案也从供应链消息指向的“恒玄 BES2800 + 研极微 ISP”，换成了“高通 AR1 + 恒玄 BES2800”。",
+    "before": [
+     "产品已经走到发布前最后阶段，该项目最终被叫停。",
+     "第二代被推迟到 2026 年下半年，而且直接拆成了两个版本 —— 一个堆满功能，一个把重量死磕到 20 多克。"
+    ],
+    "after": [
+     "此外，代工与供应链的合作方，也在这次推倒重来中被一并换掉。",
+     "第一代基于歌尔股份的公版方案打造；"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S34",
+  "name": "dfcfw.com",
+  "url": "https://pdf.dfcfw.com/pdf/H3_AP202410141640282443_1.pdf",
+  "grade": "B",
+  "gradeReason": "券商研报原文 PDF（卖方立场）",
+  "status": "ok",
+  "failReason": "",
+  "title": "华为 Vision Glass 硬件成本拆解研报",
+  "date": "2024/10/11",
+  "textLen": 34248,
+  "anchors": [
+   {
+    "claim": "…有两条：其一是 Micro OLED + Birdbath，成本成熟、色彩表现好，是分体式观影眼镜的主流选择——华为 Vision Glass 的硬件成本拆解显示，屏幕与 Birdbath 模组合计占物料成本近 78% （dfcfw.com） ；其二是 Micro LED + 光波导，入眼亮度高（Micro LED 可达 10 万尼特级）、模组轻薄，是一体式全天候眼镜的终局方向，TrendForce 预测到 2030 年 Micro LED 在 AR 装置市场的份额将达 44…",
+    "matched": true,
+    "hit": "Air 1S 2022 年 10 月 分体式 Micro OLED+BirdBath 双目 45° 82 2499 元",
+    "before": [
+     "雷鸟",
+     "Air 2022 年 1 月 分体式 Micro OLED+BirdBath 双目 47° 69 3299 元"
+    ],
+    "after": [
+     "Air Plus 2023 年 5 月 分体式（选配主机盒子） Micro OLED+BirdBath 双目 49° 87 2499 元",
+     "X2 2023 年 10 月 一体式（高通骁龙 XR2) 全彩 Micro-LED+衍射光波导 双目 25° 119 4999 元"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S35",
+  "name": "chaoyidianzi.com",
+  "url": "http://www.chaoyidianzi.com/dongtai/yynews/2485.html",
+  "grade": "C",
+  "gradeReason": "电子行业小站转载",
+  "status": "ok",
+  "failReason": "",
+  "title": "2025AR眼镜大爆发，Micro LED如何点亮未来视觉",
+  "date": "1125/1-25",
+  "textLen": 1235,
+  "anchors": [
+   {
+    "claim": "… LED + 光波导，入眼亮度高（Micro LED 可达 10 万尼特级）、模组轻薄，是一体式全天候眼镜的终局方向，TrendForce 预测到 2030 年 Micro LED 在 AR 装置市场的份额将达 44% （chaoyidianzi.com） 。",
+    "matched": true,
+    "hit": "TrendForce预测，到2030年Micro LED在AR装置市场的份额将达44%，对应2550万台设备规模。",
+    "before": [
+     "Micro LED技术正经历从实验室到量产线的关键跨越。",
+     "格罗方德研发的GaN LED+CMOS背板方案已实现全彩显示的商业化突破，国内厂商如思坦科技在厦门建立年产600万套量产线，采用垂直堆叠像素技术将像素间距压缩至3-5微米。"
+    ],
+    "after": [
+     "二、从核心部件到生态构建",
+     "在资本市场上，2025年上半年智能眼镜领域完成66笔融资，总金额达559.8亿元，其中53%资金流向光波导镀膜、Micro-OLED等核心环节。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "据陀螺研究院数据，2025 年该领域全球融资额突破 300 亿元，创近十年新高 （36氪） ；2025 年上半年国内智能眼镜领域完成 66 笔融资、总金额 559.8 亿元（含产业链），其中 53% 流向光波导镀膜、Micro OLED 等核心环节 （chaoyidianzi.com） 。",
+    "matched": true,
+    "hit": "在资本市场上，2025年上半年智能眼镜领域完成66笔融资，总金额达559.8亿元，其中53%资金流向光波导镀膜、Micro-OLED等核心环节。",
+    "before": [
+     "TrendForce预测，到2030年Micro LED在AR装置市场的份额将达44%，对应2550万台设备规模。",
+     "二、从核心部件到生态构建"
+    ],
+    "after": [
+     "这种投资转向印证了产业共识：掌握芯片、光学与显示三大核心部件的企业将主导下一代计算平台的入口。",
+     "超毅电子作为台湾亿光电子的代理商，像是高光效4014系列贴片灯珠、宽视角红外接收头等产品，可为AR设备制造商提供需要的电子元器件方案以及技术支持。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S36",
+  "name": "VR陀螺",
+  "url": "https://www.vrtuoluo.cn/543632.html",
+  "grade": "B",
+  "gradeReason": "XR 行业头部垂直媒体原创",
+  "status": "ok",
+  "failReason": "",
+  "title": "两万字汇总｜2025光博会，看到AR产业全面商业化爆发的曙光_VR陀螺",
+  "date": "",
+  "textLen": 25745,
+  "anchors": [
+   {
+    "claim": "光波导内部，几何光波导（Meta Display 采用）、表面浮雕衍射光波导（SRG，夸克 S1、Rokid Glasses 采用）与体全息光波导（PVG/VHG）并行竞争；PVG 因无需半导体工艺、量产成本优势明显，正扮演\"价格屠夫\"角色，谷东智能与光峰科技的\"PVG+LCoS\"方案有望将终端价格下探至 1500–2000 元区间，形意智能基于 VHG 波导的 AR99 已低至 999 元 （VR陀螺） 。",
+    "matched": true,
+    "hit": "谷东智能与光峰科技在现场召开了联合发布会，展示“PVG一拖二波导+LCoS”AR光学解决方案，据悉终端产品价格有望下探至1500-2000元区间。",
+    "before": [
+     "最后，今年PVG体全息波导也有较高的亮相频率，并且已经开始扮演AR波导价格屠夫的角色：",
+     "立讯精密展台展出了一款单绿色体全息波导AR眼镜云雀2.0，采用高通AR1+恒玄2800的芯片方案，波导来自南京平行视界；"
+    ],
+    "after": [
+     "形意智能推出旗下最新AR眼镜AR99，采用VHG波导+Micro-LED，价格已经来到了999元。",
+     "体全息光波导同样是AR波导的一项重要技术路线之一，它利用体全息光栅来耦合和传输光，由于它不需要像SRG波导一样利用半导体设备进行加工，因而在规模量产方面具有很大成本优势。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S37",
+  "name": "什么值得买",
+  "url": "https://post.smzdm.com/p/a95lk4op",
+  "grade": "C",
+  "gradeReason": "消费社区内容（政策转述）",
+  "status": "fail",
+  "failReason": "HTTP 202",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "行业数据显示，光机成本已从高位下降约 40% 至 20 美元量级，水晶光电等厂商的 AR 光学模组良率从 30% 提升至 65%、单套成本降至 40 美元以下 （什么值得买） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 202）"
+   }
+  ]
+ },
+ {
+  "id": "S38",
+  "name": "36氪",
+  "url": "https://www.36kr.com/p/3448012057793922",
+  "grade": "B",
+  "gradeReason": "主流科技媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "成交量10倍增长，平均9天一款新品，深扒AI眼镜野蛮生长背后-36氪",
+  "date": "2026-08-11",
+  "textLen": 5801,
+  "anchors": [
+   {
+    "claim": "芯片格局高度集中：高通骁龙 AR1 + 索尼 IMX681 1200 万像素摄像头已成为行业\"标准模板\"，雷鸟、小米、阿里、联想、中国电信等 2025 年新品几乎清一色采用该组合 （36氪） 。",
+    "matched": true,
+    "hit": "比如纵观这25款产品，一个突出特点就是高通骁龙AR1芯片+1200万像素索尼IMX 681摄像头已经成为AI眼镜的一个 “标准模板”。",
+    "before": [
+     "但同时， 供应链方案的“拿来即用”也或多或少会造成产品硬件方案的同质化。",
+     "2025 AI眼镜新品芯片和摄像头方案情况，来源：智东西"
+    ],
+    "after": [
+     "看到1200万像素镜头，大概率就对应着高通AR1方案。",
+     "雷鸟、小米、雷神、联想、李未可、阿里巴巴、中国电信都是如此，与Meta基本保持一致。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S39",
+  "name": "来源",
+  "url": "https://fin.a11.world/articles/market-analysis/2026-05-28-AI%E7%9C%BC%E9%95%9C%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A",
+  "grade": "D",
+  "gradeReason": "陌生金融站点，责任主体不明",
+  "status": "ok",
+  "failReason": "",
+  "title": "AI眼镜发展趋势深度研究报告 2026",
+  "date": "2025/1/6",
+  "textLen": 2285,
+  "anchors": [
+   {
+    "claim": "整机制造环节中国供应链占绝对主导：歌尔股份是 Meta Ray-Ban 系列独家代工商、并承接华为约 70% 的 AR 眼镜订单，立讯精密、舜宇光学、蓝思科技、长盈精密等均在 Meta 供应链中占据关键位置 （来源） 。",
+    "matched": false,
+    "hit": "",
+    "before": [
+     "📚 参考文献（APA格式，按作者姓氏字母排序）",
+     "21世纪经济报道. (2025, November). IDC：2026年中国智能眼镜市场迎来规模化拐点 . Retrieved from https://finance.eastmoney.com/a/202511203569875815.html"
+    ],
+    "after": [],
+    "note": "已获取原文，但未定位到精确对应句，需人工核对"
+   }
+  ]
+ },
+ {
+  "id": "S40",
+  "name": "weeklyonstock.com",
+  "url": "https://static.weeklyonstock.com/26/0407/zbf151444.html",
+  "grade": "D",
+  "gradeReason": "陌生站点托管 PDF，出处不明",
+  "status": "ok",
+  "failReason": "",
+  "title": "中国AI眼镜军团集体冲刺IPO，上游“卖水人”受益-公司动态-证券市场周刊",
+  "date": "2026-04-05",
+  "textLen": 1784,
+  "anchors": [
+   {
+    "claim": "技术瓶颈同样清晰，业内称之为\"重量、续航、算力的不可能三角\" （weeklyonstock.com） 。",
+    "matched": true,
+    "hit": "招商证券研报指出，2026 年全球 AI 眼镜行业正迎来历史性iPhone 时刻，核心源于技术瓶颈突破与产业生态成熟，重量、续航、算力的行业不可能三角正被逐步破解，千亿级硬科技赛道加速成型。",
+    "before": [
+     "公司累计融资超 35 亿元，近期获康耐特光学 1.8 亿元投资，估值突破 10 亿美元跻身独角兽，待组织与财务梳理完成后将启动正式上市流程。",
+     "三大头部企业同步冲刺资本市场，意味着中国 AI 眼镜行业完成早期商业模式验证，进入规范化、规模化发展新阶段，为迎战苹果、Meta 等国际巨头储备充足资本弹药。"
+    ],
+    "after": [
+     "市场数据印证爆发趋势：洛图科技数据显示，2025 年全球 AR 眼镜销量约 110 万台，同比增长 110%；",
+     "第四季度销量 53.5 万台，同比暴涨超 200%，行业从萌芽期直接跨入爆发式增长期。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "行业的赌注意味着共识——谁先完成品类定义、建立生态，谁就能在\"iPhone 时刻\"到来时拿到船票；招商证券判断 2026 年全球 AI 眼镜正迎来历史性\"iPhone 时刻\"，千亿级硬科技赛道加速成型 （weeklyonstock.com） 。",
+    "matched": true,
+    "hit": "招商证券研报指出，2026 年全球 AI 眼镜行业正迎来历史性iPhone 时刻，核心源于技术瓶颈突破与产业生态成熟，重量、续航、算力的行业不可能三角正被逐步破解，千亿级硬科技赛道加速成型。",
+    "before": [
+     "公司累计融资超 35 亿元，近期获康耐特光学 1.8 亿元投资，估值突破 10 亿美元跻身独角兽，待组织与财务梳理完成后将启动正式上市流程。",
+     "三大头部企业同步冲刺资本市场，意味着中国 AI 眼镜行业完成早期商业模式验证，进入规范化、规模化发展新阶段，为迎战苹果、Meta 等国际巨头储备充足资本弹药。"
+    ],
+    "after": [
+     "市场数据印证爆发趋势：洛图科技数据显示，2025 年全球 AR 眼镜销量约 110 万台，同比增长 110%；",
+     "第四季度销量 53.5 万台，同比暴涨超 200%，行业从萌芽期直接跨入爆发式增长期。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S41",
+  "name": "搜狐",
+  "url": "https://www.sohu.com/a/932700857_100158378",
+  "grade": "C",
+  "gradeReason": "门户自媒体号转载",
+  "status": "ok",
+  "failReason": "",
+  "title": "AI眼镜行业深度：AI眼镜销量、商业化、消费者调研、头部企业；续航和重量依然是当前痛点_产品_用户_市场",
+  "date": "2025-09-08",
+  "textLen": 1515,
+  "anchors": [
+   {
+    "claim": "当前主流产品重量 39–76 克（传统眼镜约 20–30 克），Wellsenn XR 调研显示 19.5% 的用户认为 50 克的 Ray-Ban Meta 佩戴不舒适，压鼻梁和过重是主要痛点 （搜狐） ；端侧算力约为骁龙 8 Gen3 的四分之一，连续高负载使用（录像+AR 叠加）续航仅 2–4 小时 （什么值得买） ；行业尚无一家厂商能打通从材料、光学、硬件、系统到算法的全部环节，硬件方案同质化严重 （钛媒体） 。",
+    "matched": true,
+    "hit": "据wellensennXR针对国内用户的体验调研显示， 19.5% 的用户认为Ray-BanMeta智能眼镜（机身重量50克）佩戴不舒适，压鼻梁和机身过重为主要痛点。",
+    "before": [
+     "较重的机身设计也是AI眼镜普及路上的一大痛点。",
+     "当前AI眼镜需集成处理芯片、摄像头模组、电池及散热系统等核心部件，致使整机重量普遍超过 50克 ，远超传统眼镜 20克 左右的标准。"
+    ],
+    "after": [
+     "另有76%的用户反馈“有一点重但尚可接受”，反映出重量问题已成为影响产品普及的重要因素。",
+     "过去十年间，人工智能在多个领域性能表现实现跨越式发展，多项能力已超越人类基准水平。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "小米 AI 眼镜首周销量 7 万副，但抖音平台退货率约 40%，\"耳机+相机的简单组合\"\"导航仍需掏手机\"是典型差评 （钛媒体） ；Wellsenn XR 调研显示续航与重量是用户两大痛点 （搜狐） ；CES 2026 上 Meta Display 仍暴露出高负载续航约 3 小时、AI 偶发错误等问题 （OFweek维科网） 。",
+    "matched": true,
+    "hit": "据wellensennXR针对国内用户的体验调研显示， 19.5% 的用户认为Ray-BanMeta智能眼镜（机身重量50克）佩戴不舒适，压鼻梁和机身过重为主要痛点。",
+    "before": [
+     "较重的机身设计也是AI眼镜普及路上的一大痛点。",
+     "当前AI眼镜需集成处理芯片、摄像头模组、电池及散热系统等核心部件，致使整机重量普遍超过 50克 ，远超传统眼镜 20克 左右的标准。"
+    ],
+    "after": [
+     "另有76%的用户反馈“有一点重但尚可接受”，反映出重量问题已成为影响产品普及的重要因素。",
+     "过去十年间，人工智能在多个领域性能表现实现跨越式发展，多项能力已超越人类基准水平。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S42",
+  "name": "什么值得买",
+  "url": "https://post.smzdm.com/p/a5r8v77l",
+  "grade": "C",
+  "gradeReason": "消费社区内容（政策转述）",
+  "status": "fail",
+  "failReason": "HTTP 202",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "当前主流产品重量 39–76 克（传统眼镜约 20–30 克），Wellsenn XR 调研显示 19.5% 的用户认为 50 克的 Ray-Ban Meta 佩戴不舒适，压鼻梁和过重是主要痛点 （搜狐） ；端侧算力约为骁龙 8 Gen3 的四分之一，连续高负载使用（录像+AR 叠加）续航仅 2–4 小时 （什么值得买） ；行业尚无一家厂商能打通从材料、光学、硬件、系统到算法的全部环节，硬件方案同质化严重 （钛媒体） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 202）"
+   },
+   {
+    "claim": "续航焦虑催生了换电设计这一中国特色方案——夸克 MiniMag 换电系统、千问 G1 热插拔换电可实现\"理论 24 小时\"接力续航 （什么值得买） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（HTTP 202）"
+   }
+  ]
+ },
+ {
+  "id": "S43",
+  "name": "钛媒体",
+  "url": "https://www.tmtpost.com/7723082.html",
+  "grade": "B",
+  "gradeReason": "科技媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "2025年，AI眼镜走下神坛-钛媒体官方网站",
+  "date": "",
+  "textLen": 4112,
+  "anchors": [
+   {
+    "claim": "当前主流产品重量 39–76 克（传统眼镜约 20–30 克），Wellsenn XR 调研显示 19.5% 的用户认为 50 克的 Ray-Ban Meta 佩戴不舒适，压鼻梁和过重是主要痛点 （搜狐） ；端侧算力约为骁龙 8 Gen3 的四分之一，连续高负载使用（录像+AR 叠加）续航仅 2–4 小时 （什么值得买） ；行业尚无一家厂商能打通从材料、光学、硬件、系统到算法的全部环节，硬件方案同质化严重 （钛媒体） 。",
+    "matched": true,
+    "hit": "行业机构统计显示，京东、天猫等平台AI眼镜退货率约为30%，抖音平台更是高达40%-50%，高退货率的背后，“功能实用性不足”是消费者反馈的核心问题。",
+    "before": [
+     "今年上半年，京东平台智能眼镜成交量同比增长超10倍，入驻品牌数量激增约3倍，平均每9天就有一款新品上市。",
+     "但热闹背后，危机已至。"
+    ],
+    "after": [
+     "曾经被捧上神坛的AI眼镜，正在经历前所未有的质疑。",
+     "小米AI眼镜几乎是这场泡沫的典型代表。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "拍摄眼镜的提示灯可被轻易遮挡、周围人难以察觉录制状态，已引发广泛担忧 （钛媒体） ；新华社等权威媒体提醒消费者优先选择具备本地化处理、一键关闭摄像头麦克风、AES-256 加密能力的产品 （新华网） 。",
+    "matched": true,
+    "hit": "在开启拍摄功能后，周围人几乎无法察觉眼镜正处于录制状态，这引发了严重的隐私担忧。",
+    "before": [
+     "”比如在导航时，因缺乏视觉显示，仅靠语音播报难以在多岔路口准确辨路，最终仍需掏出手机查看地图。",
+     "一位科技博主在测试中发现，仅用一只马克笔涂抹，就能成功遮挡住小米AI眼镜的拍摄提示灯，从外观上很难分辨提示灯是否亮起。"
+    ],
+    "after": [
+     "当然，这不是个例。",
+     "2025年被寄予厚望的“百镜大战”并未如期爆发，行业缺乏标准已成硬伤。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "小米 AI 眼镜首周销量 7 万副，但抖音平台退货率约 40%，\"耳机+相机的简单组合\"\"导航仍需掏手机\"是典型差评 （钛媒体） ；Wellsenn XR 调研显示续航与重量是用户两大痛点 （搜狐） ；CES 2026 上 Meta Display 仍暴露出高负载续航约 3 小时、AI 偶发错误等问题 （OFweek维科网） 。",
+    "matched": true,
+    "hit": "行业机构统计显示，京东、天猫等平台AI眼镜退货率约为30%，抖音平台更是高达40%-50%，高退货率的背后，“功能实用性不足”是消费者反馈的核心问题。",
+    "before": [
+     "今年上半年，京东平台智能眼镜成交量同比增长超10倍，入驻品牌数量激增约3倍，平均每9天就有一款新品上市。",
+     "但热闹背后，危机已至。"
+    ],
+    "after": [
+     "曾经被捧上神坛的AI眼镜，正在经历前所未有的质疑。",
+     "小米AI眼镜几乎是这场泡沫的典型代表。"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "… （OFweek光学网） ）；存储涨价推高 BOM 成本，Counterpoint 已观察到 AI 眼镜均价从 347 美元升至 360 美元并可能继续上行 （CNET） ；体验不及预期导致的高退货率可能透支消费者信任 （钛媒体） ；巨头碾压——苹果、三星、字节入场后，创业公司的窗口期可能快速关闭；盈利模型未跑通，头部公司普遍亏损，若 2027 年前无法证明软件与服务收入（高盛预计 2030 年占 35% （43y.com.cn） ）的可行性，资本退潮风险不可忽视。",
+    "matched": true,
+    "hit": "行业机构统计显示，京东、天猫等平台AI眼镜退货率约为30%，抖音平台更是高达40%-50%，高退货率的背后，“功能实用性不足”是消费者反馈的核心问题。",
+    "before": [
+     "今年上半年，京东平台智能眼镜成交量同比增长超10倍，入驻品牌数量激增约3倍，平均每9天就有一款新品上市。",
+     "但热闹背后，危机已至。"
+    ],
+    "after": [
+     "曾经被捧上神坛的AI眼镜，正在经历前所未有的质疑。",
+     "小米AI眼镜几乎是这场泡沫的典型代表。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S44",
+  "name": "36氪",
+  "url": "https://www.36kr.com/p/3749027684139776",
+  "grade": "B",
+  "gradeReason": "主流科技媒体署名报道",
+  "status": "ok",
+  "failReason": "",
+  "title": "起步融资4000万，新玩家杀入：智能眼镜最大变局，来了-36氪",
+  "date": "2026-08-11",
+  "textLen": 4313,
+  "anchors": [
+   {
+    "claim": "据陀螺研究院数据，2025 年该领域全球融资额突破 300 亿元，创近十年新高 （36氪） ；2025 年上半年国内智能眼镜领域完成 66 笔融资、总金额 559.8 亿元（含产业链），其中 53% 流向光波导镀膜、Micro OLED 等核心环节 （chaoyidianzi.com） 。",
+    "matched": true,
+    "hit": "据陀螺研究院数据，2025年全球融资额突破300亿元，创下近十年新高。",
+    "before": [
+     "方向都对 但用户迟迟不来",
+     "智能眼镜融资又急又热，但规模化用户迟迟不来。"
+    ],
+    "after": [
+     "2026年仅前3个月，雷鸟创新、XREAL、影目科技三家企业融资近20亿元。",
+     "另一方面，达到百万级出货的产品依然稀缺。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S45",
+  "name": "VR陀螺",
+  "url": "https://www.vrtuoluo.cn/544978.html",
+  "grade": "B",
+  "gradeReason": "XR 行业头部垂直媒体原创",
+  "status": "ok",
+  "failReason": "",
+  "title": "头部「AI 眼镜」厂商正集体IPO_VR陀螺",
+  "date": "",
+  "textLen": 3640,
+  "anchors": [
+   {
+    "claim": "头部公司密集冲刺资本市场：XREAL 于 2026 年 4 月 1 日率先递表港交所（2023–2025 年营收 3.90/3.94/5.16 亿元，毛利率提升至 35.2%，亏损收窄至 4.56 亿元），Rokid 完成股改并获康耐特光学 1.8 亿元投资、估值突破 10 亿美元，雷鸟创新 2026 年初完成中国移动、中国联通等超 10 亿元融资，INMO 半年内完成三轮融资、估值达 20 亿元 （VR陀螺） 。",
+    "matched": true,
+    "hit": "从财务数据来看，XREAL已经具备一定规模化能力：2023至2025年营收分别为3.90亿元、3.94亿元和5.16亿元，且2025年同比增长30.8%；",
+    "before": [
+     "XREAL率先打响IPO第一枪。",
+     "4月1日，其正式向港交所递交招股书，成为AR赛道中首个实质性推进上市进程的企业。"
+    ],
+    "after": [
+     "毛利率持续提升至35.2%，亏损则逐年收窄至4.56亿元。",
+     "收入结构上，AR眼镜及配件占比超过九成，显示其商业模式已高度聚焦硬件规模化。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S46",
+  "name": "虎嗅网",
+  "url": "https://www.huxiu.com/article/4877305.html",
+  "grade": "B",
+  "gradeReason": "科技媒体署名报道",
+  "status": "fail",
+  "failReason": "正文提取过短（可能需登录/反爬）",
+  "title": "",
+  "date": "",
+  "textLen": 0,
+  "anchors": [
+   {
+    "claim": "但资本的乐观与经营的现实之间存在张力：XREAL 三年累计亏损超 20 亿元，Rokid 成立 11 年累计烧钱超 35 亿元，头部四家公司尚无一家实现规模化盈利 （虎嗅网） 。",
+    "matched": false,
+    "hit": "",
+    "before": [],
+    "after": [],
+    "note": "原文未能获取（正文提取过短（可能需登录/反爬））"
+   }
+  ]
+ },
+ {
+  "id": "S47",
+  "name": "93913.com",
+  "url": "https://www.93913.com/119710.html",
+  "grade": "C",
+  "gradeReason": "VR 行业自媒体",
+  "status": "ok",
+  "failReason": "",
+  "title": "2025年中国智能眼镜销量暴涨211% 2026年首入国补开启行业黄金期 – 93913-元宇宙&AI信息与产业服务",
+  "date": "2026/03/1",
+  "textLen": 997,
+  "anchors": [
+   {
+    "claim": "这一政策被洛图科技解读为国家对\"下一代核心智能终端\"战略赛道的认可 （93913.com） ，机构预计其将撬动超 50 亿元终端消费、推动 2026 年中国销量翻倍至 300 万台以上 （搜狐） 。",
+    "matched": true,
+    "hit": "作为本轮政策唯一新增品类，智能眼镜获国家层面战略认可，被定位为下一代核心智能终端。",
+    "before": [
+     "2025年底，国家发改委、财政部联合印发通知，2026年起将智能眼镜纳入数码智能产品购新补贴，与手机、平板、智能手表同享政策支持。",
+     "补贴标准明确：单价不超6000元产品，按售价15%补贴，单件最高500元，每人每类可享1件补贴。"
+    ],
+    "after": [
+     "政策落地直接降低消费门槛，激活潜在需求。",
+     "业内普遍认为，国补将推动产品从科技发烧友向普通消费者渗透，加速教育、办公、出行、安防等场景规模化落地，带动产业链上下游协同升级。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S48",
+  "name": "搜狐",
+  "url": "https://www.sohu.com/a/983714608_121826552",
+  "grade": "C",
+  "gradeReason": "门户自媒体号转载",
+  "status": "ok",
+  "failReason": "",
+  "title": "国补新增智能眼镜！2026年数码消费新风口来了_政策_市场_产业",
+  "date": "2026-02-04",
+  "textLen": 2390,
+  "anchors": [
+   {
+    "claim": "这一政策被洛图科技解读为国家对\"下一代核心智能终端\"战略赛道的认可 （93913.com） ，机构预计其将撬动超 50 亿元终端消费、推动 2026 年中国销量翻倍至 300 万台以上 （搜狐） 。",
+    "matched": true,
+    "hit": "在补贴政策的刺激下，相关机构预测2026年中国智能眼镜销量将突破300万副，较2025年实现翻倍增长，直接撬动超50亿元的终端消费市场，有效对冲传统数码产品市场饱和带来的增长压力。",
+    "before": [
+     "以一款售价3000元的智能眼镜为例，消费者可享受450元补贴；",
+     "若产品售价超过3333元，也能享受最高500元的补贴优惠。"
+    ],
+    "after": [
+     "从促产业的角度来看，补贴政策通过刺激终端需求，将倒逼企业加大研发投入，推动全产业链的升级迭代。",
+     "当前智能眼镜产业仍面临光学显示、核心芯片、电池续航、AI交互等关键技术瓶颈，而政策带来的市场增量，将为企业提供更多研发资金和实践场景。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S49",
+  "name": "新华网",
+  "url": "http://www.news.cn/tech/20260414/1cc196e905814d85bd4cfd9d7fad7974/c.html",
+  "grade": "A",
+  "gradeReason": "国家级通讯社原文",
+  "status": "ok",
+  "failReason": "",
+  "title": "智能眼镜：随身便利背后暗藏风险-新华网",
+  "date": "2026-04-14",
+  "textLen": 2755,
+  "anchors": [
+   {
+    "claim": "拍摄眼镜的提示灯可被轻易遮挡、周围人难以察觉录制状态，已引发广泛担忧 （钛媒体） ；新华社等权威媒体提醒消费者优先选择具备本地化处理、一键关闭摄像头麦克风、AES-256 加密能力的产品 （新华网） 。",
+    "matched": true,
+    "hit": "同时，产品需配备一键关闭摄像头与麦克风的功能，并支持AES-256等高强度数据加密。",
+    "before": [
+     "“在挑选产品时，大家一定要关注隐私安全。",
+     "”佟鑫宇认为，消费者应优先选择具备本地化处理能力的产品——即数据可以在设备端完成运算，无需上传云端的产品，从源头降低隐私泄露风险。"
+    ],
+    "after": [
+     "对于带有支付功能的产品，还应确认其是否通过PCI DSS支付安全认证，以保障资金与信息安全。",
+     "“佩戴舒适度与显示效果直接决定了日常使用频率。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S50",
+  "name": "OFweek维科网",
+  "url": "https://m.ofweek.com/ai/2026-04/ART-201718-8420-30685443.html",
+  "grade": "C",
+  "gradeReason": "行业门户（多为供稿/转载）",
+  "status": "ok",
+  "failReason": "",
+  "title": "14 年沉浮、9 次生死、千亿估值归零：AR 眼镜，终于等到 AI 这根 “救命稻草”？ - OFweek 人工智能网",
+  "date": "2014年4月15",
+  "textLen": 4402,
+  "anchors": [
+   {
+    "claim": "小米 AI 眼镜首周销量 7 万副，但抖音平台退货率约 40%，\"耳机+相机的简单组合\"\"导航仍需掏手机\"是典型差评 （钛媒体） ；Wellsenn XR 调研显示续航与重量是用户两大痛点 （搜狐） ；CES 2026 上 Meta Display 仍暴露出高负载续航约 3 小时、AI 偶发错误等问题 （OFweek维科网） 。",
+    "matched": true,
+    "hit": "千元左右的AI眼镜没有镜片，诸如小米AI眼镜、千问AI眼镜，不包含镜片重量约40克左右，放弃了影视功能，仅聚焦语音助手、 实时翻译实现跨语言交流、第一视角进行拍照/录像、听歌、以及导航、电话短信通知等功能。",
+    "before": [
+     "多年来，AR眼镜一直被贴着：小众，玩具，美丽的废物等标签。",
+     "在2024年，随着大模型的逐步成熟，AI眼镜出现。"
+    ],
+    "after": [
+     "当用户佩戴眼镜时，可以直接说，“帮我拍个照片/视频““帮我翻译这段话？",
+     "” “这是什么建筑？"
+    ],
+    "note": ""
+   },
+   {
+    "claim": "行业共识是：短期（1–2 年）AI 眼镜是手机的补充配件，中期部分功能（语音、导航、简单交互）将从手机迁移，长期当端侧 AI 足够成熟时，\"你看到的世界本身就是界面\" （OFweek维科网） 。",
+    "matched": true,
+    "hit": "中期来看，手机一部分功能会被迁移（语音、导航、简单交互）；",
+    "before": [
+     "另外，在CES 2026上，Meta首款AR+AI眼镜Ray-Bann Display仍出现续航仅3小时、AI频繁出错、录像时镜片白光刺眼等问题。",
+     "短期来看，AI眼镜更像手机的补充设备，类似耳机或手表。"
+    ],
+    "after": [
+     "长期来看，当AI足够成熟，操作系统将被弱化、应用形态发生改变、手机的重要性逐步下降。",
+     "因为，AI眼镜具备手机不具备的优势：“解放双手 + 无感交互”。"
+    ],
+    "note": ""
+   }
+  ]
+ },
+ {
+  "id": "S51",
+  "name": "abvr360.com",
+  "url": "https://www.abvr360.com/a/32656",
+  "grade": "D",
+  "gradeReason": "VR 小站，责任主体不明",
+  "status": "ok",
+  "failReason": "",
+  "title": "IDC：中国产AI眼镜今年出货量预计占全球市场45％ - 艾邦AR/VR网",
+  "date": "2022年5月27",
+  "textLen": 989,
+  "anchors": [
+   {
+    "claim": "其四，中国供应链是最大赢家：无论 Meta、谷歌还是苹果谁胜出，光学模组、微显示、代工、芯片环节的中国企业都已卡位核心环节，IDC 预计 2026 年中国厂商出货将占全球 45% （abvr360.com） 。",
+    "matched": true,
+    "hit": "IDC预计2026年中国厂商出货量将占全球市场的45％，中国科技创新厂商在北美、欧洲和亚太地区表现活跃。",
+    "before": [
+     "增长主要集中在音频、音频拍摄眼镜及AR／ER眼镜领域。",
+     "中国厂商在全球智能眼镜市场的出货占比稳步提升。"
+    ],
+    "after": [
+     "不过业内人士坦言，中国产AI眼镜仍需在硬体轻量化、世界模型、生态建设等方面持续突破，属于这个行业的「iPhone时刻」，才会到来。",
+     "艾邦建有AR/VR产业链微信群，目前有HTC、PICO、OPPO、亮亮视野、光粒科技、影创、创维、佳视、歌尔、立讯精密、多哚（纳立多）、欣旺达、耐德佳，联创电子、至格科技、灵犀微光、舜宇光学、广景视睿、珑璟光电、京东方、海信视像、科煦智能、阿科玛、金发科技、思立可、新安天玉、四方超轻、大族激光、发那科、承熹机电等加入，也欢迎大家长按下方图片识别二维码加入微信群： 资料下载： AR VR显示技术报告 2022年ARVR推出的新品总结20221103 2022年5月27日AR/VR产业链论坛演讲PPT AR 光波导显示方案企业介绍 国内45家AR/VR/MR头显品牌企业盘点 AR/VR/元宇宙ODM/OEM代工16强 AR/VR高分子材料供应商介绍20强 AR/VR材料介绍PPT 欢迎您点击此处加入 AR/VR通讯录 ，目前已经有3000多人加入，如歌尔、HTC、OPPO、创维、PICO、字节跳动、黑鲨、联想、耐德佳、灵犀微光、立讯、领益智造、欧菲光、华勤、闻泰、立讯、珑璟光电、舜宇、深圳虚拟现实等，点击下方关键词可以筛选 品牌 代工 AR AR眼镜 VR ODM及方案 外观件 外观设计 内容 AR导航 游戏 交互 光学元件 智能终端 光波导 人脸识别 摄像头 眼动追踪 天线 软件 五金 语音识别 显示屏 光学镜头 塑胶件"
+    ],
+    "note": ""
+   }
+  ]
+ }
+]

@@ -16,6 +16,7 @@ interface Props {
   onPick: () => void;
   onDropFiles: (files: File[]) => void;
   onDemo: () => void;
+  onTrace: () => void;
   onRestore: (id: string) => void;
   onDelete: (id: string) => void;
 }
@@ -30,7 +31,7 @@ const CAPS = [
 const DOOR_ORIGIN = '50% 40%';
 
 export default function WelcomeSection({
-  parsing, restoring, departing, history, onPick, onDropFiles, onDemo, onRestore, onDelete,
+  parsing, restoring, departing, history, onPick, onDropFiles, onDemo, onTrace, onRestore, onDelete,
 }: Props) {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const scrollerRef = useRef<HTMLDivElement | null>(null);
@@ -262,6 +263,16 @@ export default function WelcomeSection({
               className="a2-rise mt-4 text-[11px] tracking-[0.2em] text-ink-400 underline decoration-ink-300 underline-offset-4 transition-colors hover:text-cinnabar-600"
             >
               未备卷宗 · 先览演示
+            </button>
+          )}
+
+          {!busy && (
+            <button
+              onClick={onTrace}
+              className="a2-rise mt-2.5 text-[11px] tracking-[0.2em] text-ink-400 underline decoration-ink-300 underline-offset-4 transition-colors hover:text-cinnabar-600"
+              title="打开调研报告溯源：左侧报告，点击引证，右侧弹出网络原文并标红对应句"
+            >
+              研于网海 · 溯源调研报告
             </button>
           )}
 
