@@ -17,6 +17,7 @@ interface Props {
   onDropFiles: (files: File[]) => void;
   onDemo: () => void;
   onTrace: () => void;
+  onNidu: () => void;
   onRestore: (id: string) => void;
   onDelete: (id: string) => void;
 }
@@ -31,7 +32,7 @@ const CAPS = [
 const DOOR_ORIGIN = '50% 40%';
 
 export default function WelcomeSection({
-  parsing, restoring, departing, history, onPick, onDropFiles, onDemo, onTrace, onRestore, onDelete,
+  parsing, restoring, departing, history, onPick, onDropFiles, onDemo, onTrace, onNidu, onRestore, onDelete,
 }: Props) {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const scrollerRef = useRef<HTMLDivElement | null>(null);
@@ -273,6 +274,16 @@ export default function WelcomeSection({
               title="打开调研报告溯源：左侧报告，点击引证，右侧弹出网络原文并标红对应句"
             >
               研于网海 · 溯源调研报告
+            </button>
+          )}
+
+          {!busy && (
+            <button
+              onClick={onNidu}
+              className="a2-rise mt-2.5 text-[11px] tracking-[0.2em] text-ink-400 underline decoration-ink-300 underline-offset-4 transition-colors hover:text-cinnabar-600"
+              title="打开逆读训练：先猜作者想干什么，再看作者真正怎么做——问题·判断·证据·推理·边界"
+            >
+              逆读训练 · 先猜再看作者怎么做
             </button>
           )}
 
