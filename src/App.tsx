@@ -33,6 +33,7 @@ import MultiYearSection from '@/sections/MultiYearSection';
 import WelcomeSection from '@/sections/WelcomeSection';
 import AiChatPanel from '@/sections/AiChatPanel';
 import TraceDesk from '@/sections/TraceDesk';
+import NiduDesk from '@/sections/NiduDesk';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Group, Panel, Separator } from 'react-resizable-panels';
@@ -82,6 +83,8 @@ function ResearchDesk() {
   const [demoMode, setDemoMode] = useState(false);
   /** 调研溯源模式：展示带网络来源锚点的调研报告（左报告右原文标红） */
   const [traceMode, setTraceMode] = useState(false);
+  /** 逆读训练模式：作者思维地图 + Commitment Gate 先猜后看 */
+  const [niduMode, setNiduMode] = useState(false);
   /** 欢迎页：leaving=正在做离场过渡；welcomeGone=已离场 */
   const [welcomeGone, setWelcomeGone] = useState(false);
   const [leaving, setLeaving] = useState(false);
@@ -89,10 +92,14 @@ function ResearchDesk() {
   const [deskFx, setDeskFx] = useState<'' | 'from-near' | 'to-near'>('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // 深链：?trace=1 直接进入调研溯源模式（跳过欢迎页）
+  // 深链：?trace=1 进入调研溯源模式；?nidu=1 进入逆读训练模式（跳过欢迎页）
   useEffect(() => {
-    if (new URLSearchParams(window.location.search).get('trace') === '1') {
+    const q = new URLSearchParams(window.location.search);
+    if (q.get('trace') === '1') {
       setTraceMode(true);
+      setWelcomeGone(true);
+    } else if (q.get('nidu') === '1') {
+      setNiduMode(true);
       setWelcomeGone(true);
     }
   }, []);
@@ -292,6 +299,7 @@ function ResearchDesk() {
       setRiskPackOverride(null);
       setDemoMode(false);
       setTraceMode(false);
+      setNiduMode(false);
       setDeskFx('');
     }, 700);
   }
@@ -574,7 +582,7 @@ function ResearchDesk() {
               AI 研判{aiPending > 0 ? `中 ${aiPending}` : ''}
             </button>
           )}
-          {(realPdf || traceMode) && (
+          {(realPdf || traceMode || niduMode) && (
             <button
               onClick={leaveToHome}
               className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 transition-colors hover:bg-stone-100"
@@ -869,6 +877,9 @@ function ResearchDesk() {
         ) : traceMode ? (
           /* 调研溯源模式：左侧调研报告，点击引证，右侧弹出网络原文标红（PDF 模式优先于本模式） */
           <TraceDesk />
+        ) : niduMode ? (
+          /* 逆读训练模式：左原文 / 中作者思维地图 / 右我的理解（Commitment Gate 先猜后看） */
+          <NiduDesk />
         ) : demoMode ? (
           <Group orientation="horizontal" className="min-w-0 flex-1">
             {sidebarCollapsed ? (
@@ -977,6 +988,7 @@ function ResearchDesk() {
             onDropFiles={(fs) => handleFiles(fs)}
             onDemo={() => { setDemoMode(true); enterWithTransition(); }}
             onTrace={() => { setTraceMode(true); enterWithTransition(); }}
+            onNidu={() => { setNiduMode(true); enterWithTransition(); }}
             onRestore={restoreAnalysis}
             onDelete={async (id) => {
               await deleteAnalysis(id);
