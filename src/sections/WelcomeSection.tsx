@@ -258,33 +258,64 @@ export default function WelcomeSection({
             溯于原文 · 察于细微 · 成于研判
           </p>
 
+          {/* 择径而入 · 三径 */}
           {!busy && (
-            <button
-              onClick={onDemo}
-              className="a2-rise mt-4 text-[11px] tracking-[0.2em] text-ink-400 underline decoration-ink-300 underline-offset-4 transition-colors hover:text-cinnabar-600"
-            >
-              未备卷宗 · 先览演示
-            </button>
-          )}
+            <div className="a2-rise mt-10 w-full max-w-3xl px-4">
+              <div className="flex items-center justify-center gap-3 text-[10px] tracking-[0.34em] text-ink-400">
+                <span className="h-px w-8 bg-ink-200" />
+                <span>择径而入</span>
+                <span className="h-px w-8 bg-ink-200" />
+              </div>
+              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <button
+                  onClick={onTrace}
+                  title="打开溯源工作台：左侧报告，点击引证，右侧弹出网络原文并标红对应句"
+                  className="group rounded-xl border border-ink-200/70 bg-paper-50/75 p-5 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cinnabar-300/70 hover:shadow-[0_16px_36px_-18px_rgba(60,45,20,0.4)]"
+                >
+                  <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-lg bg-cinnabar-600/10 font-song text-base text-cinnabar-700 transition-colors group-hover:bg-cinnabar-600/20">
+                    溯
+                  </div>
+                  <div className="mt-3 font-song text-sm font-semibold tracking-[0.18em] text-ink-800 transition-colors group-hover:text-cinnabar-700">
+                    溯源调研报告
+                  </div>
+                  <div className="mt-1.5 text-[11px] leading-5 text-ink-500">
+                    粘贴 GPT / Kimi 深度研究，引证逐条回溯网络原文标红
+                  </div>
+                </button>
 
-          {!busy && (
-            <button
-              onClick={onTrace}
-              className="a2-rise mt-2.5 text-[11px] tracking-[0.2em] text-ink-400 underline decoration-ink-300 underline-offset-4 transition-colors hover:text-cinnabar-600"
-              title="打开调研报告溯源：左侧报告，点击引证，右侧弹出网络原文并标红对应句"
-            >
-              研于网海 · 溯源调研报告
-            </button>
-          )}
+                <button
+                  onClick={onNidu}
+                  title="打开逆读训练：先猜作者想干什么，再看作者真正怎么做——问题·判断·证据·推理·边界"
+                  className="group rounded-xl border border-ink-200/70 bg-paper-50/75 p-5 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cinnabar-300/70 hover:shadow-[0_16px_36px_-18px_rgba(60,45,20,0.4)]"
+                >
+                  <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-lg bg-cinnabar-600/10 font-song text-base text-cinnabar-700 transition-colors group-hover:bg-cinnabar-600/20">
+                    逆
+                  </div>
+                  <div className="mt-3 font-song text-sm font-semibold tracking-[0.18em] text-ink-800 transition-colors group-hover:text-cinnabar-700">
+                    逆读训练
+                  </div>
+                  <div className="mt-1.5 text-[11px] leading-5 text-ink-500">
+                    先猜作者想干什么，再看作者真正怎么做
+                  </div>
+                </button>
 
-          {!busy && (
-            <button
-              onClick={onNidu}
-              className="a2-rise mt-2.5 text-[11px] tracking-[0.2em] text-ink-400 underline decoration-ink-300 underline-offset-4 transition-colors hover:text-cinnabar-600"
-              title="打开逆读训练：先猜作者想干什么，再看作者真正怎么做——问题·判断·证据·推理·边界"
-            >
-              逆读训练 · 先猜再看作者怎么做
-            </button>
+                <button
+                  onClick={onDemo}
+                  title="未备卷宗，先览一份虚构年报的完整研判流程"
+                  className="group rounded-xl border border-ink-200/70 bg-paper-50/75 p-5 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cinnabar-300/70 hover:shadow-[0_16px_36px_-18px_rgba(60,45,20,0.4)]"
+                >
+                  <div className="mx-auto flex h-9 w-9 items-center justify-center rounded-lg bg-cinnabar-600/10 font-song text-base text-cinnabar-700 transition-colors group-hover:bg-cinnabar-600/20">
+                    览
+                  </div>
+                  <div className="mt-3 font-song text-sm font-semibold tracking-[0.18em] text-ink-800 transition-colors group-hover:text-cinnabar-700">
+                    演示卷宗
+                  </div>
+                  <div className="mt-1.5 text-[11px] leading-5 text-ink-500">
+                    未备卷宗，先览一份虚构年报全流程
+                  </div>
+                </button>
+              </div>
+            </div>
           )}
 
           {busy && (
