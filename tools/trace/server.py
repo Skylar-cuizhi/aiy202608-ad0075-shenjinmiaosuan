@@ -6,12 +6,15 @@
     python3 tools/trace/server.py
 
 接口：
-    GET  /health  → {"ok": true}
-    POST /build   body: {"title": "...", "reportMd": "..."}（UTF-8 JSON）
+    GET  /health   → {"ok": true, "webbridge": bool}（webbridge=浏览器补抓是否可用）
+    POST /build    body: {"title": "...", "reportMd": "..."}（UTF-8 JSON）
                   → 抓取全部引证来源、定位锚点、可信度分级，返回完整溯源包 JSON
                   同时落盘 trace-out/last-pack.json 备份
+    POST /refetch  body: {"url": "...", "name": "...", "claims": ["..."]}
+                  → 单来源补抓：先直连重试，失败则自动经 Kimi WebBridge 驱动本机真实浏览器抓取，
+                    重新定位锚点与分级，返回该来源的完整 TraceSource JSON（不含 id，由前端保留）
 
-见微前端「粘贴报告」功能调用本服务；关闭服务后前端自动降级为「仅粘贴浏览」。
+见微前端「粘贴报告」与失败来源「补抓」功能调用本服务；关闭服务后前端自动降级为「仅粘贴浏览 / 剪贴板手动补录」。
 """
 import json, os, sys, time
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -92,6 +95,83 @@ def build_pack(title: str, report_md: str) -> dict:
     return {"title": title, "reportMd": report_md, "sources": sources}
 
 
+def webbridge_available() -> bool:
+    """Kimi WebBridge 守护与浏览器扩展是否在线（在线才能浏览器补抓）。"""
+    try:
+        import urllib.request as ur
+        with ur.urlopen("http://127.0.0.1:10086/status", timeout=2) as r:
+            st = json.loads(r.read().decode("utf-8"))
+        return bool(st.get("extension_connected"))
+    except Exception:
+        return False
+
+
+def browser_fetch_text(url: str):
+    """经 WebBridge 驱动用户真实浏览器抓取正文；返回 (text, title, err)。标签归入「见微·溯源补抓」组。"""
+    try:
+        import fetch_webbridge as wb
+    except Exception as e:
+        return None, None, f"补抓模块不可用：{e}"
+    try:
+        wb.navigate(url, new_tab=True)
+        time.sleep(5)
+        for _ in range(3):  # 等正文加载（部分站点有反爬挑战页）
+            res = wb.cmd("evaluate", {"code": wb.EXTRACT_JS})
+            val = res.get("value")
+            if val:
+                try:
+                    data = json.loads(val)
+                    if len(data.get("text", "")) >= 400:
+                        return data["text"], data.get("title", ""), None
+                except Exception:
+                    pass
+            time.sleep(4)
+        return None, None, "正文提取为空（可能是挑战页/需登录）"
+    except Exception as e:
+        return None, None, str(e)[:120]
+
+
+def refetch_source(url: str, name: str, claims: list) -> dict:
+    """单来源补抓：先直连重试，失败则自动经 WebBridge 浏览器抓取；重新定位锚点与分级。"""
+    info, err, how = None, "", ""
+    raw, ferr = fetch(url)
+    if not ferr:
+        i2 = extract_text(raw)
+        if len(i2["text"]) >= 100:
+            info = i2
+        else:
+            ferr = "正文提取过短（可能需登录/反爬）"
+    if info is None:
+        text, title, werr = browser_fetch_text(url)
+        if text:
+            info = {"title": title or "", "date": "", "text": text}
+            how = "WebBridge 浏览器补抓（见微内建）"
+        else:
+            err = f"直连重试失败（{ferr}）；浏览器补抓失败（{werr}）"
+
+    grade, reason = grade_of(url)
+    src = {"name": name or domain_of(url), "url": url,
+           "grade": grade, "gradeReason": reason,
+           "status": "ok" if info else "fail",
+           "failReason": "" if info else err,
+           "title": (info["title"] if info else "")[:120],
+           "date": info["date"] if info else "",
+           "textLen": len(info["text"]) if info else 0,
+           "anchors": []}
+    if how:
+        src["provenance"] = how
+    for claim in claims or []:
+        if info:
+            loc = locate(claim, info["text"])
+            src["anchors"].append({"claim": claim, **loc} if loc else
+                                  {"claim": claim, "matched": False, "hit": "", "before": [], "after": [],
+                                   "note": "原文已获取，但未定位到对应句（可能为转述/概括）"})
+        else:
+            src["anchors"].append({"claim": claim, "matched": False, "hit": "", "before": [], "after": [],
+                                   "note": f"原文未能获取（{src['failReason']}）"})
+    return src
+
+
 class Handler(BaseHTTPRequestHandler):
     def _cors(self):
         self.send_header("Access-Control-Allow-Origin", "*")
@@ -114,11 +194,25 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/health":
-            self._json(200, {"ok": True, "service": "jianwei-trace-pipeline"})
+            self._json(200, {"ok": True, "service": "jianwei-trace-pipeline", "webbridge": webbridge_available()})
         else:
             self._json(404, {"error": "not found"})
 
     def do_POST(self):
+        if self.path == "/refetch":
+            try:
+                n = int(self.headers.get("Content-Length", "0"))
+                payload = json.loads(self.rfile.read(n).decode("utf-8"))
+                url = payload.get("url", "").strip()
+                if not url.startswith("http"):
+                    raise ValueError("url 缺失或不合法")
+                t0 = time.time()
+                src = refetch_source(url, payload.get("name", ""), payload.get("claims") or [])
+                print(f"[refetch] {src['status']:<4} {domain_of(url)} 耗时 {time.time()-t0:.0f}s", flush=True)
+                self._json(200, src)
+            except Exception as e:
+                self._json(400, {"error": str(e)[:200]})
+            return
         if self.path != "/build":
             self._json(404, {"error": "not found"})
             return
