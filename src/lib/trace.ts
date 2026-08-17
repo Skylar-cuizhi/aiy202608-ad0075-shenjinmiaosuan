@@ -138,3 +138,115 @@ export const BUILTIN_PACKS: { label: string; pack: TracePack }[] = [
   { label: '智能眼镜市场深度调研报告', pack: demoTracePack },
   { label: '一副眼镜的十五年', pack: glasses15yTracePack },
 ]
+
+
+/* ---------------- 内建补抓：失败来源原地复活 ---------------- */
+
+export const TRACE_SVC_URL = 'http://127.0.0.1:8787'
+
+/** 单来源补抓：本地管线服务先直连重试，失败自动经 WebBridge 驱动本机真实浏览器抓取；返回保留原 id 的新来源 */
+export async function refetchSource(src: TraceSource): Promise<TraceSource> {
+  const claims = src.anchors.map((a) => a.claim).filter(Boolean)
+  const resp = await fetch(`${TRACE_SVC_URL}/refetch`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url: src.url, name: src.name, claims }),
+  })
+  const data = await resp.json()
+  if (!resp.ok) throw new Error(data?.error ?? `HTTP ${resp.status}`)
+  return { ...data, id: src.id } as TraceSource
+}
+
+/** 与管线 build_data.locate 对齐的二元组定位（用于剪贴板手动补录） */
+export function locateInText(claimCtx: string, sourceText: string): Omit<TraceAnchor, 'claim'> | null {
+  const bigrams = (s: string): Set<string> => {
+    const t = s.replace(/[^\w一-鿿]+/g, '')
+    const out = new Set<string>()
+    for (let i = 0; i < t.length - 1; i++) out.add(t.slice(i, i + 2))
+    return out
+  }
+  const sents = sourceText
+    .split(/(?<=[。！？!?；;])|\n/)
+    .map((s) => s.trim())
+    .filter((s) => s.length >= 6)
+  const cands = claimCtx
+    .split(/[。；;!?！？\n｜]/)
+    .map((s) => s.trim())
+    .filter((s) => s.length >= 8)
+    .sort((a, b) => b.length - a.length)
+    .slice(0, 8)
+  let bestI = -1
+  let bestSc = 0
+  for (const c of cands) {
+    const cw = bigrams(c)
+    if (!cw.size) continue
+    for (let i = 0; i < Math.min(sents.length, 4000); i++) {
+      const bw = bigrams(sents[i])
+      let hit = 0
+      cw.forEach((g) => { if (bw.has(g)) hit++ })
+      const sc = hit / cw.size
+      if (sc > bestSc) { bestSc = sc; bestI = i }
+    }
+    if (bestSc >= 0.5) break
+  }
+  if (bestI < 0 || bestSc < 0.3) return null
+  return {
+    matched: true,
+    hit: sents[bestI].slice(0, 400),
+    before: sents.slice(Math.max(0, bestI - 2), bestI).slice(0, 2),
+    after: sents.slice(bestI + 1, bestI + 3).slice(0, 2),
+    note: `二元组重合度 ${Math.round(bestSc * 100)}%（剪贴板补录）`,
+  }
+}
+
+/** 与管线 build_data.grade_of 对齐的域名可信度分级（用于剪贴板手动补录） */
+export function gradeOfUrl(url: string): { grade: TraceGrade; reason: string } {
+  const d = (url.match(/^https?:\/\/(?:www\.)?([^/]+)/)?.[1] ?? url).toLowerCase()
+  if (/(mckinsey|deloitte|pwc|idc\.|counterpoint|gartner|statista|canalys|questmobile|runto|wellsenn|frost|bain\.|bcg|cinnogroup|strategyanalytics|iresearch|analysys)/.test(d))
+    return { grade: 'A', reason: '专业机构原始研究报告（一手数据发布方）' }
+  if (/(gov\.cn|ftc\.gov|fcc\.gov|sec\.gov|europa\.eu|commerce\.gov|congress\.gov|govinfo|courtlistener|justia|pirg\.org|who\.int|un\.org)/.test(d))
+    return { grade: 'A', reason: '政府 / 监管 / 司法官方来源' }
+  if (/(blog\.google|apple\.com|meta\.com|about\.fb\.com|mi\.com|xiaomi|huawei\.com|oppo\.com|vivo\.com|baidu\.com\/news|alibaba|tencent\.com|bytedance|rokid|xreal|ray-ban|essilorluxottica)/.test(d))
+    return { grade: 'A', reason: '厂商官方披露（新闻稿 / 官方博客 / 财报）' }
+  if (/(bloomberg|reuters|ft\.com|wsj|nytimes|theverge|techcrunch|cnbc|apnews|washingtonpost|bbc|cnn|wired|scmp|koreatimes|36kr|tmtpost|jiqizhixin|iyiou|sina\.com|sohu\.com|163\.com|qq\.com|ifeng|thepaper|guancha|huxiu|geekpark|leiphone|qbitai|ebrun|caixin|yicai|jingji|stcn|cls\.cn)/.test(d))
+    return { grade: 'B', reason: '主流媒体 / 专业媒体署名报道' }
+  if (/(zhihu|baike|wikipedia|weixin|mp\.|medium|substack|toutiao|douban|xiaohongshu|reddit)/.test(d))
+    return { grade: 'C', reason: '百科 / 自媒体 / 社区二手转述' }
+  if (/(tieba|4chan|anonymous)/.test(d)) return { grade: 'D', reason: '匿名来源，不可追责' }
+  return { grade: 'C', reason: '未识别域名，按二手转述保守分级' }
+}
+
+/** 剪贴板手动补录：把用户从浏览器复制的原文纯文本合并进来源，重新定位锚点与分级 */
+export function sourceFromText(src: TraceSource, text: string, provenance: string): TraceSource {
+  const { grade, reason } = gradeOfUrl(src.url)
+  const out: TraceSource = {
+    ...src,
+    grade, gradeReason: reason,
+    status: 'ok', failReason: '',
+    textLen: text.length,
+    provenance,
+    anchors: [],
+  }
+  const claims = src.anchors.map((a) => a.claim).filter(Boolean)
+  for (const claim of claims.length ? claims : ['']) {
+    const loc = claim ? locateInText(claim, text) : null
+    out.anchors.push(
+      loc
+        ? { claim, ...loc }
+        : { claim, matched: false, hit: '', before: [], after: [], note: '原文已获取，但未定位到对应句（可能为转述/概括）' },
+    )
+  }
+  return out
+}
+
+/** 导出溯源包 JSON（补抓/补录结果随之保存，可再经「导入溯源包」打开） */
+export function downloadTracePack(pack: TracePack) {
+  const blob = new Blob([JSON.stringify(pack, null, 1)], { type: 'application/json' })
+  const a = document.createElement('a')
+  a.href = URL.createObjectURL(blob)
+  a.download = `${pack.title.replace(/[\\/:*?"<>|]/g, '_').slice(0, 60)}-溯源包.json`
+  document.body.appendChild(a)
+  a.click()
+  a.remove()
+  setTimeout(() => URL.revokeObjectURL(a.href), 5000)
+}

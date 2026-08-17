@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { Group, Panel, Separator } from 'react-resizable-panels'
-import { ClipboardPaste, FileJson2, Loader2, Wifi, WifiOff, X } from 'lucide-react'
+import { ClipboardPaste, Download, FileJson2, Loader2, RefreshCw, Wifi, WifiOff, X } from 'lucide-react'
 import TraceReport from '@/sections/TraceReport'
 import TraceSourcePanel from '@/sections/TraceSourcePanel'
 import {
-  BUILTIN_PACKS, demoTracePack, packFromMdOnly, packStats, parseTracePack, TRACE_GRADE_STYLE,
+  BUILTIN_PACKS, demoTracePack, downloadTracePack, packFromMdOnly, packStats, parseTracePack, refetchSource,
+  TRACE_GRADE_STYLE, TRACE_SVC_URL,
   type TraceGrade, type TracePack, type TraceSource,
 } from '@/lib/trace'
 
-const SVC_URL = 'http://127.0.0.1:8787'
+const SVC_URL = TRACE_SVC_URL
 
 function ResizeHandle() {
   return (
@@ -35,6 +36,19 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
   const [elapsed, setElapsed] = useState(0)
   const fileRef = useRef<HTMLInputElement>(null)
   const stats = packStats(pack)
+  // 批量补抓进度：{done,total} | null
+  const [batch, setBatch] = useState<{ done: number; total: number } | null>(null)
+
+  // 常驻服务检测：挂载时 + 打开粘贴框时各测一次
+  useEffect(() => {
+    const ctrl = new AbortController()
+    const t = setTimeout(() => ctrl.abort(), 2000)
+    fetch(`${SVC_URL}/health`, { signal: ctrl.signal })
+      .then((r) => setSvc(r.ok ? 'online' : 'offline'))
+      .catch(() => setSvc('offline'))
+      .finally(() => clearTimeout(t))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     if (!pasteOpen) return
@@ -60,6 +74,28 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
     setPasteMd('')
     setPasteTitle('')
     onPackTitle?.(p.title)
+  }
+
+  /** 单来源原地更新（补抓/手动补录回写），右侧面板选中态同步刷新 */
+  function patchSource(s: TraceSource) {
+    setPack((p) => ({ ...p, sources: p.sources.map((x) => (x.id === s.id ? s : x)) }))
+    setSel((prev) => (prev?.id === s.id ? s : prev))
+  }
+
+  /** 一键补抓全部失败来源（本地管线逐个重试 + 浏览器补抓） */
+  async function refetchAll() {
+    const fails = pack.sources.filter((s) => s.status === 'fail')
+    if (!fails.length) return
+    setBatch({ done: 0, total: fails.length })
+    for (const s of fails) {
+      try {
+        patchSource(await refetchSource(s))
+      } catch {
+        break // 服务离线等硬错误：保留其余失败源原状
+      }
+      setBatch((b) => (b ? { ...b, done: b.done + 1 } : b))
+    }
+    setBatch(null)
   }
 
   async function importPack(file: File) {
@@ -150,6 +186,25 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
         >
           {importing ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <FileJson2 className="h-3.5 w-3.5" />}
           导入溯源包
+        </button>
+        {stats.fail > 0 && (
+          <button
+            onClick={refetchAll}
+            disabled={!!batch || svc !== 'online'}
+            className="flex items-center gap-1.5 rounded-md border border-cinnabar-300 bg-cinnabar-50 px-2.5 py-1 text-xs font-medium text-cinnabar-700 transition-colors hover:bg-cinnabar-100 disabled:opacity-50"
+            title={svc === 'online' ? '本地管线逐个重试失败来源，反爬源自动驱动本机真实浏览器补抓' : '需先启动本地管线服务（python3 tools/trace/server.py）'}
+          >
+            {batch ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <RefreshCw className="h-3.5 w-3.5" />}
+            {batch ? `补抓中 ${batch.done}/${batch.total}…` : `补抓全部失败源（${stats.fail}）`}
+          </button>
+        )}
+        <button
+          onClick={() => downloadTracePack(pack)}
+          className="flex items-center gap-1.5 rounded-md border border-stone-300 px-2.5 py-1 text-xs font-medium text-stone-700 transition-colors hover:bg-stone-100"
+          title="把当前溯源包（含补抓/补录结果）导出为 JSON，可再经「导入溯源包」打开"
+        >
+          <Download className="h-3.5 w-3.5" />
+          导出
         </button>
         <input
           ref={fileRef}
@@ -259,7 +314,7 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
             <>
               <ResizeHandle />
               <Panel defaultSize="38%" minSize="24%" maxSize="55%">
-                <TraceSourcePanel source={sel} onClose={() => setSel(null)} />
+                <TraceSourcePanel source={sel} onClose={() => setSel(null)} onPatch={patchSource} />
               </Panel>
             </>
           )}
@@ -270,7 +325,7 @@ export default function TraceDesk({ onPackTitle }: { onPackTitle?: (t: string) =
       </div>
       {sel && (
         <div className="fixed inset-0 z-40 bg-paper-light md:hidden">
-          <TraceSourcePanel source={sel} onClose={() => setSel(null)} />
+          <TraceSourcePanel source={sel} onClose={() => setSel(null)} onPatch={patchSource} />
         </div>
       )}
     </div>
