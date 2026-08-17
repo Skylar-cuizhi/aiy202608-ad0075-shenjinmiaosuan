@@ -33,6 +33,14 @@ UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit
 
 CITE_RE = re.compile(r"\[\(([^)\n]{1,60})\)\]\((https?://[^)\s]+)\)")
 FOOT_DEF_RE = re.compile(r"^\[\^(\d+)\^\]:\s*(.*?)\s*(?:<(https?://[^>\s]+)>|(https?://\S+))?\s*$", re.M)
+# ChatGPT 深度研究导出残留：PUA 私有区字符（U+E200/U+E202/U+E201 等）包裹的 cite…turn…search… 令牌
+GPT_CITE_PUA_RE = re.compile("[\uE000-\uF8FF]")
+GPT_CITE_TOKEN_RE = re.compile(r"cite(?:turn\d+(?:search|academia)\d+)+")
+
+
+def strip_gpt_cite_tokens(md: str) -> str:
+    """清除 ChatGPT 导出的引证令牌；不去除会导致脚注定义行尾残留令牌、定义正则整行失配、全文 0 来源。"""
+    return GPT_CITE_TOKEN_RE.sub("", GPT_CITE_PUA_RE.sub("", md))
 
 
 def _foot_name(desc: str) -> str:
@@ -44,6 +52,7 @@ def _foot_name(desc: str) -> str:
 
 def normalize_citations(md: str) -> str:
     """把脚注式引证 [^N^]（文尾定义）转成内联 [(名称)](URL)；无 URL 的定义行直接删除。已是内联格式则原样返回。"""
+    md = strip_gpt_cite_tokens(md)
     defs = {}
     for m in FOOT_DEF_RE.finditer(md):
         num, desc, u1, u2 = m.groups()
