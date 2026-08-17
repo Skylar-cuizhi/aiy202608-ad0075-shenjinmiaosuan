@@ -70,6 +70,9 @@ export function parseTracePack(text: string): TracePack {
  * 与管线 build_data.normalize_citations 逻辑对齐；无 URL 的定义与未定义引用号直接去除。
  */
 export function normalizeCitations(md: string): string {
+  // 清除 ChatGPT 深度研究导出残留的引证令牌：PUA 私有区字符（U+E200/U+E202/U+E201 等）包裹的 cite…turn…search… 标记，
+  // 否则脚注定义行尾的残留令牌会让定义正则匹配失败、全文 0 来源
+  md = md.replace(/[\uE000-\uF8FF]/g, '').replace(/cite(?:turn\d+(?:search|academia)\d+)+/g, '')
   const DEF_RE = /^\[\^(\d+)\^\]:\s*(.*?)\s*(?:<(https?:\/\/[^>\s]+)>|(https?:\/\/\S+))?\s*$/gm
   const defs = new Map<string, [string, string]>()
   for (const m of md.matchAll(DEF_RE)) {
